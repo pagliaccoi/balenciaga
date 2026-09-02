@@ -4,7 +4,7 @@ INNER
 
 .inner {
     max-width: 1920px;
-    margin: 0 auto;
+    margin: 0 auto; 
     padding: 135px 120px 0;
 }
 
@@ -107,6 +107,7 @@ PRODUCT SIZE BUTTON
 }
 
 .package .package-exp-title {
+    font-size: 0.88em;
     font-weight: 600;
     border-bottom: 1px solid #111;
 }
@@ -120,6 +121,9 @@ PRODUCT SIZE BUTTON
 /* ===================================================================
 상품 설명
 =================================================================== */
+.product-detail{
+    margin-bottom: 60px;
+}
 
 #toggle-detail,
 #toggle-size,
@@ -188,8 +192,8 @@ PRODUCT SIZE BUTTON
 .product-detail .delivery-exp,
 .product-detail .package-exp,
 .product-detail .possible-exp {
-    font-size: 12px;
-    line-height: 20px;
+    font-size: 1em;
+    line-height: 2;
 }
 
 .pay-choice-wrap {
@@ -201,6 +205,10 @@ PRODUCT SIZE BUTTON
 .product-detail>.delivery,
 .product-detail>.package {
     margin-bottom: 20px;
+}
+
+.product-detail label {
+    border-bottom: 1px solid #111;
 }
 
 /* ============================================================
@@ -254,7 +262,6 @@ I-PAD
         color: #fff;
 
     }
-
 
 }
 
