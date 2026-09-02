@@ -265,12 +265,16 @@ header > .inner {
     height: 100vh;
     background: var(--primary-color);
     margin-top: 0;
+    padding-top: 50px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     z-index: 9999;
 
     transform: translateX(-100%);
-    transition: 0.3s;
+    transition: transform 0.3s ease-in-out;
+  }
+  .gnb-menu::-webkit-scrollbar {
+    display: none;
   }
   .gnb-menu.is-active {
     transform: translateX(0);
@@ -283,7 +287,7 @@ header > .inner {
     left: 100%; /* 메뉴 바로 오른쪽 끝부터 시작 */
     width: 100vw; /* 화면 전체를 덮도록 설정 */
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5); /* 반투명 검은색 */
+    background-color: rgba(0, 0, 0, 0.8); /* 반투명 검은색 */
 
     /* 초기에는 보이지 않다가 투명도와 함께 0.3초 동안 부드럽게 전환 */
     opacity: 0;
@@ -294,10 +298,10 @@ header > .inner {
     z-index: -1; /* 메뉴 내용물 뒤로 가도록 설정 */
   }
   .gnb-menu.is-active::before {
-        opacity: 1;
-        visibility: visible;
-    }
+    opacity: 1;
+    visibility: visible;
 }
+
   .main-menu {
     flex-direction: column;
     margin: 0 2em;
@@ -391,8 +395,9 @@ header > .inner {
     width: 150px;
   }
   .gnb-menu {
+    top: 6%;
     width: 100%;
-    top: 0;
+    padding: 0;
   }
   .sub-menu-wrap {
     /* background: rgba(255,255,255,0.2); */
@@ -400,6 +405,9 @@ header > .inner {
   }
   .sub-menu {
     flex-direction: column;
+  }
+  .m-close-btn{
+    top: 4%;
   }
   .gnb-list,
   .m-btn {
