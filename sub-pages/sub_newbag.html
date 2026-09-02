@@ -12,6 +12,9 @@
     <link rel="stylesheet" href="./css/header-style.css">
     <link rel="stylesheet" href="./css/sub-newbag.css">
     <link rel="stylesheet" href="./css/footer.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js" defer></script>
+    <script src="/js/header.js" defer></script>
+    <script src="./js/sub_newbag.js" defer></script>
 </head>
 
 <body>
@@ -36,7 +39,7 @@
                                         <a href="#">전체보기</a>
                                     </li>
                                     <li>
-                                        <a href="./sub-pages/W-new-goods.html">여성 신제품</a>
+                                        <a href="./W-new-goods.html">여성 신제품</a>
                                         <ul class="sub-menu-category">
                                             <li><a href="#">겨울 26</a></li>
                                             <li><a href="#">홀리데이</a></li>
@@ -54,7 +57,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="./sub-pages/sub_newbag.html">가방 신제품</a>
+                                        <a href="./sub_newbag.html">가방 신제품</a>
                                         <ul class="sub-menu-category">
                                             <li><a href="#">LE CITY</a></li>
                                             <li><a href="#">RODEO</a></li>
@@ -78,7 +81,7 @@
                             <div class="sub-menu-wrap">
                                 <ul class="sub-menu">
                                     <li>
-                                        <a href="./sub-pages/index-shop-women.html">전체보기</a>
+                                        <a href="./index-shop-women.html">전체보기</a>
                                     </li>
                                     <li>
                                         <a href="#">상의</a>
@@ -216,8 +219,8 @@
                                     <li>
                                         <a href="#">캠페인</a>
                                         <ul class="sub-menu-category">
-                                            <li><a href="./sub-pages/index-campaign.html">All</a></li>
-                                            <li><a href="./sub-pages/index-campaign-newyork.html">New York Minute</a>
+                                            <li><a href="./index-campaign.html">All</a></li>
+                                            <li><a href="./index-campaign-newyork.html">New York Minute</a>
                                             </li>
                                             <li><a href="#">Soccer Series</a></li>
                                             <li><a href="#">Icon Photocard</a></li>
@@ -285,7 +288,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="./sub-pages/payment.html">
+                            <a href="./payment.html">
                                 <img src="./images/header-icon/icon-bag.svg" alt="장바구니 아이콘">
                             </a>
                             <span class="cart-count">1</span>
@@ -645,186 +648,6 @@
             <img src="./images/footer-icon/Big-logo.svg" alt="3분의 1이 잘린 로고">
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
-    <script>
-        const headerSwiper = new Swiper('.headerSwiper', {
-            loop: true,
-            spaceBetween: 0,
-            centeredSlides: false,
-            a11y: false,
-            autoplay: {
-                delay: 2500,
-                disableOnInteraction: false,
-            },
-        });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const mainMenuLis = document.querySelectorAll('.main-menu > li');
-            const header = document.querySelector('header');
-            const subBg = document.querySelector('.sub-bg');
-            const allSubWraps = document.querySelectorAll('.sub-menu-wrap');
-
-            mainMenuLis.forEach(li => {
-                const subWrap = li.querySelector('.sub-menu-wrap');
-
-                li.addEventListener('mouseenter', () => {
-                    // 1. 모든 서브메뉴 닫기 (클래스 제거)
-                    allSubWraps.forEach(wrap => {
-                        wrap.classList.remove('is-active');
-                    });
-
-                    // 2. 현재 호버한 메뉴에 서브메뉴가 있는 경우에만 배경과 서브메뉴 열기
-                    if (subWrap) {
-                        subBg.classList.add('is-active'); // 배경 슬라이드 열림
-                        subWrap.classList.add('is-active'); // 서브메뉴 열림
-                    } else {
-                        // '고객서비스'처럼 서브메뉴가 없는 메뉴에 마우스 올리면 배경 닫기
-                        subBg.classList.remove('is-active');
-                    }
-                });
-            });
-
-            // 헤더 전체 영역을 벗어났을 때 모두 닫기
-            header.addEventListener('mouseleave', () => {
-                subBg.classList.remove('is-active'); // 배경 닫힘
-
-                allSubWraps.forEach(wrap => {
-                    wrap.classList.remove('is-active');
-                });
-            });
-        });
-    </script>
-    <script>
-        function syncVisualHeight() {
-            const list = document.querySelector('.bag-product-list');
-            if (!list) return;
-
-            const normalItem = list.querySelector('.bag-product-item:not(.bag-product-item--visual)');
-            const tallImage = list.querySelector('.bag-product-item--tall .bag-product-image');
-            if (!normalItem || !tallImage) return;
-
-            if (window.innerWidth <= 789) {
-                tallImage.style.height = '';
-                return;
-            }
-
-            const normalImage = normalItem.querySelector('.bag-product-image');
-            const normalInfo = normalItem.querySelector('.bag-product-info');
-            if (!normalImage || !normalInfo) return;
-
-            const rowGap = parseFloat(getComputedStyle(list).rowGap) || 0;
-            const imageH = normalImage.offsetHeight;
-            const infoH = normalInfo.offsetHeight;
-
-            tallImage.style.height = (imageH + infoH + rowGap + imageH) + 'px';
-        }
-
-        syncVisualHeight();
-        window.addEventListener('resize', syncVisualHeight);
-
-        // Swiper로 카테고리 스와이프, 휠 이동, 커스텀 스크롤바를 제어
-        const categorySwiper = new Swiper('.bag-category-swiper', {
-            slidesPerView: 'auto',
-            centerInsufficientSlides: true,
-            grabCursor: true,
-            watchOverflow: true,
-            freeMode: true,
-            scrollbar: {
-                el: '.bag-category-scrollbar',
-                draggable: true,
-                snapOnRelease: false
-            },
-            mousewheel: {
-                forceToAxis: false,
-                releaseOnEdges: true
-            },
-            keyboard: {
-                enabled: true,
-                onlyInViewport: true,
-                pageUpDown: false
-            },
-            breakpoints: {
-                0: {
-                    spaceBetween: 12,
-                    slidesOffsetBefore: 12,
-                    slidesOffsetAfter: 12
-                },
-                790: {
-                    spaceBetween: 16,
-                    slidesOffsetBefore: 20,
-                    slidesOffsetAfter: 20
-                },
-                1281: {
-                    spaceBetween: 20,
-                    slidesOffsetBefore: 40,
-                    slidesOffsetAfter: 40
-                }
-            }
-        });
-
-        const categoryScrollbar = document.querySelector('.bag-category-scrollbar');
-
-        // 카테고리가 모두 보이는 화면에서는 페이지 휠을 그대로 사용
-        function syncCategoryMousewheel() {
-            if (window.innerWidth >= 790 || categorySwiper.isLocked) categorySwiper.mousewheel.disable();
-            else categorySwiper.mousewheel.enable();
-        }
-
-        function updateCategoryScrollbarA11y() {
-            categoryScrollbar.setAttribute('aria-valuenow', Math.round(categorySwiper.progress * 100));
-            categoryScrollbar.setAttribute('aria-disabled', String(categorySwiper.isLocked));
-        }
-
-        categoryScrollbar.addEventListener('keydown', (event) => {
-            if (event.key === 'Home') categorySwiper.slideTo(0);
-            else if (event.key === 'End') categorySwiper.slideTo(categorySwiper.slides.length - 1);
-            else return;
-
-            event.preventDefault();
-        });
-
-        categorySwiper.on('progress lock unlock', updateCategoryScrollbarA11y);
-        categorySwiper.on('lock unlock breakpoint', syncCategoryMousewheel);
-        syncCategoryMousewheel();
-        updateCategoryScrollbarA11y();
-
-        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
-        if (!reducedMotion.matches) {
-            const revealSelectors = [
-                '.bag-category-heading',
-                '.bag-category-item',
-                '.bag-product-item'
-            ];
-
-            const revealItems = revealSelectors.flatMap((selector) => (
-                [...document.querySelectorAll(selector)].map((item) => {
-                    item.classList.add('bag-reveal');
-                    return item;
-                })
-            ));
-
-            document.documentElement.classList.add('motion-ready');
-
-            if ('IntersectionObserver' in window) {
-                const revealObserver = new IntersectionObserver((entries, observer) => {
-                    entries.forEach((entry) => {
-                        if (!entry.isIntersecting) return;
-
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target);
-                    });
-                }, {
-                    threshold: 0.01,
-                    rootMargin: '0px 0px -4%'
-                });
-
-                revealItems.forEach((item) => revealObserver.observe(item));
-            } else {
-                revealItems.forEach((item) => item.classList.add('is-visible'));
-            }
-        }
-    </script>
 </body>
 
 </html>

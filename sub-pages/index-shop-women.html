@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/header-style.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/shop-w.css">
+    <script src="../js/header.js" defer></script>
 </head>
 
 <body>
@@ -20,7 +21,7 @@
             <div class="sub-bg"></div>
             <div class="inner">
                 <h1 class="logo">
-                    <a href="./index.html">
+                    <a href="/index.html">
                         <img src="./images/header/header-icon/logo-w.svg" alt="발렌시아가 로고">
                     </a>
                 </h1>
@@ -35,7 +36,7 @@
                                         <a href="#">전체보기</a>
                                     </li>
                                     <li>
-                                        <a href="./sub-pages/W-new-goods.html">여성 신제품</a>
+                                        <a href="/W-new-goods.html">여성 신제품</a>
                                         <ul class="sub-menu-category">
                                             <li><a href="#">겨울 26</a></li>
                                             <li><a href="#">홀리데이</a></li>
@@ -53,7 +54,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="./sub-pages/sub_newbag.html">가방 신제품</a>
+                                        <a href="/sub_newbag.html">가방 신제품</a>
                                         <ul class="sub-menu-category">
                                             <li><a href="#">LE CITY</a></li>
                                             <li><a href="#">RODEO</a></li>
@@ -77,7 +78,7 @@
                             <div class="sub-menu-wrap">
                                 <ul class="sub-menu">
                                     <li>
-                                        <a href="./sub-pages/index-shop-women.html">전체보기</a>
+                                        <a href="/index-shop-women.html">전체보기</a>
                                     </li>
                                     <li>
                                         <a href="#">상의</a>
@@ -210,12 +211,13 @@
                             <div class="sub-menu-wrap">
                                 <ul class="sub-menu">
                                     <li>
-                                        <a href="./sub-pages/index-campaign.html">전체보기</a>
+                                        <a href="#">전체보기</a>
                                     </li>
                                     <li>
                                         <a href="#">캠페인</a>
                                         <ul class="sub-menu-category">
-                                            <li><a href="./sub-pages/index-campaign-newyork.html">New York Minute</a>
+                                            <li><a href="/index-campaign.html">All</a></li>
+                                            <li><a href="/index-campaign-newyork.html">New York Minute</a>
                                             </li>
                                             <li><a href="#">Soccer Series</a></li>
                                             <li><a href="#">Icon Photocard</a></li>
@@ -247,12 +249,12 @@
                     </ul>
 
                     <div class="m-close-btn">
-                        <a href="#"><img src="./images/header-icon/close.svg" alt="모바일 서브메뉴 닫기 창 아이콘"></a>
+                        <a href="#"><img src="/images/header-icon/close.svg" alt="모바일 서브메뉴 닫기 창 아이콘"></a>
                     </div>
 
                     <div class="m-user-text">
-                        <p class="login"><a href="./sub-pages/login.html">로그인</a></p>
-                        <p class="mypage"><a href="./sub-pages/mypage.html">마이페이지</a></p>
+                        <p class="login"><a href="/sub-pages/login.html">로그인</a></p>
+                        <p class="mypage"><a href="/sub-pages/mypage.html">마이페이지</a></p>
                     </div>
                 </nav>
 
@@ -283,7 +285,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="./sub-pages/payment.html">
+                            <a href="/payment.html">
                                 <img src="./images/header-icon/icon-bag.svg" alt="장바구니 아이콘">
                             </a>
                             <span class="cart-count">1</span>
@@ -298,7 +300,8 @@
     <main>
         <div class="shop-wrap">
             <p class="shop-banner">
-                <img src="./images/shop-w/women-banner.jpg" alt="여성 의류 배너">
+                <img src="./images/shop-w/women-banner.jpg" alt="여성 전체보기 기본 배너" class="PC-img">
+                <img src="./images/shop-w/m-women-banner2.jpg" alt="여성 전체보기 모바일 배너" class="M-img">
             </p>
             <div class="shop-inner">
                 <section class="shop-section-wrap">
@@ -796,7 +799,7 @@
 
 
     <!-- 모바일 카테고리 js -->
-    <!-- ```html -->
+    <!-- html -->
     <script>
         function initCategoryScrollbar() {
             const list = document.querySelector('.shop-category-list');
@@ -1002,16 +1005,16 @@
 
                     list.scrollLeft = nextScroll;
                 }, {
-                passive: false
-            }
+                    passive: false
+                }
             );
 
             /* 실제 카테고리 스크롤 감지 */
             list.addEventListener(
                 'scroll',
                 updateScrollbar, {
-                passive: true
-            }
+                    passive: true
+                }
             );
 
             /* 화면 크기 변경 */
@@ -1025,47 +1028,8 @@
 
         initCategoryScrollbar();
 
-        // gnb 메뉴 
-        document.addEventListener('DOMContentLoaded', () => {
-            const mainMenuLis = document.querySelectorAll('.main-menu > li');
-            const header = document.querySelector('header');
-            const subBg = document.querySelector('.sub-bg');
-            const allSubWraps = document.querySelectorAll('.sub-menu-wrap');
 
-            mainMenuLis.forEach(li => {
-                const subWrap = li.querySelector('.sub-menu-wrap');
-
-                li.addEventListener('mouseenter', () => {
-                    // 1. 모든 서브메뉴 닫기 (클래스 제거)
-                    allSubWraps.forEach(wrap => {
-                        wrap.classList.remove('is-active');
-                    });
-
-                    // 2. 현재 호버한 메뉴에 서브메뉴가 있는 경우에만 배경과 서브메뉴 열기
-                    if (subWrap) {
-                        subBg.classList.add('is-active'); // 배경 슬라이드 열림
-                        subWrap.classList.add('is-active'); // 서브메뉴 열림
-                    } else {
-                        // '고객서비스'처럼 서브메뉴가 없는 메뉴에 마우스 올리면 배경 닫기
-                        subBg.classList.remove('is-active');
-                    }
-                });
-            });
-
-            // 헤더 전체 영역을 벗어났을 때 모두 닫기
-            header.addEventListener('mouseleave', () => {
-                subBg.classList.remove('is-active'); // 배경 닫힘
-
-                allSubWraps.forEach(wrap => {
-                    wrap.classList.remove('is-active');
-                });
-            });
-        });
-
-
-
-        // fiter 스크립트
-
+       // 필터 정렬
         document.addEventListener('DOMContentLoaded', () => {
             const triggerBtn = document.getElementById('filterTriggerBtn');
             const menuLayer = document.getElementById('filterMenuLayer');
@@ -1084,29 +1048,45 @@
                 }
             });
 
-            // 2. 원본 상품 데이터 캐싱
-            const originalItems = Array.from(productListEl.querySelectorAll('li')).map(li => ({
-                element: li,
-                title: li.querySelector('.product-title')?.textContent.trim() || '',
-                price: parseInt(li.querySelector('.product-price')?.textContent.replace(/[^0-9]/g, ''), 10) || 0,
-                isBanner: li.classList.contains('women-img1') || li.classList.contains('women-img2')
-            }));
+            // 2. 원본 상품 데이터 안전하게 캐싱 (배너 및 예외 처리 강화)
+            const originalItems = Array.from(productListEl.querySelectorAll('li')).map(li => {
+                const isBanner = li.classList.contains('women-img1') || li.classList.contains(
+                    'women-img2') || !li.querySelector('.product-price');
+
+                const titleEl = li.querySelector('.product-title');
+                const priceEl = li.querySelector('.product-price');
+
+                return {
+                    element: li,
+                    title: titleEl ? titleEl.textContent.trim() : '',
+                    price: priceEl ? parseInt(priceEl.textContent.replace(/[^0-9]/g, ''), 10) || 0 : 0,
+                    isBanner: isBanner
+                };
+            });
 
             let currentSort = 'default';
             let currentPrice = 'all';
 
-            // 3. 필터 & 정렬 실행 함수 수정
+            // 3. 필터 & 정렬 실행 함수
             function applyFilterAndSort() {
                 let workingList = [...originalItems];
 
-                // 가격 필터 적용
+                // 배너 숨김 여부 결정: 기본순(default) 이면서 가격 필터가 전체(all)일 때만 배너 표시
+                const isDefaultView = (currentSort === 'default' && currentPrice === 'all');
+
+                if (!isDefaultView) {
+                    // 기본순+전체가 아닐 경우 배너(women-img1, women-img2) 아예 제외(숨김)
+                    workingList = workingList.filter(item => !item.isBanner);
+                }
+
+                // 가격 필터 적용 (배너가 아닐 때만 가격 조건 비교)
                 if (currentPrice === 'under2m') {
                     workingList = workingList.filter(item => item.isBanner || item.price < 2000000);
                 } else if (currentPrice === 'over4m') {
                     workingList = workingList.filter(item => item.isBanner || item.price > 4000000);
                 }
 
-                // 정렬 적용
+               // 정렬 적용
                 if (currentSort === 'lowPrice') {
                     workingList.sort((a, b) => {
                         if (a.isBanner) return 1;
@@ -1126,7 +1106,6 @@
                         return a.title.localeCompare(b.title, 'ko');
                     });
                 } else if (currentSort === 'default') {
-                    // 기본순일 때는 originalItems(처음에 캐싱된 원본 순서)의 인덱스 기준으로 정렬하여 원래 배치 복원
                     workingList.sort((a, b) => originalItems.indexOf(a) - originalItems.indexOf(b));
                 }
 
@@ -1145,20 +1124,21 @@
 
                 if (sortVal !== undefined) {
                     currentSort = sortVal;
-                    btn.closest('ul').querySelectorAll('button').forEach(b => b.classList.remove('active'));
+                    btn.closest('ul').querySelectorAll('button').forEach(b => b.classList.remove(
+                        'active'));
                     btn.classList.add('active');
                 }
 
                 if (priceVal !== undefined) {
                     currentPrice = priceVal;
-                    btn.closest('ul').querySelectorAll('button').forEach(b => b.classList.remove('active'));
+                    btn.closest('ul').querySelectorAll('button').forEach(b => b.classList.remove(
+                        'active'));
                     btn.classList.add('active');
                 }
 
                 applyFilterAndSort();
             });
         });
-
     </script>
 
 </body>
