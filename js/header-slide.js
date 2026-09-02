@@ -4,7 +4,7 @@ const headerSwiper = new Swiper(".headerSwiper", {
   centeredSlides: false,
   a11y: false,
   autoplay: {
-    delay: 3000,
+    delay: 4000,
     disableOnInteraction: false,
   },
 });
