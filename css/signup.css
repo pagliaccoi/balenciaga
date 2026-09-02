@@ -1,0 +1,217 @@
+/* ==========================================================================
+   Signup
+   ========================================================================== */
+.signup {
+    padding: 6.25em 0 10em;
+    margin-top: 75px;
+}
+
+.signup-wrap {
+    width: 100%;
+    max-width: 488px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.signup-title {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+.signup-desc {
+    font-size: 0.88em;
+    color: var(--gray-600);
+    line-height: 1.5;
+    margin-bottom: 2.5em;
+}
+
+.signup-form {
+    text-align: left;
+}
+
+.signup-name-row {
+    display: flex;
+    gap: 20px;
+}
+
+.signup-name-row .field {
+    flex: 1;
+}
+
+/* ==========================================================================
+   Password Hint
+   ========================================================================== */
+.signup-password-hint {
+    margin: 0.5em 0 1.5em;
+}
+
+.signup-password-hint li {
+    position: relative;
+    padding-left: 12px;
+    font-size: 0.75em;
+    color: var(--gray-600);
+    line-height: 1.8;
+}
+
+.signup-password-hint li::before {
+    content: "·";
+    position: absolute;
+    left: 0;
+}
+
+/* ==========================================================================
+   Privacy / Agreement
+   ========================================================================== */
+.signup-privacy {
+    padding: 1.25em 0;
+    /* border-top: 1px solid var(--gray-200); */
+}
+
+.signup-privacy-title {
+    font-size: 0.88em;
+    font-weight: 700;
+    margin-bottom: 0.75em;
+}
+
+.signup-privacy-desc {
+    font-size: 0.75em;
+    color: var(--gray-600);
+    line-height: 1.6;
+    margin-bottom: 1.25em;
+}
+
+.signup-privacy-link {
+    color: var(--text-primary-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.signup-privacy-link:hover {
+    color: var(--gray-600);
+}
+
+.signup-agree-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.signup-agree-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.signup-agree-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    accent-color: var(--primary-color);
+    cursor: pointer;
+}
+
+.signup-agree-item label {
+    flex: 1;
+    font-size: 0.75em;
+    color: var(--text-primary-color);
+    cursor: pointer;
+}
+
+.signup-agree-link {
+    font-size: 0.75em;
+    color: var(--gray-600);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    white-space: nowrap;
+}
+
+.signup-agree-link:hover {
+    color: var(--text-primary-color);
+}
+
+/* ==========================================================================
+   Submit / Login link
+   ========================================================================== */
+.signup-submit {
+    display: block;
+    width: 100%;
+    height: 44px;
+    border: none;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 1em;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.signup-submit:hover {
+    background: var(--gray-800);
+}
+
+.signup-submit span {
+    position: relative;
+}
+
+.signup-submit span::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+    height: 1px;
+    background: var(--secondary-color);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+}
+
+.signup-submit:hover span::after {
+    transform: scaleX(1);
+}
+
+.signup-login {
+    text-align: center;
+    font-size: 0.88em;
+    color: var(--text-primary-color);
+    margin-top: 1.43em;
+}
+
+.signup-login a {
+    color: var(--text-primary-color);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.signup-login a:hover {
+    color: var(--gray-600);
+}
+
+.field-input {
+    cursor: text;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 1280px) {
+    .signup {
+        margin-top: 4vh;
+    }
+}
+
+@media (max-width: 789px) {
+    .signup {
+        padding: 4em 1em 6em;
+    }
+
+    .signup-name-row {
+        flex-direction: column;
+        gap: 0;
+    }
+}

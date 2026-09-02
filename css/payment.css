@@ -1,0 +1,381 @@
+.payment-list-wrap {
+    margin: 135px 0;
+}
+
+
+/* ============================================================
+INNER
+============================================================ */
+.inner {
+    /* background-color: pink; */
+}
+
+/* ============================================================
+PAYMENT LIST
+============================================================ */
+
+.payment-list>.payment-title {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.payment-title>h2 {
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.payment-title>span {
+    padding: 5px 5px;
+    background: #fff;
+    border: 2px solid #111;
+    font-size: 1em;
+    font-weight: 400;
+}
+
+/* ============================================================
+PRODUCT LIST OF PAYMENT PAGE
+============================================================ */
+.payment-product-list {
+    /* background: skyblue; */
+}
+
+.payment-product {
+    /* background: #dcdcdc; */
+    display: flex;
+    gap: 30px;
+    position: relative;
+    margin-top: 30px;
+}
+
+.payment-product .all {
+    display: flex;
+}
+
+.payment-product .all>.product-info-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.payment-product .all>.product-info-left>.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.payment-product .all>.product-info-left>.product-info>h3 {
+    font-size: 1.50em;
+    font-weight: 600;
+    color: #111;
+}
+
+.payment-product .all>.product-info-left>.product-info>p {
+    font-size: 1em;
+    font-weight: 400;
+    color: #111;
+}
+
+.payment-product .all>.product-info-left>.product-info-bottom {
+    display: flex;
+    gap: 300px;
+    margin-top: 100px;
+    align-items: center;
+}
+
+.payment-product .all>.product-info-left>.product-info-bottom>.product-size {
+    display: flex;
+    gap: 30px;
+}
+
+.payment-product .all>.product-info-left>.product-info-bottom>.product-num {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.payment-product .all>.product-info-left>.product-info-bottom>.product-num>span {
+    padding: 2px 2px;
+    background: #fff;
+    border: 2px solid #dcdcdc;
+}
+
+.product-info-right>strong {
+    font-size: 1.50em;
+    font-weight: 600;
+}
+
+/* ============================================================
+HR
+============================================================ */
+.hr {
+    width: 100%;
+    height: 2px;
+    background: #111;
+    margin: 60px 0;
+}
+
+/* ============================================================
+TOTAL
+============================================================ */
+.total {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total .total-left>strong {
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.total .total-right>strong {
+    font-size: 2em;
+    font-weight: 600;
+}
+
+/* ============================================================
+PAYMENT INFORMATION
+============================================================ */
+.payment-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 120px;
+}
+
+.payment-info-left>.payment-info-body>li {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.payment-info-right {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 10px;
+}
+
+.payment-info-right>img {
+    width: 40px;
+    height: 40px;
+}
+
+/* ============================================================
+PAYMENT SUPPORT
+============================================================ */
+.payment-support {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 120px;
+}
+
+.payment-support>.support-left>h4 {
+    font-size: 1.50em;
+    font-weight: 600;
+}
+
+.payment-support>.support-left>.support-body {
+    margin-top: 30px;
+    font-size: 14px;
+}
+
+/* .payment-support>.support-right {} */
+
+.payment-support>.support-right>a {
+    padding: 10px;
+    background: #fff;
+    border: 2px solid #111;
+    color: #111;
+}
+
+/* ============================================================
+BOTTOM BUTTON
+============================================================ */
+.payment-btn {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-top: 300px;
+    text-align: center;
+    align-items: center;
+}
+
+
+.payment-btn>p {
+    font-size: 1em;
+}
+
+.payment-btn>a {
+    font-size: 1em;
+    padding: 10px 70px;
+    background: #111;
+    border: 2px solid #111;
+    color: #fff;
+}
+
+/* ============================================================
+I-PAD (IPAD PRO)
+============================================================ */
+@media screen and (max-width:1280px) {
+    .inner {
+        /* background-color: pink; */
+    }
+
+    .payment-list {
+        padding: 0 120px;
+    }
+
+    .payment-product .all>.product-info-left>.product-info-bottom {
+        display: flex;
+        gap: 100px;
+        margin-top: 100px;
+        align-items: center;
+    }
+
+
+}
+
+/* ============================================================
+MOBILE (IPAD MINI & GALAXY S)
+============================================================ */
+@media screen and (max-width:789px) {
+
+    .payment-list-wrap {
+        margin: 75px 0;
+    }
+
+    .inner {
+        /* background-color: skyblue; */
+    }
+
+    .payment-product {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .payment-product .all>.product-info-left>.product-info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .payment-product .all>.product-info-left>.product-info-bottom {
+        display: flex;
+        gap: 100px;
+        margin-top: 20px;
+        align-items: center;
+    }
+
+    .payment-info {
+        /* display: flex; */
+        /* justify-content: space-between; */
+        display: block;
+        margin-top: 120px;
+    }
+
+    .payment-info-left>.payment-info-body>li {
+        font-size: 1em;
+        line-height: 1.5;
+    }
+
+    .payment-info-right {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .payment-info-right>img {
+        display: block;
+        width: 40px;
+        height: 40px;
+        margin-top: 30px;
+        overflow: hidden;
+        object-fit: cover;
+    }
+
+    .payment-info-right>* {
+        width: max-content;
+        height: max-content;
+    }
+
+    .payment-support {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-between; */
+        margin-top: 120px;
+        gap: 60px;
+    }
+}
+
+@media screen and (max-width:479px) {
+    .inner {
+        /* background-color: salmon; */
+    }
+
+    .payment-list {
+        padding: 0 60px;
+    }
+
+    .payment-product {
+        /* background: #dcdcdc; */
+        display: flex;
+        gap: 30px;
+        position: relative;
+        margin-top: 30px;
+    }
+
+    .payment-product .all>.product-info-right {
+        /* position: absolute; */
+        position: static;
+        display: block;
+        margin-top: 10px;
+        /* bottom: 0; */
+        /* right: 0; */
+    }
+
+    .all {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .total>.total-left {
+        display: none;
+    }
+
+    .payment-product .all>.product-info-left>.product-info>h4 {
+        font-size: 1em;
+        font-weight: 600;
+        color: #111;
+    }
+
+    .payment-product .all>.product-info-left>.product-info>p {
+        font-size: 1em;
+        font-weight: 400;
+        color: #111;
+    }
+
+    .product-info-right strong {
+        font-size: 1em;
+    }
+
+    .payment-info-right>img {
+        display: block;
+        width: 30px;
+        height: 30px;
+        margin-top: 20px;
+        overflow: hidden;
+        object-fit: cover;
+    }
+
+    .payment-btn {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        margin-top: 150px;
+        text-align: center;
+        align-items: center;
+    }
+
+}

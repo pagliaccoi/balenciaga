@@ -1,0 +1,341 @@
+main {
+  width: 100%;
+  margin: 0 auto;
+}
+.shop-wrap {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.shop-wrap p {
+  font-weight: 500;
+}
+.shop-inner {
+  max-width: 1920px;
+  width: 100%;
+  padding-bottom: 200px;
+  margin: 0 auto;
+  /* background-color: rgba(255,0,0,0.5); */
+}
+.shop-banner {
+  width: 100vw;
+}
+.shop-banner img {
+  width: 100%;
+  object-fit: cover;
+}
+.shop-section-wrap .section-title {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2em;
+  font-weight: 600;
+}
+.shop-category-wrap .shop-category-list {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  margin: 1em 0;
+  padding-bottom: 150px;
+}
+.shop-category-wrap .shop-category-list p {
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin: 1em 0;
+  font-size: 0.88em;
+  font-weight: 400;
+}
+.shop-category-list > li img {
+  transition: filter 0.3s ease;
+}
+.shop-category-list > li:hover img {
+  filter: brightness(0.8);
+}
+
+.grid-item-wrap {
+  position: relative;
+}
+.grid-item-wrap .product-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 4px;
+  row-gap: 24px;
+  grid-auto-rows: auto;
+}
+.grid-item-wrap .product-list > li > a {
+  display: block;
+  width: 100%;
+}
+
+.grid-item-wrap .product-list > li > a.img-box .hover-img {
+  display: none;
+}
+.grid-item-wrap .product-list > li > a.img-box:hover .default-img {
+  display: none;
+}
+
+.grid-item-wrap .product-list > li > a.img-box:hover .hover-img {
+  display: block;
+  filter: brightness(0.9);
+}
+
+.grid-item-wrap .product-list > li > a img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.grid-item-wrap .women-img1 {
+  grid-column: span 2;
+}
+.grid-item-wrap .women-img1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.grid-item-wrap .women-img2 {
+  grid-column: 1/5;
+  min-height: 0;
+}
+.grid-item-wrap .women-img2 a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.grid-item-wrap .women-img2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.product-list .text-box {
+  text-align: center;
+  margin: 0.88em 0;
+}
+.product-list .product-title {
+  display: block;
+  margin: 0.5em 0;
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1.63em;
+}
+.product-list .product-price {
+  font-size: 0.88em;
+  font-weight: 400;
+  color: var(--gray-800);
+}
+
+/* 필터 및 정렬 */
+.shop-filter {
+  position: relative;
+  margin: 30px 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+.filter-trigger-btn{
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  font-size: 1em;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+.filter-menu-layer{
+  display: none;
+  width: 200px;
+  flex-shrink: 0;
+  background: #fff;
+  border: 1px solid var(--gray-200);
+  padding: 20px;
+  z-index: 100;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+.filter-menu-layer.is-active{
+  display: block;
+}
+.filter-section{
+  margin-bottom: 1em;
+}
+.filter-section:last-child{
+  margin-bottom: 0;
+}
+.filter-heading{
+  font-weight: 600;
+  margin-bottom: 0.75em;
+  font-size: 0.9em;
+}
+.filter-section ul li button{
+  padding: 4px 0;
+  font-size: 0.88em;
+  color: #666;
+}
+.filter-section ul li button:hover,
+.filter-section ul li button.active{
+  font-weight: 700;
+  color: var(--primary-color);
+}
+/* -------필터 정렬 end------- */
+
+
+/* 카테고리 가로 스크롤바 */
+.shop-category-scrollbar {
+  display: none;
+}
+
+/* ipad */
+@media screen and (max-width: 1280px) {
+  .shop-banner,
+  .shop-inner {
+    max-width: 1280px;
+    width: 100%;
+  }
+  .shop-category-wrap .shop-category-list {
+    display: flex;
+    gap: 16px;
+    padding: 0 20px;
+    margin: 1em 0;
+    overflow-x: auto;
+
+    /* 왼쪽부터 배치 */
+    justify-content: center;
+
+    /* 기본 스크롤바 숨김 */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .shop-category-wrap .shop-category-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  .shop-category-wrap .shop-category-list > li {
+    flex: 0 0 120px;
+    width: 120px;
+  }
+  /* 카테고리 이미지 크기 */
+  .shop-category-wrap .shop-category-list > li img {
+    display: block;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+  }
+
+  /* 커스텀 스크롤바 */
+  .shop-category-scrollbar.is-scrollable {
+    position: relative;
+    display: block;
+    width: 500px;
+    height: 1px;
+    margin: 24px auto 0;
+    background: var(--gray-200);
+    cursor: pointer;
+    touch-action: none;
+    user-select: none;
+  }
+
+  /* 스크롤바 움직이는 부분 */
+  .shop-category-scrollbar-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--primary-color);
+  }
+  /* 키보드 접근성 */
+  .shop-category-scrollbar:focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 6px;
+  }
+
+  .shop-filter {
+    top: -2%;
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 789px) {
+  .shop-wrap {
+    padding: 1em 0;
+  }
+  .shop-inner {
+    max-width: 789px;
+    width: 100%;
+  }
+  .shop-banner {
+    height: 100%;
+  }
+  .shop-banner img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .shop-section-wrap .section-title {
+    height: 100px;
+    font-size: 2em;
+    font-weight: 600;
+  }
+  .shop-category-wrap .shop-category-list {
+    gap: 1em;
+    margin: 1em 0;
+    padding-bottom: 10px;
+  }
+  .shop-category-list > li {
+    cursor: pointer;
+  }
+
+  .grid-item-wrap {
+    position: relative;
+  }
+  .grid-item-wrap .product-list {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 8px;
+    row-gap: 24px;
+  }
+  .grid-item-wrap .women-img1 {
+    grid-column: 1/3;
+    height: 100%;
+  }
+  .grid-item-wrap .women-img1 img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .grid-item-wrap .women-img2 {
+    grid-column: 1/3;
+    grid-row: auto;
+    height: 25vh;
+  }
+  .shop-category-scrollbar.is-scrollable {
+    width: 240px;
+    margin-top: 18px;
+  }
+  .shop-filter {
+    top: 2%;
+  }
+}
+
+/* mobile */
+@media screen and (max-width: 480px) {
+  .shop-inner {
+    max-width: 480px;
+    width: 100%;
+  }
+  .shop-category-wrap .shop-category-list {
+    justify-content: flex-start;
+  }
+  .shop-category-wrap .shop-category-list > li {
+    flex: 0 0 100px;
+    width: 100px;
+  }
+
+  .shop-category-wrap .shop-category-list > li img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .shop-category-scrollbar.is-scrollable {
+    width: 160px;
+    margin-top: 16px;
+  }
+}

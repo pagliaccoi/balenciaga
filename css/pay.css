@@ -1,0 +1,354 @@
+/* ===================================================================
+INNER
+=================================================================== */
+
+.inner {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 135px 120px 0;
+}
+
+.inner>.pay {
+    display: flex;
+    gap: 5em;
+}
+
+/* ===================================================================
+LEFT SIDE IMAGE BOX
+=================================================================== */
+.pay-left>.img-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    /* gap: 1.25em; */
+}
+
+.pay-left>.img-box>img {
+    width: 405px;
+    height: 405px;
+    /* width: 100%; */
+    object-fit: cover;
+}
+
+
+/* ===================================================================
+PRODUCT INFORMATION
+=================================================================== */
+.product-info>.product-title {
+    margin-bottom: 20px;
+    font-size: 1.50em;
+    font-weight: 600;
+}
+
+.product-info>.product-exp {
+    margin-bottom: 20px;
+    font-size: 0.88em;
+    font-weight: 300;
+}
+
+.product-info>.product-price {
+    margin-bottom: 60px;
+    font-size: 1.25em;
+    font-weight: 600;
+}
+
+.product-size>.product-title {
+    margin-bottom: 20px;
+}
+
+
+/* ===================================================================
+PRODUCT SIZE BUTTON
+=================================================================== */
+.pay-right>.product-size .size {
+    display: flex;
+    gap: 0.63em;
+    margin-bottom: 120px;
+}
+
+.pay-right>.product-size .size>.btn {
+    padding: 10px 8px;
+    border: 1.5px solid rgba(0, 0, 0, 0.3);
+    background: #fff;
+    color: black;
+}
+
+.pay-right>.product-size .size>.btn:hover {
+    padding: 10px 8px;
+    border: 1.5px solid rgba(0, 0, 0, 0.3);
+    background: #8a8a8a;
+    color: #fff;
+}
+
+.pay-right>.pay-choice-wrap>.pay-choice {
+    display: flex;
+    gap: 0.31em;
+}
+
+.pay-right>.pay-choice-wrap>.pay-choice li {
+    padding: 10px 150px;
+    border: 1.5px solid rgba(0, 0, 0, 0.3);
+    background: #fff;
+    color: black;
+    cursor: pointer;
+}
+
+.pay-right>.pay-choice-wrap>.pay-choice li:hover {
+    padding: 10px 150px;
+    border: 1.5px solid rgba(0, 0, 0, 0.3);
+    background: #8a8a8a;
+    color: #fff;
+    cursor: pointer;
+}
+
+.product-size>.size>.btn:nth-child(4):hover {
+    background: #cfcfcf;
+    color: #707070;
+    border: 1.5px solid #707070;
+}
+
+.package .package-exp-title {
+    font-weight: 600;
+    border-bottom: 1px solid #111;
+}
+
+.product-size>.size>.btn:nth-child(4) {
+    background: #cfcfcf;
+    border: 1.5px solid #707070;
+    color: #707070;
+}
+
+/* ===================================================================
+상품 설명
+=================================================================== */
+
+#toggle-detail,
+#toggle-size,
+#toggle-delivery,
+#toggle-package,
+#toggle-possible {
+    display: none;
+}
+
+#toggle-detail:checked~.open,
+#toggle-size:checked~.open,
+#toggle-delivery:checked~.open,
+#toggle-package:checked~.open,
+#toggle-possible:checked~.open {
+    display: none;
+}
+
+#toggle-detail:checked~.close,
+#toggle-size:checked~.close,
+#toggle-delivery:checked~.close,
+#toggle-package:checked~.close,
+#toggle-possible:checked~.close {
+    display: flex;
+}
+
+#toggle-detail:checked~.product-detail-exp,
+#toggle-size:checked~.size-info-exp,
+#toggle-delivery:checked~.delivery-exp,
+#toggle-package:checked~.package-exp,
+#toggle-possible:checked~.possible-exp {
+    display: block;
+}
+
+.open,
+.close {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.open {
+    display: flex;
+}
+
+.close {
+    display: none;
+}
+
+.product-detail-exp,
+.size-info-exp,
+.delivery-exp,
+.package-exp,
+.possible-exp {
+    display: none;
+    margin-top: 20px;
+}
+
+.product-detail .open,
+.product-detail .close {
+    font-size: 16px;
+}
+
+.product-detail .product-detail-exp,
+.product-detail .size-info-exp,
+.product-detail .delivery-exp,
+.product-detail .package-exp,
+.product-detail .possible-exp {
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.pay-choice-wrap {
+    margin-bottom: 20px;
+}
+
+.product-detail>.detail,
+.product-detail>.size-info,
+.product-detail>.delivery,
+.product-detail>.package {
+    margin-bottom: 20px;
+}
+
+/* ============================================================
+I-PAD
+============================================================ */
+@media screen and (max-width:1280px) {
+    .inner {
+        /* background-color: pink; */
+    }
+
+    .pay {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        justify-content: center;
+    }
+
+    .pay-left>.img-box img {
+        width: 100%;
+    }
+
+    .pay-right>.product-size .size {
+        margin-bottom: 60px;
+    }
+
+    .pay-right>.pay-choice-wrap>.pay-choice li {
+        margin-bottom: 30px;
+    }
+
+    .pay-right>.pay-choice-wrap>.pay-choice {
+        display: flex;
+        /* justify-content: center; */
+        gap: 2em;
+    }
+
+    .product-detail {
+        padding-bottom: 75px;
+    }
+
+    .pay-right>.pay-choice-wrap>.pay-choice li {
+        padding: 10px 150px;
+        border: 1.5px solid rgba(0, 0, 0, 0.3);
+        background: #fff;
+        color: black;
+        cursor: pointer;
+    }
+
+    .pay-right>.pay-choice-wrap>.pay-choice li:hover {
+        padding: 10px 150px;
+        border: 1.5px solid rgba(0, 0, 0, 0.3);
+        background: #8a8a8a;
+        color: #fff;
+        cursor: pointer;
+    }
+
+
+}
+
+/* ============================================================
+MOBILE
+============================================================ */
+@media screen and (max-width:789px) {
+    .inner {
+        /* background-color: skyblue; */
+    }
+
+    .pay-left>.img-box img {
+        width: 100%;
+        padding-top: 30px;
+    }
+
+    .pay-right>.pay-choice-wrap>.pay-choice li {
+        padding: 10px 75px;
+        border: 1.5px solid rgba(0, 0, 0, 0.3);
+        background: #fff;
+        color: black;
+        align-items: center;
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+    }
+
+    .pay-right>.pay-choice-wrap>.pay-choice li:hover {
+        padding: 10px 75px;
+        border: 1.5px solid rgba(0, 0, 0, 0.3);
+        background: #8a8a8a;
+        color: #fff;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .pay-right>.product-size .size {
+        margin-bottom: 60px;
+    }
+
+    .pay-right>.pay-choice-wrap>.pay-choice {
+        display: flex;
+        /* justify-content: space-between; */
+        gap: 2em;
+    }
+}
+
+@media screen and (max-width:460px) {
+    .inner {
+        /* background-color: aquamarine; */
+        padding: 50px;
+    }
+
+    .pay-left>.img-box {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+        gap: 1.25em;
+    }
+
+    .pay-left>.img-box>img {
+        /* width: 405px;
+        height: 405px; */
+        width: 100%;
+        /* object-fit: cover; */
+    }
+
+    .pay-right>.pay-choice-wrap>.pay-choice li {
+        padding: 10px 45px;
+        border: 1.5px solid rgba(0, 0, 0, 0.3);
+        background: #fff;
+        color: black;
+        align-items: center;
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+    }
+
+    .pay-right>.pay-choice-wrap>.pay-choice li:hover {
+        padding: 10px 50px;
+        border: 1.5px solid rgba(0, 0, 0, 0.3);
+        background: #8a8a8a;
+        color: #fff;
+        align-items: center;
+        cursor: pointer;
+    }
+
+    .pay-right>.pay-choice-wrap>.pay-choice {
+        display: flex;
+        justify-content: space-between;
+        /* gap: 1em; */
+    }
+}

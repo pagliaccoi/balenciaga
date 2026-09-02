@@ -1,0 +1,399 @@
+/* ==========================================================================
+   Bag Hero
+   ========================================================================== */
+.bag-hero {
+    width: 100%;
+}
+
+.bag-hero-image {
+    width: 100%;
+    aspect-ratio: 1920 / 640;
+    overflow: hidden;
+}
+
+.bag-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: bag-hero-reveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes bag-hero-reveal {
+    from {
+        opacity: 0;
+        transform: scale(1.035);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* JS가 지원되는 환경에서만 스크롤 진입 모션을 적용한다. */
+.motion-ready .bag-reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+        opacity 0.55s ease,
+        transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.motion-ready .bag-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==========================================================================
+   Bag Category
+   ========================================================================== */
+.bag-category {
+    padding: 5em 0 5em;
+}
+
+.bag-category-heading {
+    margin-bottom: 1.88em;
+    font-size: 2em;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.04em;
+    text-align: center;
+}
+
+.bag-category-list {
+    display: flex;
+}
+
+.bag-category-item {
+    width: auto;
+}
+
+.bag-category-link {
+    display: block;
+    text-align: center;
+}
+
+.bag-category-thumb {
+    position: relative;
+    display: block;
+    width: 160px;
+    height: 160px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    background: var(--gray-200);
+}
+
+.bag-category-thumb::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.bag-category-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.bag-category-link:hover .bag-category-thumb::after {
+    opacity: 1;
+}
+
+.bag-category-name {
+    display: block;
+    font-size: 0.88em;
+    font-weight: 400;
+    color: var(--text-primary-color);
+}
+
+.bag-category-scrollbar {
+    display: none;
+}
+
+/* ==========================================================================
+   Bag Product
+   ========================================================================== */
+.bag-product {
+    padding: 0 0 7.5em;
+}
+
+.bag-product-filter {
+    width: 100%;
+    max-width: 1760px;
+    margin: 0 auto 1.25em;
+    padding: 0 40px;
+}
+
+.bag-product-filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.94em;
+    font-weight: 500;
+    color: var(--text-primary-color);
+}
+
+.bag-product-filter-btn::before {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(../images/icon/icon_filter.svg) no-repeat center / contain;
+}
+
+.bag-product-list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 417px));
+    justify-content: center;
+    grid-auto-flow: row dense;
+    column-gap: 4px;
+    row-gap: 40px;
+    padding: 0 40px;
+}
+
+.bag-product-item {
+    position: relative;
+}
+
+.bag-product-link {
+    display: block;
+}
+
+.bag-product-image {
+    width: 100%;
+    aspect-ratio: 417 / 521;
+    overflow: hidden;
+    background: var(--gray-200);
+}
+
+.bag-product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.bag-product-link:hover .bag-product-image img {
+    transform: scale(1.04);
+}
+
+.bag-product-info {
+    padding-top: 0.875em;
+    text-align: center;
+}
+
+.bag-product-name {
+    margin-bottom: 4px;
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.bag-product-price {
+    font-size: 0.88em;
+    font-weight: 400;
+    color: var(--gray-800);
+}
+
+/* 모델컷 (2칸 차지) */
+.bag-product-item--visual {
+    grid-column: span 2;
+}
+
+.bag-product-item--visual .bag-product-image {
+    aspect-ratio: 838 / 521;
+}
+
+.bag-product-item--visual .bag-product-link:hover .bag-product-image img {
+    transform: none;
+}
+
+/* 세로로 긴 모델컷 (2칸 x 2행) — 높이는 JS가 실측해 적용 */
+.bag-product-item--tall {
+    grid-row: span 2;
+}
+
+.bag-product-item--tall .bag-product-image {
+    aspect-ratio: 838 / 1140;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+/* PC에서는 모든 카테고리를 한 줄 중앙에 고정한다. */
+@media (min-width: 1281px) {
+    .bag-category-list {
+        width: 100%;
+        margin: 0 !important;
+        box-sizing: border-box;
+        justify-content: center;
+        gap: 20px;
+        padding: 0 40px;
+        transform: none !important;
+        transition-duration: 0ms !important;
+    }
+
+    .bag-category-item {
+        margin-right: 0 !important;
+    }
+}
+
+@media (max-width: 1280px) {
+    body {
+        font-size: 16px;
+    }
+
+    .bag-category {
+        padding: 3.75em 0;
+    }
+
+    .bag-category-heading {
+        margin-bottom: 1.75em;
+    }
+
+    .bag-category-list {
+        padding: 0;
+    }
+
+    .bag-category-scrollbar.swiper-scrollbar-horizontal:not(.swiper-scrollbar-lock) {
+        position: relative;
+        inset: auto;
+        display: block;
+        width: 500px;
+        height: 1px;
+        margin: 24px auto 0;
+        background: var(--gray-200);
+        border-radius: 0;
+        cursor: pointer;
+    }
+
+    .bag-category-scrollbar .swiper-scrollbar-drag {
+        height: 100%;
+        background: var(--primary-color);
+        border-radius: 0;
+    }
+
+    .bag-category-scrollbar:focus-visible {
+        outline: 2px solid var(--primary-color);
+        outline-offset: 6px;
+    }
+
+    .bag-category-thumb {
+        width: 130px;
+        height: 130px;
+    }
+
+    .bag-product {
+        padding: 0 0 5em;
+    }
+
+    .bag-product-filter,
+    .bag-product-list {
+        padding: 0 20px;
+    }
+
+    .bag-product-name {
+        font-size: 0.88em;
+    }
+
+    .bag-product-price {
+        font-size: 0.75em;
+    }
+}
+
+@media (max-width: 789px) {
+    body {
+        font-size: 14px;
+    }
+
+    .bag-hero-image {
+        aspect-ratio: 4 / 3;
+    }
+
+    .bag-category {
+        padding: 3em 0;
+    }
+
+    .bag-category-heading {
+        margin-bottom: 1.5em;
+    }
+
+    .bag-category-name {
+        font-size: 1em;
+    }
+
+    .bag-category-thumb {
+        width: 90px;
+        height: 90px;
+    }
+
+    .bag-category-scrollbar.swiper-scrollbar-horizontal:not(.swiper-scrollbar-lock) {
+        width: 240px;
+        margin-top: 18px;
+    }
+
+    .bag-product {
+        padding: 0 0 3.75em;
+    }
+
+    .bag-product-filter,
+    .bag-product-list {
+        padding: 0 12px;
+    }
+
+    .bag-product-list {
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 28px;
+    }
+
+    .bag-product-item--visual {
+        display: none;
+    }
+
+    .bag-product-name {
+        font-size: 1em;
+    }
+
+    .bag-product-price {
+        font-size: 0.88em;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .bag-category {
+        padding: 2.5em 0;
+    }
+
+    .bag-hero-image {
+        aspect-ratio: 1 / 1;
+    }
+
+    .bag-category-thumb {
+        width: 72px;
+        height: 72px;
+    }
+
+    .bag-category-scrollbar.swiper-scrollbar-horizontal:not(.swiper-scrollbar-lock) {
+        width: 160px;
+        margin-top: 16px;
+    }
+
+    .bag-product-filter,
+    .bag-product-list {
+        padding: 0 8px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bag-hero-image img,
+    .motion-ready .bag-reveal {
+        animation: none;
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}

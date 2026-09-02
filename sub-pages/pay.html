@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>결제하기 | 발렌시아가 공식 온라인 부티크</title>
+    <link rel="icon" href="./images/balen-favicon.png">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/font/font.css">
+    <link rel="stylesheet" href="./css/pay.css">
+    <link rel="stylesheet" href="./css/header-style.css">
+</head>
+
+<body>
+    <!-- <header></header> -->
+    <div class="wrap">
+        <header>
+            <div class="sub-bg"></div>
+            <div class="inner">
+                <h1 class="logo">
+                    <a href="./index.html">
+                        <img src="./images/header/header-icon/logo-w.svg" alt="발렌시아가 로고">
+                    </a>
+                </h1>
+
+                <nav class="gnb-menu">
+                    <ul class="main-menu">
+                        <li>
+                            <a href="#">신제품</a>
+                            <div class="sub-menu-wrap">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="#">전체보기</a>
+                                    </li>
+                                    <li>
+                                        <a href="./sub-pages/W-new-goods.html">여성 신제품</a>
+                                        <ul class="sub-menu-category">
+                                            <li><a href="#">겨울 26</a></li>
+                                            <li><a href="#">홀리데이</a></li>
+                                            <li><a href="#">가을 26</a></li>
+                                            <li><a href="#">테크웨어</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">남성 신제품</a>
+                                        <ul class="sub-menu-category">
+                                            <li><a href="#">겨울 26</a></li>
+                                            <li><a href="#">홀리데이</a></li>
+                                            <li><a href="#">가을 26</a></li>
+                                            <li><a href="#">테크웨어</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="./sub-pages/sub_newbag.html">가방 신제품</a>
+                                        <ul class="sub-menu-category">
+                                            <li><a href="#">LE CITY</a></li>
+                                            <li><a href="#">RODEO</a></li>
+                                            <li><a href="#">LE 7</a></li>
+                                            <li><a href="#">Hourglass</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p class="sub-menu-img">
+                                            <a href="#">
+                                                <img src="./images/header/header-menu-img/new-menu-img.jpg"
+                                                    alt="신제품 서브메뉴 우측에 표기되는 라임색 점퍼 착용한 여성 이미지">
+                                            </a>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">여성</a>
+                            <div class="sub-menu-wrap">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="./sub-pages/index-shop-women.html">전체보기</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">상의</a>
+                                        <ul class="sub-menu-category">
+                                            <li><a href="#">티셔츠</a></li>
+                                            <li><a href="#">니트웨어</a></li>
+                                            <li><a href="#">드레스</a></li>
+                                            <li><a href="#">아우터</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">하의</a>
+                                        <ul class="sub-menu-category">
+                                            <li><a href="#">팬츠</a></li>
+                                            <li><a href="#">데님</a></li>
+                                            <li><a href="#">스커트</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">신발</a>
+                                        <ul class="sub-menu-category">
+                                            <li><a href="#">하이힐</a></li>
+                                            <li><a href="#">부츠</a></li>
+                                            <li><a href="#">샌들</a></li>
+                                            <li><a href="#">스니커즈</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p class="sub-menu-img">
+                                            <a href="#">
+                                                <img src="./images/header/header-menu-img/woman-menu-img.jpg"
+                                                    alt="여성 서브메뉴 우측에 표기되는 분홍색 코트를 걸친 여성 이미지">
+                                            </a>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">남성</a>
+                            <div class="sub-menu-wrap">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="#">전체보기</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">상의</a>
+                                        <ul class="sub-menu-category">
+                                            <li><a href="#">티셔츠</a></li>
+                                            <li><a href="#">셔츠</a></li>
+                                            <li><a href="#">니트웨어</a></li>
+                                            <li><a href="#">아우터</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">하의</a>
+                                        <ul class="sub-menu-category">
+                                            <li><a href="#">팬츠</a></li>
+                                            <li><a href="#">데님</a></li>
+                                            <li><a href="#">테크웨어</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">신발</a>
+                                        <ul class="sub-menu-category">
+                                            <li><a href="#">부츠</a></li>
+                                            <li><a href="#">로퍼</a></li>
+                                            <li><a href="#">뮬</a></li>
+                                            <li><a href="#">스니커즈</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p class="sub-menu-img">
+                                            <a href="#">
+                                                <img src="./images/header/header-menu-img/men-menu-img.jpg"
+                                                    alt="남성 서브메뉴 우측에 표기되는 버건디 가방을 든 코트 착용한 남성 이미지">
+                                            </a>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">악세사리</a>
+                            <div class="sub-menu-wrap">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="#">전체보기</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">악세사리</a>
+                                        <ul class="sub-menu-category">
+                                            <li><a href="#">주얼리</a></li>
+                                            <li><a href="#">모자</a></li>
+                                            <li><a href="#">스카프</a></li>
+                                            <li><a href="#">헤어 악세사리</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">가방</a>
+                                        <ul class="sub-menu-category">
+                                            <li><a href="#">핸드백</a></li>
+                                            <li><a href="#">토트백</a></li>
+                                            <li><a href="#">숄더백</a></li>
+                                            <li><a href="#">미니백</a></li>
+                                            <li><a href="#">백팩</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">지갑</a>
+                                        <ul class="sub-menu-category">
+                                            <li><a href="#">지갑</a></li>
+                                            <li><a href="#">카드홀더</a></li>
+                                            <li><a href="#">파우치</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <p class="sub-menu-img">
+                                            <a href="#">
+                                                <img src="./images/header/header-menu-img/acc-menu-img.jpg"
+                                                    alt="악세사리 서브메뉴 우측에 표기되는 볼드한 골드 악세사리를 착용한 여성 이미지">
+                                            </a>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#">브랜드 스토리</a>
+                            <div class="sub-menu-wrap">
+                                <ul class="sub-menu">
+                                    <li>
+                                        <a href="#">전체보기</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">캠페인</a>
+                                        <ul class="sub-menu-category">
+                                            <li><a href="./sub-pages/index-campaign.html">All</a></li>
+                                            <li><a href="./sub-pages/index-campaign-newyork.html">New York Minute</a></li>
+                                            <li><a href="#">Soccer Series</a></li>
+                                            <li><a href="#">Icon Photocard</a></li>
+                                            <li><a href="#">Sneakers Campain</a></li>
+                                            <li><a href="#">NBA Collaboration</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">컬렉션</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">브랜드 역사</a>
+                                    </li>
+                                    <li>
+                                        <p class="sub-menu-img">
+                                            <a href="#">
+                                                <img src="./images/header/header-menu-img/brand-menu-img.jpg" alt="">
+                                            </a>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+
+
+                        <li>
+                            <a href="#">고객서비스</a>
+                        </li>
+                    </ul>
+
+                    <div class="m-close-btn">
+                        <a href="#"><img src="./images/header-icon/close.svg" alt="모바일 서브메뉴 닫기 창 아이콘"></a>
+                    </div>
+
+                    <div class="m-user-text">
+                        <p class="login"><a href="./sub-pages/login.html">로그인</a></p>
+                        <p class="mypage"><a href="#">마이페이지</a></p>
+                    </div>
+                </nav>
+
+
+                <div class="m-left-btn">
+                    <ul class="m-btn">
+                        <li class="ham-btn">
+                            <a href="#"><img src="./images/header-icon/ham-btn.svg" alt="햄버거 메뉴 아이콘"></a>
+                        </li>
+                        <li class="m-search-icon">
+                            <a href="#">
+                                <img src="./images/header-icon/icon-search.svg" alt="검색 아이콘">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="gnb-icon">
+                    <ul class="gnb-list">
+                        <li class="search-icon">
+                            <a href="#">
+                                <img src="./images/header-icon/icon-search.svg" alt="검색 아이콘">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./sub-pages/login.html">
+                                <img src="./images/header-icon/icon-profile.svg" alt="마이페이지 및 로그인 유저 프로필 아이콘">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./sub-pages/payment.html">
+                                <img src="./images/header-icon/icon-bag.svg" alt="장바구니 아이콘">
+                            </a>
+                            <span class="cart-count">1</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+    </div> 
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
+
+    <script>
+        // const swiper = new Swiper('.headerSwiper', {
+        //     loop: true,
+        //     spaceBetween: 0,
+        //     centeredSlides: false,
+
+        //     autoplay: {
+        //         delay: 2500,
+        //         disableOnInteraction: false,
+        //     },
+        // });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const mainMenuLis = document.querySelectorAll('.main-menu > li');
+            const header = document.querySelector('header');
+            const subBg = document.querySelector('.sub-bg');
+            const allSubWraps = document.querySelectorAll('.sub-menu-wrap');
+
+            mainMenuLis.forEach(li => {
+                const subWrap = li.querySelector('.sub-menu-wrap');
+
+                li.addEventListener('mouseenter', () => {
+                    // 1. 모든 서브메뉴 닫기 (클래스 제거)
+                    allSubWraps.forEach(wrap => {
+                        wrap.classList.remove('is-active');
+                    });
+
+                    // 2. 현재 호버한 메뉴에 서브메뉴가 있는 경우에만 배경과 서브메뉴 열기
+                    if (subWrap) {
+                        subBg.classList.add('is-active'); // 배경 슬라이드 열림
+                        subWrap.classList.add('is-active'); // 서브메뉴 열림
+                    } else {
+                        // '고객서비스'처럼 서브메뉴가 없는 메뉴에 마우스 올리면 배경 닫기
+                        subBg.classList.remove('is-active');
+                    }
+                });
+            });
+
+            // 헤더 전체 영역을 벗어났을 때 모두 닫기
+            header.addEventListener('mouseleave', () => {
+                subBg.classList.remove('is-active'); // 배경 닫힘
+
+                allSubWraps.forEach(wrap => {
+                    wrap.classList.remove('is-active');
+                });
+            });
+        });
+    </script>
+
+
+    <main>
+        <div class="inner">
+            <div class="pay">
+                <div class="pay-left">
+                    <div class="img-box">
+                        <img src="./images/Pay/pay-goods/pay-women-goods01.jpg" alt="제품사진1">
+                        <img src="./images/Pay/pay-goods/pay-women-goods02.jpg" alt="제품사진2">
+                        <img src="./images/Pay/pay-goods/pay-women-goods03.jpg" alt="제품사진3">
+                        <img src="./images/Pay/pay-goods/pay-women-goods04.jpg" alt="제품사진4">
+                    </div>
+                </div>
+
+                <div class="pay-right">
+                    <div class="product-info">
+                        <h1 class="product-title">여성 베이비돌 스트랩 드레스 블랙</h1>
+                        <p class="product-exp">블랙 울 및 실크 소재의 베이비돌 스트랩 드레스</p>
+                        <p class="product-price">₩ 2,900,000</p>
+                    </div>
+
+                    <div class="product-size">
+                        <h2 class="product-title">사이즈 (FR/EUR)</h2>
+                        <ul class="size">
+                            <li class="btn"><a href="#">XS/34</a></li>
+                            <li class="btn"><a href="#">S/36</a></li>
+                            <li class="btn"><a href="#">M/38</a></li>
+                            <li class="btn"><a href="#">L/40</a></li>
+                            <!-- <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li>
+                        <li><a href="#"></a></li> -->
+                        </ul>
+                    </div>
+
+                    <div class="pay-choice-wrap">
+                        <ul class="pay-choice">
+                            <li><a href="./payment.html">구매하기</a></li>
+                            <li><a href="#">장바구니</a></li>
+                        </ul>
+                    </div>
+
+
+
+
+                    <div class="product-detail">
+                        <!-- ==============================================================================================================================
+제품 세부 정보
+============================================================================================================================== -->
+
+                        <div class="detail">
+                            <input type="checkbox" id="toggle-detail">
+                            <!-- 닫혀있을 때 보이는 버튼 -->
+                            <label for="toggle-detail" class="open">
+                                <img src="./images/Pay/Icon/icon_open.png" alt="아래화살표">
+                                <span>제품 세부 정보</span>
+                            </label>
+                            <!-- <div class="open">
+                                <a href="#"><img src="./images/Pay/Icon/icon_open.png" alt="아래화살표"></a>
+                                <a href="#">제품 세부 정보</a>
+                            </div> -->
+
+                            <!-- 열려있을 때 보이는 버튼 -->
+                            <label for="toggle-detail" class="close">
+                                <img src="./images/Pay/Icon/icon_close.png" alt="위화살표">
+                                <span>제품 세부 정보</span>
+                            </label>
+                            <!-- <div class="close">
+                                <a href="#"><img src="./images/Pay/Icon/icon_close.png" alt="위화살표"></a>
+                                <a href="#">제품 세부 정보</a>
+                            </div> -->
+
+                            <!-- 상세설명 -->
+                            <p class="product-detail-exp">
+                                울 및 실크 혼방<br>
+                                앞면 스트레이트 네크라인 및 깊게 파인 V 모양 뒷면<br>
+                                씬 스트랩<br>
+                                슬리브리스<br>
+                                피티드 허리 부분<br>
+                                뒷면 길이가 더 긴 라운드 헴<br>
+                                조각적인 볼륨감으로 플레어 실루엣을 연출하는 뒷면<br>
+                                뒷면 인비저블 지퍼<br>
+                                제조국 : 이탈리아<br>
+                                주소재 : 80% 울, 20% 실크<br>
+                                안감 : 100% 쿠프로<br>
+                                Product ID : A00291TUT221000
+                            </p>
+
+                        </div>
+                        <!-- ==============================================================================================================================
+실측 사이즈
+============================================================================================================================== -->
+                        <div class="size-info">
+                            <input type="checkbox" id="toggle-size">
+                            <label for="toggle-size" class="open">
+                                <img src="./images/Pay/Icon/icon_open.png" alt="아래화살표">
+                                <span>실측 사이즈</span>
+                            </label>
+                            <!-- <div class="open">
+                                <a href="#"><img src="./images/Pay/Icon/icon_open.png" alt="아래화살표"></a>
+                                <a href="#">실측 사이즈</a>
+                            </div> -->
+
+                            <label for="toggle-size" class="close">
+                                <img src="./images/Pay/Icon/icon_close.png" alt="위화살표">
+                                <span>실측 사이즈</span>
+                            </label>
+                            <!-- <div class="close">
+                                <a href="#"><img src="./images/Pay/Icon/icon_close.png" alt="위화살표"></a>
+                                <a href="#">실측 사이즈</a>
+                            </div> -->
+                            <p class="size-info-exp">
+                                미니 길이<br>
+                                모델 키 : 178cm, 착용 사이즈 : 36(프랑스 사이즈)
+                            </p>
+                        </div>
+                        <!-- ==============================================================================================================================
+무료 배송 및 반품
+============================================================================================================================== -->
+                        <div class="delivery">
+                            <input type="checkbox" id="toggle-delivery">
+                            <label for="toggle-delivery" class="open">
+                                <img src="./images/Pay/Icon/icon_open.png" alt="아래화살표">
+                                <span>무료 배송 및 반품</span>
+                            </label>
+                            <!-- <div class="open">
+                                <a href="#"><img src="./images/Pay/Icon/icon_open.png" alt="아래화살표"></a>
+                                <a href="#">무료 배송 및 반품</a>
+                            </div> -->
+
+                            <label for="toggle-delivery" class="close">
+                                <img src="./images/Pay/Icon/icon_close.png" alt="위화살표">
+                                <span>무료 배송 및 반품</span>
+                            </label>
+                            <!-- <div class="close">
+                                <a href="#"><img src="./images/Pay/Icon/icon_close.png" alt="위화살표"></a>
+                                <a href="#">무료 배송 및 반품</a>
+                            </div> -->
+                            <p class="delivery-exp">
+                                무료 반품 및 교환은 사용하지 않은 새제품에 한해 적용되며, 수령일로부터 14일 이내에 제품을 반품 및 교환하실 수 있습니다. <br>
+                                자세한 내용은 FAQ에서 확인할 수 있습니다. <br>
+                                (단, 재판매 목적으로 제품을 구매한 사실이 확인되거나, 기타 법령에 반하거나, <br>
+                                발렌시아가의 약관에 반하는 구매로 확인되는경우에는 반품 또는 교환이 거절될 수 있습니다. <br>
+                                그 경우에도 관련 법이 보장하는 철회권은 보장됩니다.)
+                            </p>
+                        </div>
+                        <!-- ==============================================================================================================================
+패키지
+============================================================================================================================== -->
+                        <div class="package">
+                            <input type="checkbox" id="toggle-package">
+                            <label for="toggle-package" class="open">
+                                <img src="./images/Pay/Icon/icon_open.png" alt="아래화살표">
+                                <span>패키지</span>
+                            </label>
+                            <!-- <div class="open">
+                                <a href="#"><img src="./images/Pay/Icon/icon_open.png" alt="아래화살표"></a>
+                                <a href="#">패키지</a>
+                            </div> -->
+
+                            <label for="toggle-package" class="close">
+                                <img src="./images/Pay/Icon/icon_close.png" alt="위화살표">
+                                <span>패키지</span>
+                            </label>
+                            <!-- <div class="close">
+                                <a href="#"><img src="./images/Pay/Icon/icon_close.png" alt="위화살표"></a>
+                                <a href="#">패키지</a>
+                            </div> -->
+
+                            <p class="package-exp package-exp-title">
+                                시그니처 패키지
+                            <p>
+                            <p class="package-exp">
+                                구매하신 제품은 시그니처 패키지에 담아 배송됩니다. <br>
+                                시그니처 그레이 기프트 패키지와 블랙 온 블랙 리본은 더욱 매끄러운 종이, <br>
+                                한 층 실키한 Tencel Lyocell 쇼퍼 핸들, 더욱 부드러운 Ecovero <br>
+                                Viscose 더스트 백 등 업그레이드 된 소재를 사용해 세련미를 더했습니다.
+                            </p>
+                            <p class="package-exp package-exp-title">
+                                선물 포장 서비스
+                            <p>
+                            <p class="package-exp">
+                                결제 시 선물 옵션을 선택하면 리본과 맞춤 메시지가 추가됩니다. <br>
+                                선물 포장은 요청 시 무료로 제공되며 플라스틱을 사용하지 않습니다. <br>
+                                이 서비스는 기본 패키지에 리본과 선택 가능한 맞춤 카드를 추가합니다. <br>
+                                기본 패키지는 제품에 따라 더스트 백, 옷걸이가 포함된 재사용 가능한 의류 가방, <br>
+                                전용 봉투 또는 케이스로 구성되며, 견고한 박스와 쇼퍼 백 안에 담깁니다. <br>
+                                박스와 쇼퍼 백 중앙에는 각각 Balenciaga 로고가 선명하게 표시되어 있습니다.
+                            </p>
+                        </div>
+                        <!-- ==============================================================================================================================
+지속가능성
+============================================================================================================================== -->
+                        <div class="possible">
+                            <input type="checkbox" id="toggle-possible">
+                            <label for="toggle-possible" class="open">
+                                <img src="./images/Pay/Icon/icon_open.png" alt="아래화살표">
+                                <span>지속가능성</span>
+                            </label>
+                            <!-- <div class="open">
+                                <a href="#"><img src="./images/Pay/Icon/icon_open.png" alt="아래화살표"></a>
+                                <a href="#">지속가능성</a>
+                            </div> -->
+
+                            <label for="toggle-possible" class="close">
+                                <img src="./images/Pay/Icon/icon_close.png" alt="위화살표">
+                                <span>지속가능성</span>
+                            </label>
+                            <!-- <div class="close">
+                                <a href="#"><img src="./images/Pay/Icon/icon_close.png" alt="위화살표"></a>
+                                <a href="#">지속가능성</a>
+                            </div> -->
+                            <p class="possible-exp">
+                                지속 가능성 접근법: 지속가능성과 혁신은 브랜드 가치와 창조적 비전의 핵심입니다. <br>
+                                이에 환경적, 사회적 영향을 줄이기 위한 여정을 이끌어갈 정량화된 목표와 구체적인 행동에 전념하고 있습니다. <br>
+                                여러 수치, 진행 보고서, 핵심 성과 지표를 근거로 작업을 진행하며, <br>
+                                이를 바탕으로 사무실, 매장, 패션쇼, 공급망에서의 로드맵, 의사결정, 행동을 개발하고 있습니다.
+                            </p>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+        </div>
+    </main>
+    <!-- <footer></footer> -->
+</body>
+
+</html>

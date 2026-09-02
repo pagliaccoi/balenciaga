@@ -1,0 +1,172 @@
+/* foeter main 설정 */
+
+footer {
+    display: none;
+    max-width: 100%;
+    font-size: 1em;
+    position: relative;
+    background: #111;
+    line-height: 1;
+}
+
+.footer-inner {
+    max-width: 1920px;
+    margin: 1em auto;
+    padding: 0 120px;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 0.88em;
+}
+
+.footer-logo {
+    align-items: center;
+}
+
+/* footer 주소, 저작권 영역 */
+
+.location {
+    width: 100%;
+    font-size: 0.88em;
+}
+
+.location>p {
+    margin: 0 0 0.5em 0;
+}
+
+.location>p span {
+    line-height: 1.44em;
+}
+
+.footer-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.footer-left .copyright {
+    font-weight: 400;
+}
+
+.footer-right {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* boutique 영역 */
+
+.right-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.boutique-wrap {
+    margin: 0 1.25em 0 0;
+}
+
+.boutique-wrap>.boutique {
+    display: block;
+    color: #A8A8A8;
+    font-size: 0.88em;
+    font-weight: 600;
+    margin-bottom: 2em;
+}
+
+.boutique-list>li {
+    font-size: 0.88em;
+    margin: 0 0 1.55em 0;
+}
+
+.boutique-list>li>a {
+    font-weight: 500;
+}
+
+.boutique-list>li>a:hover {
+    text-decoration: underline;
+}
+
+select {
+    color: #fff;
+    font-size: 0.88em;
+    display: block;
+    border: 0.13em solid #fff;
+    padding: 0.25em 1.5em 0.25em 0.25em;
+}
+
+
+/* cs 영역 */
+
+.cs-wrap>.cs {
+    color: #A8A8A8;
+    font-size: 0.88em;
+    font-weight: 600;
+}
+
+.cs-wrap>p {
+    color: #A8A8A8;
+    font-size: 0.75em;
+    font-weight: 300;
+    margin-bottom: 1.13em;
+}
+
+.cs-wrap>.cs-list>li {
+    color: #fff;
+    margin-bottom: 0.5em;
+}
+
+.cs-wrap>.cs-list>li>a {
+    font-size: 0.88em;
+    font-weight: 500;
+}
+
+.cs-wrap>.cs-list>li>a:hover {
+    text-decoration: underline;
+}
+
+.cs-wrap>.cs-list>li>p {
+    font-size: 0.75em;
+}
+
+.sns-wrap {
+    margin-top: 1em;
+}
+
+.sns-wrap .sns-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sns-wrap .sns-list li img {
+    height: 1.5em;
+    text-align: center;
+}
+
+@media screen and (max-width:1280px) {
+    footer {
+        max-width: 100%;
+    }
+
+    .footer-inner {
+        padding: 1em;
+        display: flex;
+        flex-direction: column
+    }
+
+    .footer-left .copyright {
+        margin: 1em 0;
+    }
+}
+
+@media screen and (max-width:789px) {
+    .footer-inner {
+        display: flex;
+        flex-direction: column
+    }
+}
+
+@media screen and (max-width:480px) {
+    .location span {
+        display: block;
+    }
+}

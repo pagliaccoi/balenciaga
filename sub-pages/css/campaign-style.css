@@ -1,0 +1,126 @@
+:root {
+  /* color */
+  --primary-color: #111;
+  --secondary-color: #fff;
+  --impact-color: #ccfb55;
+
+  --text-primary-color: #111;
+  --text-secondray-color: #555;
+  --text-tertiary-color: #8a8a8a;
+  --text-disabled-color: #cfcfcf;
+
+  --gray-200: #e5e5e5;
+  --gray-300: #cfcfcf;
+  --gray-400: #a8a8a8;
+  --gray-500: #8a8a8a;
+  --gray-600: #666666;
+  --gray-700: #4a4a4a;
+  --gray-800: #2e2e2e;
+
+  /* layout */
+  --inner-width: 1920px;
+  /* spacing */
+
+  /* border */
+  /* transition */
+}
+body {
+  font-family: "Pretendard", sans-serif;
+  font-size: 16px;
+  background: var(--primary-color);
+}
+
+/* capmpain-main */
+main {
+  width: 100%;
+  max-width: var(--inner-width);
+  margin: 0 auto;
+  color: #fff;
+  padding: 10% 0;
+}
+
+.campaign-wrap {
+  width: 100%;
+}
+.campaign-inner {
+  max-width: var(--inner-width);
+  margin: 0 auto;
+}
+.campaign-inner > .section-title {
+  display: block;
+  text-align: center;
+  color: var(--impact-color);
+  font-size: 2em;
+  font-weight: 600;
+  letter-spacing: 10px;
+  text-shadow: rgba(255, 255, 255, 0.5) 1px 2px 10px;
+  /* 메인 타이틀 쉐도우 추가 */
+  margin: 0 0 10% 0;
+}
+
+.campaign-inner > div {
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 5em;
+}
+.campaign-inner > div > img {
+  width: 100%;
+}
+.campaign-part {
+  position: relative;
+}
+.campaign-inner .campaign-part p > a {
+  color: var(--secondary-color);
+  font-weight: 200;
+  font-size: 1em;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 5%;
+  transform: translateY(-50%);
+  right: 0.63em;
+  border-bottom: 1px solid var(--secondary-color);
+}
+.campaign-inner > div > p > a::after {
+  content: "";
+  display: block;
+  width: 1.5em;
+  height: 1.5em;
+  background: url(../images/campaign/icon/icon-right-arrow.svg) no-repeat center
+    center;
+}
+.campaign-inner > .last-campaign p > a {
+  filter: invert();
+}
+
+/* 반응형 디자인 */
+
+/* ipad */
+@media screen and (max-width: 1280px) {
+  .campaign-wrap {
+    margin-top: 5%;
+  }
+  .campaign-inner > .section-title {
+    font-size: 1.5em;
+  }
+  .campaign-inner .campaign-part p > a {
+    font-size: 0.63em;
+    font-weight: 300;
+  }
+}
+/* mobile */
+@media screen and (max-width: 789px) {
+  .campaign-wrap {
+    margin-top: 10%;
+  }
+  .campaign-inner > .section-title {
+    font-size: 1em;
+  }
+}
+
+/* mobile - mini phone */
+@media screen and (max-width: 480px) {
+  .campaign-wrap {
+    margin-top: 10%;
+  }
+}

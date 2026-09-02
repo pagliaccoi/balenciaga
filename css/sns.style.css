@@ -1,0 +1,211 @@
+.sns-banner-section{
+    width: 100%;
+    /* background-color: rgba(255,0,0,0.2); */
+}
+.sns-banner-section>h2{
+    text-indent: -9999px;
+}
+.sns-banner-wrap{
+    width: 100%;
+    margin: 0 auto;
+}
+.sns-banner-list{
+    display: flex;
+    aspect-ratio: 1920 / 950
+}
+.sns-banner-list>.big-item{
+    width: 40%;
+    height: 100%;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.sns-banner-list>.big-item>a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.sns-banner-list>.big-item video{
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sns-banner-list>.grid-item>div{
+    position: relative;
+}
+.sns-banner-list>.grid-item:nth-child(2){
+    display: flex;
+    flex-direction: column;
+
+    width: 33%;
+    height: 100%;
+}
+.sns-banner-list .sns-acc{
+    position: relative;
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
+}
+.sns-banner-list>.grid-item:nth-child(3){
+    display: flex;
+    flex-direction: column;
+
+    width: 40%;
+    height: 100%;
+}
+.sns-banner-list .sns-shoes{
+    position: relative;
+    width: 100%;
+    height: 40%;
+    overflow: hidden;
+}
+.sns-banner-list .sns-women{
+    position: relative;
+    width: 100%;
+    height: 60%;
+    overflow: hidden;
+}
+.sns-banner-list .grid-item img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 숨기기 */
+.sns-banner-list .m-text-box{
+    display: none;
+}
+
+/* sns-btn */
+.sns-banner-list .sns-btn>a{
+    display: block;
+    width: 130px;
+    height: 44px;
+    background: #111;
+    color: #fff;
+    font-size: 0.88em;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.3s;
+}
+.sns-banner-list .sns-btn:hover a{
+    background: #CCFB55;
+    color: #111;
+}
+
+/* sns-more-btn */
+.sns-banner-list .more-btn>a{
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: 0.3s;
+}
+.sns-banner-list .more-btn:hover>a{
+    opacity: 1;
+}
+
+
+/* 반응형 디자인 */
+@media screen and (max-width:1280px) {
+    .sns-banner-section{
+        padding: 0;
+    }
+    .sns-banner-list{
+        display: block; /* flex 레이아웃 해제 */
+        width: 100%;
+        height: 100%; /* 화면 전체 높이 사용 (필요에 따라 height 설정) */
+        aspect-ratio: auto;
+    }
+    .sns-banner-list>.grid-item:not(.big-item){
+        display: none;
+    }
+    .sns-banner-list>.big-item{
+        width: 100%;
+        height: 80vh;
+    }
+    .sns-banner-list>li{
+        position: relative;
+    }
+    .sns-banner-list .m-text-box{
+        display: block;
+        color: var(--secondary-color);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 1.88em;
+        width: 100%;
+        line-height: 3em;
+        text-align: center;
+        text-shadow: 1px 2px 5px rgba(0,0,0,0.5);
+    }
+    .sns-banner-list .m-text-box strong{
+        font-size: 2.5em;
+        font-weight: 600;
+        letter-spacing: 2px;
+    }
+    .sns-banner-list .m-text-box p{
+        font-size: 1.8em;
+    }
+    .sns-banner-list .m-text-box span{
+        display: block;
+        width: 100%;
+        line-height: 2em;
+    }
+    .sns-banner-list .m-text-box .sns-text-btn{
+        display: block;
+        margin-top: 1em;
+        font-size: 1.25em;
+        text-decoration: underline;
+        letter-spacing: 2px;
+    }
+
+    .sns-banner-list .sns-btn>a{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width:789px) {
+    .sns-banner-list{
+        height: auto;
+    }
+    .sns-banner-list>.big-item{
+        height: 60vh;
+    }
+    .sns-banner-list .m-text-box strong{
+        font-size: 1.25em;
+    }
+    .sns-banner-list .m-text-box p{
+        font-size: 0.88em;
+    }
+    .sns-banner-list .m-text-box span{
+
+        line-height: 2em;
+    }
+    .sns-banner-list .m-text-box .sns-text-btn{
+        font-size: 0.75em;
+    }
+
+    .sns-banner-list .sns-btn>a{
+        display: none;
+    }
+    
+}
