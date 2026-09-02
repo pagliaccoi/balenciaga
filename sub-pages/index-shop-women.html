@@ -1028,7 +1028,7 @@
         initCategoryScrollbar();
 
 
-
+       // 필터 정렬
         document.addEventListener('DOMContentLoaded', () => {
             const triggerBtn = document.getElementById('filterTriggerBtn');
             const menuLayer = document.getElementById('filterMenuLayer');
@@ -1070,14 +1070,22 @@
             function applyFilterAndSort() {
                 let workingList = [...originalItems];
 
-                // 가격 필터 적용 (배너는 필터에서 제외되지 않도록 유지하거나 조건 분기)
+                // 배너 숨김 여부 결정: 기본순(default) 이면서 가격 필터가 전체(all)일 때만 배너 표시
+                const isDefaultView = (currentSort === 'default' && currentPrice === 'all');
+
+                if (!isDefaultView) {
+                    // 기본순+전체가 아닐 경우 배너(women-img1, women-img2) 아예 제외(숨김)
+                    workingList = workingList.filter(item => !item.isBanner);
+                }
+
+                // 가격 필터 적용 (배너가 아닐 때만 가격 조건 비교)
                 if (currentPrice === 'under2m') {
                     workingList = workingList.filter(item => item.isBanner || item.price < 2000000);
                 } else if (currentPrice === 'over4m') {
                     workingList = workingList.filter(item => item.isBanner || item.price > 4000000);
                 }
 
-                // 정렬 적용 (배너는 항상 원래 위치 또는 하단에 유지되도록 예외 처리)
+               // 정렬 적용
                 if (currentSort === 'lowPrice') {
                     workingList.sort((a, b) => {
                         if (a.isBanner) return 1;
