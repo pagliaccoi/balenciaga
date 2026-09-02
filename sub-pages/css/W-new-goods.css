@@ -49,7 +49,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5em;
+    font-size: 2em;
     line-height: 1.4;
     font-weight: 600;
     text-align: center;
@@ -59,7 +59,8 @@
 /* 콘텐츠 전체 폭 */
 
 .W-new-goods-inner {
-    width: 1920px;
+    width: 100%;
+    max-width: 1920px;
     margin: 0 auto;
 }
 
@@ -321,7 +322,7 @@
 
 .W-new-goods-5 {
     display: grid;
-    grid-template-columns: 1.5fr 1.5fr;
+    grid-template-columns: 1fr 1fr;
     gap: 0.25em;
     align-items: start;
     width: 100%;
@@ -374,6 +375,11 @@
 /* 1280px 이하일 때 */
 
 @media (max-width: 1280px) {
+
+    body {
+        font-size: 16px;
+    }
+
     .W-new-goods-inner {
         width: min(960px, calc(100% - 36px));
     }
@@ -383,6 +389,9 @@
 /* 789px 이하 */
 
 @media (max-width: 789px) {
+    body {
+        font-size: 14px;
+    }
     .W-new-goods-inner {
         width: calc(100% - 24px);
     }
