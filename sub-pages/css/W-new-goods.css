@@ -7,11 +7,11 @@
     color: #111;
 }
 
-/* .W-new-goods-wrap *,
+.W-new-goods-wrap *,
 .W-new-goods-wrap *::before,
 .W-new-goods-wrap *::after {
     box-sizing: border-box;
-} */
+}
 
 .W-new-goods-wrap img {
     max-width: 100%;
@@ -59,7 +59,7 @@
 /* 콘텐츠 전체 폭 */
 
 .W-new-goods-inner {
-    width: min(1680px, calc(100% - 3em));
+    width: 1920px;
     margin: 0 auto;
 }
 
