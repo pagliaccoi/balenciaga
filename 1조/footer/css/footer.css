@@ -1,26 +1,28 @@
 /* foeter main 설정 */
 
 footer {
-    display: none;
     max-width: 100%;
     font-size: 1em;
-    position: relative;
     background: #111;
+    position: relative;
     line-height: 1;
 }
 
 .footer-inner {
-    max-width: 1920px;
-    margin: 1em auto;
-    padding: 0 120px;
+    width: 1920px;
+    padding: 2em 0;
+    margin: 0em 1.5em;
     display: flex;
     justify-content: space-between;
     color: #fff;
     font-size: 0.88em;
+    background: #111;
+
 }
 
-.footer-logo {
-    align-items: center;
+.footer-logo img {
+    max-width: none;
+    width: 100%;
 }
 
 /* footer 주소, 저작권 영역 */
