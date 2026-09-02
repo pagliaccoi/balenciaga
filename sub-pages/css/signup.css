@@ -2,7 +2,7 @@
    Signup
    ========================================================================== */
 .signup {
-    padding: 6.25em 0 10em;
+    padding: 8em 0 12em;
     margin-top: 75px;
 }
 
@@ -14,8 +14,8 @@
 }
 
 .signup-title {
-    font-size: 1.5em;
-    font-weight: 700;
+    font-size: 2em;
+    font-weight: 600;
     margin-bottom: 0.5em;
 }
 
@@ -208,6 +208,11 @@
 @media (max-width: 789px) {
     .signup {
         padding: 4em 1em 6em;
+    }
+
+    /* newbag 제목의 모바일 실제 크기(28px)에 맞춘다. */
+    .signup-title {
+        font-size: 1.75em;
     }
 
     .signup-name-row {
