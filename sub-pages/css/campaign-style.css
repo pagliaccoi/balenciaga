@@ -36,7 +36,7 @@ main {
   max-width: var(--inner-width);
   margin: 0 auto;
   color: #fff;
-  padding: 10% 0;
+  padding: 200px 0;
 }
 
 .campaign-wrap {
@@ -97,8 +97,8 @@ main {
 
 /* ipad */
 @media screen and (max-width: 1280px) {
-  .campaign-wrap {
-    margin-top: 5%;
+  main{
+    padding: 180px 0;
   }
   .campaign-inner > .section-title {
     font-size: 1.5em;
@@ -120,7 +120,7 @@ main {
 
 /* mobile - mini phone */
 @media screen and (max-width: 480px) {
-  .campaign-wrap {
-    margin-top: 10%;
+  main{
+    padding: 60px 0;
   }
 }
