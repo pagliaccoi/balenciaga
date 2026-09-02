@@ -2,7 +2,7 @@
 HEADER
 ============================================================ */
 .mp-header {
-    background-color: pink;
+    background-color: pink; 
     height: 75px;
 }
 
@@ -13,15 +13,16 @@ HEADER
 /* ============================================================
 INNER
 ============================================================ */
-.inner {
-    max-width: 1920px;
-    /* background-color: aquamarine; */
+.mypage>.inner {
+    max-width: var(--inner-width);
+    width: 100%;
+    margin: 0 auto;
 }
 
-.inner>.mp-main>h2 {
+/* .mp-main>h2 {
     margin-top: 60px;
     margin-left: 280px;
-}
+} */
 
 /* ============================================================
 USER INFORMATION
@@ -31,30 +32,39 @@ USER INFORMATION
     margin: 0 auto;
 }
 
-.mp-main h2 {
+.mp-main>h2 {
     font-size: 2em;
+    margin-left: 210px;
 }
 
 .user-info-list-wrap {
     /* background-color: pink; */
     margin-top: 30px;
-    margin-left: 280px;
+    margin-left: 210px;
     display: flex;
+    /* justify-content: space-between; */
+    gap: 60px;
+}
+
+.user-info-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .user-info-list-wrap>.profile {
     display: block;
-    width: 120px;
-    height: 120px;
+    width: 150px;
+    height: 150px;
     /* border: 1px solid red; */
-    margin-right: 30px;
+    /* margin-right: 30px; */
 }
 
 .user-info-list-top {
     display: flex;
-    gap: 30px;
+    gap: 60px;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 18px;
 }
 
 .user-info-list-top>strong {
@@ -63,7 +73,7 @@ USER INFORMATION
 }
 
 .user-info-list-top>p {
-    font-size: 1.50em;
+    font-size: 1.13em;
     font-weight: 400;
 }
 
@@ -78,18 +88,18 @@ USER INFORMATION
 .user-info-list-middle {
     display: flex;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 18px;
 }
 
 .user-info-list-middle>strong {
-    margin-right: 30px;
+    margin-right: 60px;
     font-size: 1.50em;
     font-weight: 600;
 }
 
 .user-info-list-middle>p {
-    margin-right: 140px;
-    font-size: 1.50em;
+    margin-right: 120px;
+    font-size: 1.13em;
     font-weight: 400;
 }
 
@@ -106,23 +116,26 @@ USER INFORMATION
 }
 
 .user-info-list-bottom>strong {
-    margin-right: 30px;
+    margin-right: 60px;
     font-size: 1.50em;
     font-weight: 600;
 }
 
 .user-info-list-bottom>p {
-    font-size: 1.50em;
+    font-size: 1.13em;
     font-weight: 400;
 }
 
 .address-wrap {
-    margin-left: 430px;
+    margin-left: 210px;
+    margin-top: 60px;
     /* background-color: skyblue; */
 }
 
 .user-info-address {
-    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .user-info-address>strong {
@@ -132,7 +145,7 @@ USER INFORMATION
 
 .user-info-address>p {
     margin-top: 30px;
-    font-size: 1.50em;
+    font-size: 1.13em;
     font-weight: 400;
 }
 
@@ -141,8 +154,8 @@ COUPON
 ============================================================ */
 .coupon-list-wrap {
     /* background-color: orange; */
-    margin-top: 100px;
-    margin-left: 430px;
+    margin-top: 60px;
+    margin-left: 210px;
 }
 
 .coupon-title {
@@ -152,7 +165,7 @@ COUPON
 }
 
 .coupon-title>h2 {
-    font-size: 2em;
+    font-size: 1.50em;
     font-weight: 600;
 }
 
@@ -164,14 +177,21 @@ COUPON
     font-weight: 400;
 }
 
+.coupon-list {
+    display: flex;
+    justify-content: space-between;
+}
+
 .coupon-list>.coupon-list1,
 .coupon-list>.coupon-list2 {
     display: flex;
-    gap: 60px;
-    padding: 30px 10px;
+    gap: 8em;
+    justify-content: space-between;
+    padding: 10px 0;
+    /* margin-left: 210px; */
     margin-top: 30px;
     border-bottom: 1px solid #111;
-    font-size: 1.50em;
+    font-size: 1.13em;
     font-weight: 400;
     width: fit-content;
 }
@@ -180,25 +200,32 @@ COUPON
 PRODUCT LIST
 ============================================================ */
 .mp-product-list-wrap {
+    /* background-color: pink; */
+    margin-left: 210px;
+    margin-top: 60px;
     display: flex;
-    margin-top: 100px;
-    margin-left: 430px;
-    gap: 250px;
+    justify-content: space-between;
 }
 
-.mp-product-list-wrap .product-list-title {
+.product-list-title {
     display: flex;
-    align-items: center;
     gap: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
-.mp-product-list-wrap .product-list-title>h3 {
+.info-title {
+    font-size: 1.50em;
+    opacity: 0;
+    margin-bottom: 30px;
+}
+
+
+.product-list-title>h3 {
     font-size: 1.50em;
     font-weight: 600;
 }
 
-.mp-product-list-wrap .product-list-title>span {
+.product-list-title>span {
     padding: 5px 5px;
     background: #fff;
     border: 2px solid #111;
@@ -206,34 +233,43 @@ PRODUCT LIST
     font-weight: 400;
 }
 
-.product-list {
-    /* background-color: pink; */
-    width: 200px;
+.mp-product-list-wrap .mp-product-info,
+.mp-product-info-wrap .mp-product-info {
+display: flex;
+flex-direction: column;
+align-items: center;
 }
 
-.mp-product-list-wrap .mp-product-info {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    /* 보여줄 줄 수 지정 (2줄) */
-    -webkit-box-orient: vertical;
+.mp-product-list-wrap h4,
+.mp-product-info-wrap h4 {
+    text-align: center;
+    margin-top: 1.6em;
+    font-size: 1.13em;
+    font-weight: 400;
 
-    /* 넘치는 텍스트 숨기기 */
+    width: 100%;
+    max-width: 150px;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    display: block;
+    text-align: center;
 }
 
-.mp-product-list-wrap h4 {
+.mp-product-list-wrap>.product-list .price,
+.mp-product-info-wrap .price {
     text-align: center;
-    margin-top: 10px;
-    font-size: 1.50em;
-    font-weight: 600;
+    margin-top: 0.8em;
+    font-size: 1.13em;
+    font-weight: 400;
 }
 
-.mp-product-list-wrap>.product-list .price {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 1.50em;
-    font-weight: 600;
+.product-list,
+.mp-product-info-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
 }
 
 /* ============================================================
@@ -243,14 +279,15 @@ BUTTON
     display: flex;
     justify-content: center;
     gap: 120px;
+    flex: 1;
 }
 
 .mp-btn>a {
     padding: 10px 50px;
     background: #fff;
     border: 2px solid #111;
-    margin-top: 180px;
-    font-size: 1em;
+    margin-top: 120px;
+    font-size: 1.13em;
 }
 
 /* ============================================================
