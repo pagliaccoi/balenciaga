@@ -11,16 +11,17 @@
     <link rel="stylesheet" href="../css/header-style.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/campaign-style.css">
+    <script src="../js/header.js" defer></script>
 </head>
 
 <body>
-    <!-- header -->
+<!-- header -->
     <div class="wrap">
         <header>
             <div class="sub-bg"></div>
             <div class="inner">
                 <h1 class="logo">
-                    <a href="./index.html">
+                    <a href="/index.html">
                         <img src="./images/header/header-icon/logo-w.svg" alt="발렌시아가 로고">
                     </a>
                 </h1>
@@ -35,7 +36,7 @@
                                         <a href="#">전체보기</a>
                                     </li>
                                     <li>
-                                        <a href="./sub-pages/W-new-goods.html">여성 신제품</a>
+                                        <a href="/W-new-goods.html">여성 신제품</a>
                                         <ul class="sub-menu-category">
                                             <li><a href="#">겨울 26</a></li>
                                             <li><a href="#">홀리데이</a></li>
@@ -53,7 +54,7 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="./sub-pages/sub_newbag.html">가방 신제품</a>
+                                        <a href="/sub_newbag.html">가방 신제품</a>
                                         <ul class="sub-menu-category">
                                             <li><a href="#">LE CITY</a></li>
                                             <li><a href="#">RODEO</a></li>
@@ -77,7 +78,7 @@
                             <div class="sub-menu-wrap">
                                 <ul class="sub-menu">
                                     <li>
-                                        <a href="./sub-pages/index-shop-women.html">전체보기</a>
+                                        <a href="/index-shop-women.html">전체보기</a>
                                     </li>
                                     <li>
                                         <a href="#">상의</a>
@@ -215,8 +216,9 @@
                                     <li>
                                         <a href="#">캠페인</a>
                                         <ul class="sub-menu-category">
-                                            <li><a href="./sub-pages/index-campaign.html">All</a></li>
-                                            <li><a href="./sub-pages/index-campaign-newyork.html">New York Minute</a></li>
+                                            <li><a href="/index-campaign.html">All</a></li>
+                                            <li><a href="/index-campaign-newyork.html">New York Minute</a>
+                                            </li>
                                             <li><a href="#">Soccer Series</a></li>
                                             <li><a href="#">Icon Photocard</a></li>
                                             <li><a href="#">Sneakers Campain</a></li>
@@ -247,12 +249,12 @@
                     </ul>
 
                     <div class="m-close-btn">
-                        <a href="#"><img src="./images/header-icon/close.svg" alt="모바일 서브메뉴 닫기 창 아이콘"></a>
+                        <a href="#"><img src="/images/header-icon/close.svg" alt="모바일 서브메뉴 닫기 창 아이콘"></a>
                     </div>
 
                     <div class="m-user-text">
-                        <p class="login"><a href="./sub-pages/login.html">로그인</a></p>
-                        <p class="mypage"><a href="#">마이페이지</a></p>
+                        <p class="login"><a href="/sub-pages/login.html">로그인</a></p>
+                        <p class="mypage"><a href="/sub-pages/mypage.html">마이페이지</a></p>
                     </div>
                 </nav>
 
@@ -283,7 +285,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="./sub-pages/payment.html">
+                            <a href="/payment.html">
                                 <img src="./images/header-icon/icon-bag.svg" alt="장바구니 아이콘">
                             </a>
                             <span class="cart-count">1</span>
@@ -293,7 +295,7 @@
             </div>
         </header>
 
-    </div> 
+    </div>
     <main>
 
         <section class="campaign-wrap">
@@ -414,45 +416,6 @@
             <img src="./images/footer-icon/Big-logo.svg" alt="3분의 1이 잘린 로고">
         </div>
     </footer>
-
-    <script>
-        // gnb 메뉴 
-        document.addEventListener('DOMContentLoaded', () => {
-            const mainMenuLis = document.querySelectorAll('.main-menu > li');
-            const header = document.querySelector('header');
-            const subBg = document.querySelector('.sub-bg');
-            const allSubWraps = document.querySelectorAll('.sub-menu-wrap');
-
-            mainMenuLis.forEach(li => {
-                const subWrap = li.querySelector('.sub-menu-wrap');
-
-                li.addEventListener('mouseenter', () => {
-                    // 1. 모든 서브메뉴 닫기 (클래스 제거)
-                    allSubWraps.forEach(wrap => {
-                        wrap.classList.remove('is-active');
-                    });
-
-                    // 2. 현재 호버한 메뉴에 서브메뉴가 있는 경우에만 배경과 서브메뉴 열기
-                    if (subWrap) {
-                        subBg.classList.add('is-active'); // 배경 슬라이드 열림
-                        subWrap.classList.add('is-active'); // 서브메뉴 열림
-                    } else {
-                        // '고객서비스'처럼 서브메뉴가 없는 메뉴에 마우스 올리면 배경 닫기
-                        subBg.classList.remove('is-active');
-                    }
-                });
-            });
-
-            // 헤더 전체 영역을 벗어났을 때 모두 닫기
-            header.addEventListener('mouseleave', () => {
-                subBg.classList.remove('is-active'); // 배경 닫힘
-
-                allSubWraps.forEach(wrap => {
-                    wrap.classList.remove('is-active');
-                });
-            });
-        });
-    </script>
 </body>
 
 </html>
