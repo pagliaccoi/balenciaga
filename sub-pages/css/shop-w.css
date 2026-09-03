@@ -1,3 +1,29 @@
+:root {
+  /* color */
+  --primary-color: #111;
+  --secondary-color: #fff;
+  --impact-color: #ccfb55;
+
+  --text-primary-color: #111;
+  --text-secondray-color: #555;
+  --text-tertiary-color: #8a8a8a;
+  --text-disabled-color: #cfcfcf;
+
+  --gray-200: #e5e5e5;
+  --gray-300: #cfcfcf;
+  --gray-400: #a8a8a8;
+  --gray-500: #8a8a8a;
+  --gray-600: #666666;
+  --gray-700: #4a4a4a;
+  --gray-800: #2e2e2e;
+
+  /* layout */
+  --inner-width: 1680px;
+  /* spacing */
+
+  /* border */
+  /* transition */
+}
 main {
   width: 100%;
   margin: 0 auto;
@@ -5,13 +31,13 @@ main {
 .shop-wrap {
   width: 100%;
   margin: 0 auto;
-  margin-top: 10px;
+  margin-top: 50px;
 }
 .shop-wrap p {
   font-weight: 500;
 }
 .shop-inner {
-  max-width: 1920px;
+  max-width: var(--inner-width);
   width: 100%;
   padding-bottom: 200px;
   margin: 0 auto;
@@ -196,6 +222,9 @@ main {
   body{
     font-size: 16px;
   }
+  .shop-wrap{
+    margin-top: 34px;
+  }
   .shop-banner,
   .shop-inner {
     max-width: 1280px;
@@ -278,6 +307,7 @@ main {
   }
   .shop-banner {
     height: 100%;
+    /* margin-top: 75px; */
   }
   .shop-banner img {
     height: 100%;
