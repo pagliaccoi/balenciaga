@@ -35,6 +35,41 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// 모바일 gnb 서브메뉴 안 보임 해결
+document.addEventListener("DOMContentLoaded", () => {
+  const mainMenuLis = document.querySelectorAll(".main-menu > li");
+
+  mainMenuLis.forEach((li) => {
+    const link = li.querySelector("a");
+    const subWrap = li.querySelector(".sub-menu-wrap");
+
+    if (link && subWrap) {
+      link.addEventListener("click", (e) => {
+        // 화면 너비가 1280px 이하(모바일 및 태블릿)일 때만 작동
+        if (window.innerWidth <= 1280) {
+          // 서브메뉴가 있는 항목일 경우에만 기본 링크 이동 막기
+          e.preventDefault();
+
+          // 현재 누른 메뉴가 이미 열려있는 상태인지 확인
+          const isOpen = subWrap.classList.contains("is-active");
+          
+          document.querySelectorAll(".sub-menu-wrap").forEach((wrap) => {
+            wrap.classList.remove("is-active");
+          });
+          
+
+          // 열려있었다면 닫고(`isOpen = true`), 닫혀있었다면 연다(`isOpen = false`)
+          if (isOpen) {
+            subWrap.classList.remove("is-active");
+          } else {
+            subWrap.classList.add("is-active");
+          }
+        }
+      });
+    }
+  });
+});
+
 // 햄버거메뉴
 document.addEventListener("DOMContentLoaded", () => {
   const hamBtn = document.querySelector(".ham-btn");
