@@ -5,7 +5,7 @@ INNER
 .inner {
     max-width: 1920px;
     margin: 0 auto; 
-    padding: 135px 120px 0;
+    padding: 135px 120px 200px;
 }
 
 .inner>.pay {
@@ -62,6 +62,7 @@ PRODUCT SIZE BUTTON
 =================================================================== */
 .pay-right>.product-size .size {
     display: flex;
+    /* justify-content: space-between; */
     gap: 0.63em;
     margin-bottom: 120px;
 }
@@ -82,18 +83,19 @@ PRODUCT SIZE BUTTON
 
 .pay-right>.pay-choice-wrap>.pay-choice {
     display: flex;
-    gap: 0.31em;
+    /* justify-content: space-between; */
+    gap: 2em;
 }
 
 .pay-right>.pay-choice-wrap>.pay-choice li {
-    padding: 10px 150px;
+    padding: 10px 100px;
     border: 1.5px solid rgba(0, 0, 0, 0.3);
     background: #fff;
     color: black;
 }
 
 .pay-right>.pay-choice-wrap>.pay-choice li:hover {
-    padding: 10px 150px;
+    padding: 10px 100px;
     border: 1.5px solid rgba(0, 0, 0, 0.3);
     background: #8a8a8a;
     color: #fff;
@@ -240,7 +242,7 @@ I-PAD
 
     .pay-right>.pay-choice-wrap>.pay-choice {
         display: flex;
-        /* justify-content: center; */
+        /* justify-content: space-between; */
         gap: 2em;
     }
 
@@ -249,14 +251,14 @@ I-PAD
     }
 
     .pay-right>.pay-choice-wrap>.pay-choice li {
-        padding: 10px 150px;
+        padding: 10px 100px;
         border: 1.5px solid rgba(0, 0, 0, 0.3);
         background: #fff;
         color: black;
     }
 
     .pay-right>.pay-choice-wrap>.pay-choice li:hover {
-        padding: 10px 150px;
+        padding: 10px 100px;
         border: 1.5px solid rgba(0, 0, 0, 0.3);
         background: #8a8a8a;
         color: #fff;
@@ -279,7 +281,7 @@ MOBILE
     }
 
     .pay-right>.pay-choice-wrap>.pay-choice li {
-        padding: 10px 75px;
+        padding: 10px 95px;
         border: 1.5px solid rgba(0, 0, 0, 0.3);
         background: #fff;
         color: black;
@@ -290,7 +292,7 @@ MOBILE
     }
 
     .pay-right>.pay-choice-wrap>.pay-choice li:hover {
-        padding: 10px 75px;
+        padding: 10px 95px;
         border: 1.5px solid rgba(0, 0, 0, 0.3);
         background: #8a8a8a;
         color: #fff;
