@@ -15,6 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js" defer></script>
     <script src="/js/header.js" defer></script>
     <script src="./js/sub_newbag.js" defer></script>
+    <script src="./js/sub-newbag-filter.js" defer></script>
 </head>
 
 <body>
@@ -376,7 +377,8 @@
                 <h2 class="blind">가방 신제품 목록</h2>
 
                 <div class="bag-product-filter">
-                    <button type="button" class="bag-product-filter-btn">
+                    <button type="button" class="bag-product-filter-btn" id="filterSortTrigger" aria-haspopup="dialog"
+                        aria-controls="filterSortPanel" aria-expanded="false">
                         <span>필터 &amp; 정렬</span>
                     </button>
                 </div>
@@ -558,6 +560,153 @@
             </div>
         </section>
     </main>
+
+    <!-- Filter & Sort overlay -->
+    <button type="button" class="filter-sort-overlay" id="filterSortOverlay" aria-label="필터 및 정렬 창 닫기"
+        aria-hidden="true" tabindex="-1"></button>
+
+    <aside class="filter-sort-panel" id="filterSortPanel" role="dialog" aria-modal="true"
+        aria-labelledby="filterSortTitle" aria-hidden="true">
+        <header class="filter-sort-header">
+            <h2 id="filterSortTitle">필터 및 정렬</h2>
+            <button type="button" class="filter-sort-close" id="filterSortClose" aria-label="필터 닫기">
+                <img src="./images/icon/icon_close.svg" alt="">
+            </button>
+        </header>
+
+        <form class="filter-sort-form" id="filterSortForm">
+            <div class="filter-sort-content">
+                <fieldset class="filter-sort-order">
+                    <legend class="blind">정렬</legend>
+                    <p class="filter-sort-title" aria-hidden="true">정렬</p>
+                    <div class="filter-sort-options">
+                        <label class="filter-option">
+                            <input type="radio" name="sort" checked>
+                            <span>최신순</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="sort">
+                            <span>가격 낮은순</span>
+                        </label>
+                        <label class="filter-option">
+                            <input type="radio" name="sort">
+                            <span>가격 높은순</span>
+                        </label>
+                    </div>
+                </fieldset>
+
+                <section class="filter-accordion">
+                    <h3>
+                        <button type="button" class="filter-accordion-trigger" aria-expanded="false"
+                            aria-controls="filterProductType">
+                            <span>제품 유형</span><span class="filter-accordion-icon" aria-hidden="true"></span>
+                        </button>
+                    </h3>
+                    <div class="filter-accordion-panel" id="filterProductType" hidden>
+                        <div class="filter-option-list">
+                            <label class="filter-option"><input type="checkbox"><span>백팩</span></label>
+                            <label class="filter-option"><input type="checkbox"><span>크로스바디 백</span></label>
+                            <label class="filter-option"><input type="checkbox"><span>숄더백</span></label>
+                            <label class="filter-option"><input type="checkbox"><span>토트백</span></label>
+                            <label class="filter-option"><input type="checkbox"><span>탑 핸들</span></label>
+                            <label class="filter-option"><input type="checkbox"><span>트래블 백</span></label>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="filter-accordion">
+                    <h3>
+                        <button type="button" class="filter-accordion-trigger" aria-expanded="false" aria-controls="filterColor">
+                            <span>컬러</span><span class="filter-accordion-icon" aria-hidden="true"></span>
+                        </button>
+                    </h3>
+                    <div class="filter-accordion-panel" id="filterColor" hidden>
+                        <div class="filter-option-list filter-option-list--color">
+                            <label class="filter-option filter-option--color"><input type="checkbox"><span class="filter-color-chip filter-color-chip--beige" aria-hidden="true"></span><span>베이지</span></label>
+                            <label class="filter-option filter-option--color"><input type="checkbox"><span class="filter-color-chip filter-color-chip--black" aria-hidden="true"></span><span>블랙</span></label>
+                            <label class="filter-option filter-option--color"><input type="checkbox"><span class="filter-color-chip filter-color-chip--blue" aria-hidden="true"></span><span>블루</span></label>
+                            <label class="filter-option filter-option--color"><input type="checkbox"><span class="filter-color-chip filter-color-chip--brown" aria-hidden="true"></span><span>브라운</span></label>
+                            <label class="filter-option filter-option--color"><input type="checkbox"><span class="filter-color-chip filter-color-chip--cream" aria-hidden="true"></span><span>크림</span></label>
+                            <label class="filter-option filter-option--color"><input type="checkbox"><span class="filter-color-chip filter-color-chip--green" aria-hidden="true"></span><span>그린</span></label>
+                            <label class="filter-option filter-option--color"><input type="checkbox"><span class="filter-color-chip filter-color-chip--gray-silver" aria-hidden="true"></span><span>그레이 &amp; 실버</span></label>
+                            <label class="filter-option filter-option--color"><input type="checkbox"><span class="filter-color-chip filter-color-chip--multicolor" aria-hidden="true"></span><span>멀티컬러</span></label>
+                            <label class="filter-option filter-option--color"><input type="checkbox"><span class="filter-color-chip filter-color-chip--orange" aria-hidden="true"></span><span>오렌지</span></label>
+                            <label class="filter-option filter-option--color"><input type="checkbox"><span class="filter-color-chip filter-color-chip--pink" aria-hidden="true"></span><span>핑크</span></label>
+                            <label class="filter-option filter-option--color"><input type="checkbox"><span class="filter-color-chip filter-color-chip--purple" aria-hidden="true"></span><span>퍼플</span></label>
+                            <label class="filter-option filter-option--color"><input type="checkbox"><span class="filter-color-chip filter-color-chip--red" aria-hidden="true"></span><span>레드</span></label>
+                            <label class="filter-option filter-option--color"><input type="checkbox"><span class="filter-color-chip filter-color-chip--silver" aria-hidden="true"></span><span>실버</span></label>
+                            <label class="filter-option filter-option--color"><input type="checkbox"><span class="filter-color-chip filter-color-chip--white" aria-hidden="true"></span><span>화이트</span></label>
+                            <label class="filter-option filter-option--color"><input type="checkbox"><span class="filter-color-chip filter-color-chip--yellow" aria-hidden="true"></span><span>옐로우</span></label>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="filter-accordion">
+                    <h3>
+                        <button type="button" class="filter-accordion-trigger" aria-expanded="false" aria-controls="filterMaterial">
+                            <span>소재</span><span class="filter-accordion-icon" aria-hidden="true"></span>
+                        </button>
+                    </h3>
+                    <div class="filter-accordion-panel" id="filterMaterial" hidden>
+                        <div class="filter-option-list">
+                            <label class="filter-option"><input type="checkbox"><span>캔버스</span></label>
+                            <label class="filter-option"><input type="checkbox"><span>데님</span></label>
+                            <label class="filter-option"><input type="checkbox"><span>그레인드 레더</span></label>
+                            <label class="filter-option"><input type="checkbox"><span>메탈릭 레더</span></label>
+                            <label class="filter-option"><input type="checkbox"><span>스무스 레더</span></label>
+                            <label class="filter-option"><input type="checkbox"><span>스웨이드</span></label>
+                            <label class="filter-option"><input type="checkbox"><span>텍스처드 레더</span></label>
+                            <label class="filter-option"><input type="checkbox"><span>아레나 레더</span></label>
+                            <label class="filter-option"><input type="checkbox"><span>라피아</span></label>
+                            <label class="filter-option"><input type="checkbox"><span>나일론</span></label>
+                            <label class="filter-option"><input type="checkbox"><span>베지터블 레더</span></label>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="filter-accordion">
+                    <h3>
+                        <button type="button" class="filter-accordion-trigger" aria-expanded="false" aria-controls="filterLine">
+                            <span>라인</span><span class="filter-accordion-icon" aria-hidden="true"></span>
+                        </button>
+                    </h3>
+                    <div class="filter-accordion-panel" id="filterLine" hidden>
+                        <div class="filter-option-list">
+                            <label class="filter-option"><input type="checkbox"><span>Le City</span></label>
+                            <label class="filter-option"><input type="checkbox"><span>Rodeo</span></label>
+                            <label class="filter-option"><input type="checkbox"><span>Le 7</span></label>
+                            <label class="filter-option"><input type="checkbox"><span>Select</span></label>
+                            <label class="filter-option"><input type="checkbox"><span>Clicca</span></label>
+                            <label class="filter-option"><input type="checkbox"><span>Bolero</span></label>
+                            <label class="filter-option"><input type="checkbox"><span>Le Cagole</span></label>
+                            <label class="filter-option"><input type="checkbox"><span>Hourglass</span></label>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="filter-accordion">
+                    <h3>
+                        <button type="button" class="filter-accordion-trigger" aria-expanded="false" aria-controls="filterHardware">
+                            <span>하드웨어</span><span class="filter-accordion-icon" aria-hidden="true"></span>
+                        </button>
+                    </h3>
+                    <div class="filter-accordion-panel" id="filterHardware" hidden>
+                        <div class="filter-option-list">
+                            <label class="filter-option"><input type="checkbox"><span>Silver</span></label>
+                            <label class="filter-option"><input type="checkbox"><span>Aged Gold</span></label>
+                            <label class="filter-option"><input type="checkbox"><span>Black</span></label>
+                            <label class="filter-option"><input type="checkbox"><span>Bronze</span></label>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="filter-sort-actions">
+                <button type="reset" class="filter-sort-reset">초기화</button>
+                <button type="submit" class="filter-sort-submit">결과 보기</button>
+            </div>
+        </form>
+    </aside>
 
     <!-- footer -->
     <footer>
