@@ -3,7 +3,7 @@ INNER
 =================================================================== */
 
 .inner {
-    max-width: 1920px;
+    max-width: var(--inner-width);
     margin: 0 auto; 
     padding: 135px 120px 200px;
 }
