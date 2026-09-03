@@ -25,51 +25,16 @@ function syncVisualHeight() {
 syncVisualHeight();
 window.addEventListener('resize', syncVisualHeight);
 
-// 카테고리 스와이프, 스크롤바, 키보드 이동을 제어합니다.
-const categorySwiper = new Swiper('.bag-category-swiper', {
-    slidesPerView: 'auto',
-    centerInsufficientSlides: true,
-    grabCursor: true,
-    watchOverflow: true,
-    freeMode: true,
-    scrollbar: {
-        el: '.bag-category-scrollbar',
-        draggable: true,
-        snapOnRelease: false,
-    },
-    mousewheel: {
-        forceToAxis: false,
-        releaseOnEdges: true,
-    },
-    keyboard: {
-        enabled: true,
-        onlyInViewport: true,
-        pageUpDown: false,
-    },
-    breakpoints: {
-        0: {
-            spaceBetween: 12,
-            slidesOffsetBefore: 12,
-            slidesOffsetAfter: 12,
-        },
-        790: {
-            spaceBetween: 16,
-            slidesOffsetBefore: 20,
-            slidesOffsetAfter: 20,
-        },
-        1281: {
-            spaceBetween: 20,
-            slidesOffsetBefore: 40,
-            slidesOffsetAfter: 40,
-        },
-    },
-});
-
+// 모바일에서만 카테고리 스와이프, 스크롤바, 키보드 이동을 사용합니다.
 const categoryScrollbar = document.querySelector('.bag-category-scrollbar');
+const categoryList = document.querySelector('.bag-category-list');
+let categorySwiper = null;
 
-// 카테고리가 모두 보이는 화면에서는 페이지 휠 스크롤을 우선합니다.
 function syncCategoryMousewheel() {
-    if (window.innerWidth >= 790 || categorySwiper.isLocked) {
+    if (!categorySwiper) return;
+
+    // 카테고리가 모두 보이는 경우에는 페이지 휠 스크롤을 우선합니다.
+    if (categorySwiper.isLocked) {
         categorySwiper.mousewheel.disable();
     } else {
         categorySwiper.mousewheel.enable();
@@ -77,11 +42,15 @@ function syncCategoryMousewheel() {
 }
 
 function updateCategoryScrollbarA11y() {
+    if (!categorySwiper) return;
+
     categoryScrollbar.setAttribute('aria-valuenow', Math.round(categorySwiper.progress * 100));
     categoryScrollbar.setAttribute('aria-disabled', String(categorySwiper.isLocked));
 }
 
 categoryScrollbar.addEventListener('keydown', (event) => {
+    if (!categorySwiper) return;
+
     if (event.key === 'Home') {
         categorySwiper.slideTo(0);
     } else if (event.key === 'End') {
@@ -93,10 +62,71 @@ categoryScrollbar.addEventListener('keydown', (event) => {
     event.preventDefault();
 });
 
-categorySwiper.on('progress lock unlock', updateCategoryScrollbarA11y);
-categorySwiper.on('lock unlock breakpoint', syncCategoryMousewheel);
-syncCategoryMousewheel();
-updateCategoryScrollbarA11y();
+function createCategorySwiper() {
+    categorySwiper = new Swiper('.bag-category-swiper', {
+        slidesPerView: 'auto',
+        centerInsufficientSlides: true,
+        grabCursor: true,
+        watchOverflow: true,
+        freeMode: true,
+        scrollbar: {
+            el: '.bag-category-scrollbar',
+            draggable: true,
+            snapOnRelease: false,
+        },
+        mousewheel: {
+            forceToAxis: false,
+            releaseOnEdges: true,
+        },
+        keyboard: {
+            enabled: true,
+            onlyInViewport: true,
+            pageUpDown: false,
+        },
+        breakpoints: {
+            0: {
+                spaceBetween: 12,
+                slidesOffsetBefore: 12,
+                slidesOffsetAfter: 12,
+            },
+        },
+    });
+
+    categorySwiper.on('progress lock unlock', updateCategoryScrollbarA11y);
+    categorySwiper.on('lock unlock breakpoint', syncCategoryMousewheel);
+    categoryScrollbar.removeAttribute('aria-hidden');
+    categoryScrollbar.tabIndex = 0;
+    syncCategoryMousewheel();
+    updateCategoryScrollbarA11y();
+}
+
+function destroyCategorySwiper() {
+    if (categorySwiper) {
+        categorySwiper.destroy(true, true);
+        categorySwiper = null;
+    }
+
+    // Swiper가 남긴 위치값을 지워 CSS 중앙 정렬이 그대로 적용되게 한다.
+    categoryList.removeAttribute('style');
+
+    categoryScrollbar.setAttribute('aria-hidden', 'true');
+    categoryScrollbar.setAttribute('aria-disabled', 'true');
+    categoryScrollbar.setAttribute('aria-valuenow', '0');
+    categoryScrollbar.tabIndex = -1;
+}
+
+function syncCategorySwiper() {
+    // 790px 이상은 카테고리를 한 줄 중앙 정렬로 고정합니다.
+    if (window.innerWidth >= 790) {
+        destroyCategorySwiper();
+        return;
+    }
+
+    if (!categorySwiper) createCategorySwiper();
+}
+
+window.addEventListener('resize', syncCategorySwiper);
+syncCategorySwiper();
 
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
