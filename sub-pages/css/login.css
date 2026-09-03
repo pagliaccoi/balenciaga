@@ -1,7 +1,13 @@
 /* ==========================================================================
    Login
    ========================================================================== */
-.login {
+.inner {
+    max-width: var(--inner-width);
+    margin: 0 auto;
+}
+
+main > .login {
+    width: 100%;
     padding: 8em 0 12em;
     margin-top: 75px;
 }
@@ -405,13 +411,13 @@
    Responsive
    ========================================================================== */
 @media (max-width: 1280px) {
-    .login {
+    main > .login {
         margin-top: 4vh;
     }
 }
 
 @media (max-width: 789px) {
-    .login {
+    main > .login {
         padding: 4em 1em 6em;
     }
 
