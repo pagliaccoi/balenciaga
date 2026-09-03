@@ -14,7 +14,7 @@ HEADER
 INNER
 ============================================================ */
 .mypage>.inner {
-    max-width: var(--inner-width);
+    max-width: 1680px;
     width: 100%;
     margin: 0 auto;
 }
@@ -185,7 +185,7 @@ COUPON
 .coupon-list>.coupon-list1,
 .coupon-list>.coupon-list2 {
     display: flex;
-    gap: 8em;
+    gap: 6em;
     justify-content: space-between;
     padding: 10px 0;
     /* margin-left: 210px; */
