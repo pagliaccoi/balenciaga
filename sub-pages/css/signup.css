@@ -1,7 +1,13 @@
 /* ==========================================================================
    Signup
    ========================================================================== */
-.signup {
+.inner {
+    max-width: var(--inner-width);
+    margin: 0 auto;
+}
+
+main > .signup {
+    width: 100%;
     padding: 8em 0 12em;
     margin-top: 75px;
 }
@@ -200,13 +206,13 @@
    Responsive
    ========================================================================== */
 @media (max-width: 1280px) {
-    .signup {
+    main > .signup {
         margin-top: 4vh;
     }
 }
 
 @media (max-width: 789px) {
-    .signup {
+    main > .signup {
         padding: 4em 1em 6em;
     }
 
