@@ -226,8 +226,8 @@
    Service
    ========================================================================== */
 .service {
-    padding: 10em 0 10em;
-    background: var(--primary-color);
+    padding: 6.25em 0 10em;
+    background: var(--secondary-color);
     border-bottom: 1px solid var(--gray-800);
 }
 
@@ -238,45 +238,60 @@
     line-height: 1.2;
     letter-spacing: 0.04em;
     text-align: center;
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
 .service-list {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 550px));
     justify-content: center;
-    gap: 24px;
+    gap: 20px;
 }
 
 .service-item {
-    width: calc((100% - 48px) / 3);
-    max-width: 624px;
+    width: 100%;
+    min-width: 0;
 }
 
 .service-image-link {
+    position: relative;
     display: block;
+    color: var(--secondary-color);
 }
 
-.service-image {
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
+.service-image-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, transparent 45%, rgba(0, 0, 0, 0.68) 100%);
+    pointer-events: none;
 }
 
 .service-image img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
+    transition: transform 0.45s ease;
 }
 
-.service-image-link:hover .service-image img {
+.service-image {
+    aspect-ratio: 550 / 688;
+    overflow: hidden;
+}
+
+.service-image-link:hover .service-image img,
+.service-image-link:focus-visible .service-image img {
     transform: scale(1.04);
 }
 
 .service-content {
-    padding-top: 1.375em;
-    text-align: center;
+    position: absolute;
+    right: 2.5em;
+    bottom: 2em;
+    left: 2.5em;
+    z-index: 1;
+    text-align: left;
 }
 
 .service-title {
@@ -284,6 +299,80 @@
     font-weight: 600;
     line-height: 1.4;
     color: var(--secondary-color);
+}
+
+.service-description {
+    margin-top: 0;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.service-more {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25em;
+    margin-top: 0.5em;
+    font-size: 1em;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.service-more-label {
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.service-more-label::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background: currentColor;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.35s ease;
+}
+
+.service-more img {
+    position: relative;
+    top: -1px;
+    width: 24px;
+    height: 24px;
+}
+
+.service-image-link:hover .service-more-label::after,
+.service-image-link:focus-visible .service-more-label::after {
+    transform: scaleX(1);
+}
+
+.service-image-link:hover .service-more img,
+.service-image-link:focus-visible .service-more img {
+    animation: service-arrow-move 0.5s ease;
+}
+
+@keyframes service-arrow-move {
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(6px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .service-more-label::after {
+        transition: none;
+    }
+
+    .service-image-link:hover .service-more img,
+    .service-image-link:focus-visible .service-more img {
+        animation: none;
+    }
 }
 /* ==========================================================================
    Responsive
@@ -329,7 +418,10 @@
     }
 
     .service-list {
-        padding: 0 12px;
+        display: flex;
+        justify-content: flex-start;
+        gap: 0;
+        padding: 0;
     }
 
     .service-heading {
@@ -403,12 +495,26 @@
     }
 
     .service-list {
-        gap: 16px;
-        padding: 0 8px;
+        gap: 0;
+        padding: 0;
     }
 
-    .service-item {
-        width: calc((100% - 32px) / 3);
+    .service-content {
+        right: 1em;
+        bottom: 1em;
+        left: 1em;
+    }
+
+    .service-title {
+        font-size: 1.25em;
+    }
+
+    .service-description {
+        font-size: 0.875em;
+    }
+
+    .service-more {
+        font-size: 0.875em;
     }
 }
 
@@ -455,13 +561,22 @@
     }
 
     .service-list {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
+        gap: 0;
+        padding: 0;
     }
 
-    .service-item {
-        width: 100%;
-        max-width: 360px;
+    .service-content {
+        right: 2em;
+        bottom: 2em;
+        left: 2em;
+    }
+
+    .service-title {
+        font-size: 1.25em;
+    }
+
+    .service-description,
+    .service-more {
+        font-size: 1em;
     }
 }
