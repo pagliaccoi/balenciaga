@@ -313,6 +313,9 @@ header > .inner {
     flex-direction: column;
     margin: 0 2em;
   }
+  .main-menu>li{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
   .main-menu > li > a {
     font-size: 18px;
   }
@@ -327,13 +330,23 @@ header > .inner {
     top: 0;
     /* background: rgba(255,255,255,0.2); */
     background: none;
-    height: auto;
     width: 100%;
+
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease, visibilty 0.4s ease;
+  }
+  .sub-menu-wrap.is-active{
+    max-height: 1000px;
+    opacity: 1;
+    visibility: visible;
   }
   .sub-menu {
     flex-direction: column;
-    border-top: 1px solid rgba(255, 255, 255, 0.6);
     width: 100%;
+    background: rgba(255, 255, 255, 0.05);
   }
   .sub-menu > li > a {
     display: block;
@@ -355,7 +368,7 @@ header > .inner {
     width: 1.25em;
     height: 1.25em;
     position: absolute;
-    top: 5em;
+    top: 4%;
     right: 3em;
   }
   .m-user-text {
@@ -401,7 +414,7 @@ header > .inner {
   .inner > .logo {
     width: 150px;
   }
-  .gnb-menu {
+  .gnb-menu.is-active {
     top: 46px;
     width: 100%;
     padding: 0;
@@ -410,11 +423,14 @@ header > .inner {
     /* background: rgba(255,255,255,0.2); */
     height: auto;
   }
+  .gnb-menu::before{
+    display: none;
+  }
   .sub-menu {
     flex-direction: column;
   }
   .m-close-btn{
-    top: 4%;
+    top: 0;
   }
   .gnb-list,
   .m-btn {
