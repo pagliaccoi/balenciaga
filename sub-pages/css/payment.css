@@ -30,7 +30,7 @@ PAYMENT LIST
 .payment-title>span {
     padding: 5px 5px;
     background: #fff;
-    border: 2px solid #111;
+    border: 0.5px solid #111;
     font-size: 1em;
     font-weight: 400;
 }
@@ -99,7 +99,7 @@ PRODUCT LIST OF PAYMENT PAGE
 .payment-product .all>.product-info-left>.product-info-bottom>.product-num>span {
     padding: 2px 2px;
     background: #fff;
-    border: 2px solid #dcdcdc;
+    border: 0.5px solid #dcdcdc;
 }
 
 .product-info-right>strong {
@@ -184,7 +184,7 @@ PAYMENT SUPPORT
 .payment-support>.support-right>a {
     padding: 10px;
     background: #fff;
-    border: 2px solid #111;
+    border: 0.5px solid #111;
     color: #111;
 }
 
@@ -209,7 +209,7 @@ BOTTOM BUTTON
     font-size: 1em;
     padding: 10px 70px;
     background: #111;
-    border: 2px solid #111;
+    border: 0.5px solid #111;
     color: #fff;
 }
 
@@ -438,7 +438,7 @@ MOBILE (IPAD MINI & GALAXY S)
     .payment-support>.support-right>a {
         padding: 10px 5px;
         background: #fff;
-        border: 2px solid #111;
+        border: 0.5px solid #111;
         color: #111;
         font-size: 0.88em;
         display: flex;
