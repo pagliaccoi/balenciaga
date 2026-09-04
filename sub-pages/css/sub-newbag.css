@@ -51,6 +51,11 @@
     padding: 5em 0 5em;
 }
 
+.inner {
+    max-width: var(--inner-width);
+    margin: 0 auto;
+}
+
 .bag-category-heading {
     margin-bottom: 1.88em;
     font-size: 2em;
@@ -122,7 +127,6 @@
 
 .bag-product-filter {
     width: 100%;
-    max-width: 1760px;
     margin: 0 auto 1.25em;
     padding: 0 40px;
 }
@@ -146,7 +150,7 @@
 
 .bag-product-list {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 417px));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     justify-content: center;
     grid-auto-flow: row dense;
     column-gap: 4px;
@@ -306,15 +310,16 @@
 .filter-sort-content {
     flex: 1;
     min-height: 0;
+    overflow-x: hidden;
     overflow-y: auto;
     overscroll-behavior-y: contain;
     scrollbar-gutter: stable;
 }
 
 .filter-sort-order {
+    position: relative;
     padding: 28px 40px 24px;
     border: 0;
-    border-bottom: var(--filter-panel-border);
 }
 
 .filter-sort-title {
@@ -353,7 +358,18 @@
 }
 
 .filter-accordion {
-    border-bottom: var(--filter-panel-border);
+    position: relative;
+}
+
+.filter-sort-order::after,
+.filter-accordion::after {
+    content: "";
+    position: absolute;
+    right: -16px;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background: var(--primary-color);
 }
 
 .filter-accordion h3 {
@@ -489,21 +505,20 @@
 /* ==========================================================================
    Responsive
    ========================================================================== */
-/* PC에서는 모든 카테고리를 한 줄 중앙에 고정한다. */
+/* PC에서는 Swiper 없이 모든 카테고리를 한 줄 중앙에 고정한다. */
 @media (min-width: 1281px) {
     .bag-category-list {
         width: 100%;
-        margin: 0 !important;
         box-sizing: border-box;
         justify-content: center;
         gap: 20px;
-        padding: 0 40px;
-        transform: none !important;
-        transition-duration: 0ms !important;
+        padding: 0;
     }
 
-    .bag-category-item {
-        margin-right: 0 !important;
+    .bag-product-filter,
+    .bag-product-list {
+        padding-right: 0;
+        padding-left: 0;
     }
 }
 
@@ -567,6 +582,19 @@
 
     .bag-product-price {
         font-size: 0.75em;
+    }
+}
+
+/* 태블릿에서는 모든 카테고리가 한 줄에 들어가 중앙 정렬되도록 썸네일을 유동 조정한다. */
+@media (min-width: 790px) and (max-width: 1280px) {
+    .bag-category-list {
+        justify-content: center;
+        gap: 16px;
+    }
+
+    .bag-category-thumb {
+        width: clamp(100px, 14vw, 130px);
+        height: clamp(100px, 14vw, 130px);
     }
 }
 

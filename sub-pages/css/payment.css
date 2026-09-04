@@ -7,7 +7,7 @@
 INNER
 ============================================================ */
 .payment-list-wrap>.inner {
-    max-width: var(--inner-width);
+    max-width: 1680px;
     width: 100%;
     margin: 0 auto;
 }
