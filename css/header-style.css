@@ -76,9 +76,11 @@ header > .inner {
   width: 100%;
   height: 75px;
   line-height: 4.69em;
+  color: var(--gray-300);
 }
 .main-menu > li:hover > a {
   border-bottom: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
 }
 .sub-bg {
   /* display: none; */
