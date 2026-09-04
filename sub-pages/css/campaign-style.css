@@ -95,12 +95,13 @@ main {
 
 /* ipad */
 @media screen and (max-width: 1280px) {
-  main{
-    padding: 180px 0;
+  main {
+    max-width: 1280px;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 100px 0;
   }
-  .campaign-inner > .section-title {
-    font-size: 1.5em;
-  }
+
   .campaign-inner .campaign-part p > a {
     font-size: 0.63em;
     font-weight: 300;
@@ -112,7 +113,7 @@ main {
     margin-top: 10%;
   }
   .campaign-inner > .section-title {
-    font-size: 1em;
+    font-size: 1.2em;
   }
 }
 

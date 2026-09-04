@@ -284,9 +284,8 @@ main {
   .campaign-inner > div {
     padding-bottom: 0;
   }
-  .campaign-inner h2 {
-    font-size: 1.2em;
-    margin-bottom: 2.5em;
+  .campaign-inner .section-title {
+    margin-bottom: 2em;
   }
   .behind-text {
     font-size: 0.75em;
@@ -294,7 +293,7 @@ main {
   .behind-text-box {
     width: 90%;
   }
-  .campaign-inner .campaign-innerspan {
+  .campaign-inner .campaign-inner span {
     margin: 10px 0;
   }
   .campaign-rodeo-behind {
@@ -355,14 +354,45 @@ main {
   /* main */
   main {
     width: 100%;
+    padding: 100px 0;
   }
-  .campaign-inner h2 {
-    font-size: 0.88em;
-    margin-bottom: 2.5em;
+  .campaign-inner .section-title {
+    font-size: 1.2em;
+    margin-bottom: 2em;
   }
   .campaign-wrap {
     width: 100%;
-    padding-top: 20%;
+  }
+  .campaign-menu-wrap {
+    width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    margin-bottom: 2em;
+  }
+  .campaign-menu-wrap::-webkit-scrollbar{
+    display: none;
+  }
+  .campaign-menu-list{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding: 0 1em;
+  }
+  .campaign-menu-list>li{
+    flex: 0 0 auto;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 6px rgba(255,255,255,0.05);
+    transition: all 0.3s ease;
+  }
+  .campaign-menu-list > li:hover{
+    color: #fff;
+    border-bottom: transparent;
   }
   .campaign-wrap .more-btn > a {
     top: 14%;
@@ -370,6 +400,9 @@ main {
   }
   .campaign-wrap .product > ul > li .text-box {
     font-size: 0.5em;
+  }
+  .campaign-newyork-title{
+    margin: 80px 0;
   }
   .campaign-lecity-behind > ul {
     flex-direction: column;
