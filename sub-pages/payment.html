@@ -346,155 +346,274 @@
             });
         });
     </script>
-
-    <main></main>
-    <div class="payment-list-wrap">
-        <div class="inner">
-            <div class="payment-list">
-                <div class="payment-title">
-                    <h2>결제하기</h2>
-                    <span>03</span>
-                </div>
-
-                <div class="payment-product-list">
-                    <div class="payment-product">
-                        <div class="img-box">
-                            <a href="#"><img src="./images/Payment/Payment-goods/goods01.png" alt="결제창 제품1"></a>
-                        </div>
-                        <div class="all">
-                            <div class="product-info-left">
-                                <div class="product-info">
-                                    <h3>남성 바시티 재킷 블랙</h3>
-                                    <p>블랙 보머 트윌 소재의 바시티 재킷</p>
-                                </div>
-                                <div class="product-info-bottom">
-                                    <div class="product-size">
-                                        <strong>SIZE</strong>
-                                        <p>46</p>
-                                    </div>
-                                    <div class="product-num">
-                                        <p>수량</p>
-                                        <span>01</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-info-right">
-                                <strong>₩ 4,700,000</strong>
-                            </div>
-                        </div>
+    <main>
+        <div class="payment-list-wrap">
+            <div class="inner">
+                <div class="payment-list">
+                    <div class="payment-title">
+                        <h2>결제하기</h2>
+                        <span id="total-item-count">03</span>
                     </div>
 
-                    <div class="payment-product">
-                        <div class="img-box">
-                            <a href="#"><img src="./images/Payment/Payment-goods/goods06.png" alt="결제창 제품2"></a>
-                        </div>
-                        <div class="all">
-                            <div class="product-info-left">
-                                <div class="product-info">
-                                    <h3>여성 에이사 일립스 이어링 샤이니 골드</h3>
-                                    <p>아카이브 샤이니 골드 코퍼 소재의 에이사 일립스 이어링은 발렌시아가 여름 26 컬렉션의 20번 및 43번 룩에서 선보인 제품입니다.</p>
-                                </div>
-                                <div class="product-info-bottom">
-                                    <div class="product-size">
-                                        <strong>SIZE</strong>
-                                        <p>Default</p>
+                    <div class="payment-product-list">
+                        <div class="payment-product" data-price="4700000">
+                            <div class="img-box">
+                                <a href="#"><img src="./images/Payment/Payment-goods/goods05.png" alt="결제창 제품1"></a>
+                            </div>
+                            <div class="all">
+                                <div class="product-info-left">
+                                    <div class="product-info">
+                                        <h3>여성 베이비돌 스트랩 드레스 블랙</h3>
+                                        <p>블랙 울 및 실크 소재의 베이비돌 스트랩 드레스</p>
                                     </div>
-                                    <div class="product-num">
-                                        <p>수량</p>
-                                        <span>01</span>
+                                    <div class="product-info-bottom">
+                                        <div class="product-size">
+                                            <strong>SIZE</strong>
+                                            <select class="size-select">
+                                                <option value="44">44</option>
+                                                <option value="46" selected>46</option>
+                                                <option value="48">48</option>
+                                                <option value="50">50</option>
+                                            </select>
+                                        </div>
+                                        <div class="product-num">
+                                            <p>수량</p>
+                                            <div class="qty-control">
+                                                <button type="button" class="minus-btn">-</button>
+                                                <span class="qty-val">1</span>
+                                                <button type="button" class="plus-btn">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-top-right">
+                                    <div class="product-action-btns">
+                                        <button type="button" class="wishlist-btn">+ 위시리스트</button>
+                                        <button type="button" class="delete-btn">삭제</button>
+                                    </div>
+                                    <div class="product-info-right">
+                                        <strong class="item-total-price">₩ 2,900,000</strong>
                                     </div>
                                 </div>
                             </div>
-                            <div class="product-info-right">
-                                <strong>₩ 1,250,000</strong>
-                            </div>
                         </div>
-                    </div>
 
-                    <div class="payment-product">
-                        <div class="img-box">
-                            <a href="#"><img src="./images/Payment/Payment-goods/goods03.png" alt="결제창 제품3"></a>
-                        </div>
-                        <div class="all">
-                            <div class="product-info-left">
-                                <div class="product-info">
-                                    <h3>남성 르 셋 볼링백 라지 블랙/브라운</h3>
-                                    <p>블랙 발렌시아가 코팅 캔버스 및 미드 브라운 스무드 카프스킨 소재의 르 셋 볼링백 라지, 빈티지 실버 장식</p>
-                                </div>
-                                <div class="product-info-bottom">
-                                    <div class="product-size">
-                                        <strong>SIZE</strong>
-                                        <p>Default</p>
+                        <div class="payment-product" data-price="1250000">
+                            <div class="img-box">
+                                <a href="#"><img src="./images/Payment/Payment-goods/goods06.png" alt="결제창 제품2"></a>
+                            </div>
+                            <div class="all">
+                                <div class="product-info-left">
+                                    <div class="product-info">
+                                        <h3>여성 에이사 일립스 이어링 샤이니 골드</h3>
+                                        <p>아카이브 샤이니 골드 코퍼 소재의 에이사 일립스 이어링은 발렌시아가 여름 26 컬렉션의 20번 및 43번 룩에서 선보인 제품입니다.</p>
                                     </div>
-                                    <div class="product-num">
-                                        <p>수량</p>
-                                        <span>01</span>
+                                    <div class="product-info-bottom">
+                                        <div class="product-size">
+                                            <strong>SIZE</strong>
+                                            <select class="size-select">
+                                                <option value="Default" selected>Default</option>
+                                            </select>
+                                        </div>
+                                        <div class="product-num">
+                                            <p>수량</p>
+                                            <div class="qty-control">
+                                                <button type="button" class="minus-btn">-</button>
+                                                <span class="qty-val">1</span>
+                                                <button type="button" class="plus-btn">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-top-right">
+                                    <div class="product-action-btns">
+                                        <button type="button" class="wishlist-btn">+ 위시리스트</button>
+                                        <button type="button" class="delete-btn">삭제</button>
+                                    </div>
+                                    <div class="product-info-right">
+                                        <strong class="item-total-price">₩ 1,250,000</strong>
                                     </div>
                                 </div>
                             </div>
-                            <div class="product-info-right">
-                                <strong>₩ 6,650,000</strong>
+                        </div>
+
+                        <div class="payment-product" data-price="6650000">
+                            <div class="img-box">
+                                <a href="#"><img src="./images/Payment/Payment-goods/goods03.png" alt="결제창 제품3"></a>
+                            </div>
+                            <div class="all">
+                                <div class="product-info-left">
+                                    <div class="product-info">
+                                        <h3>남성 르 셋 볼링백 라지 블랙/브라운</h3>
+                                        <p>블랙 발렌시아가 코팅 캔버스 및 미드 브라운 스무드 카프스킨 소재의 르 셋 볼링백 라지, 빈티지 실버 장식</p>
+                                    </div>
+                                    <div class="product-info-bottom">
+                                        <div class="product-size">
+                                            <strong>SIZE</strong>
+                                            <select class="size-select">
+                                                <option value="Default" selected>Default</option>
+                                            </select>
+                                        </div>
+                                        <div class="product-num">
+                                            <p>수량</p>
+                                            <div class="qty-control">
+                                                <button type="button" class="minus-btn">-</button>
+                                                <span class="qty-val">1</span>
+                                                <button type="button" class="plus-btn">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="product-top-right">
+                                    <div class="product-action-btns">
+                                        <button type="button" class="wishlist-btn">+ 위시리스트</button>
+                                        <button type="button" class="delete-btn">삭제</button>
+                                    </div>
+                                    <div class="product-info-right">
+                                        <strong class="item-total-price">₩ 6,650,000</strong>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
 
-                </div>
+                    <div class="hr"></div>
 
-                <div class="hr"></div>
-
-                <div class="total">
-                    <div class="total-left">
-                        <strong>합계</strong>
-                    </div>
-                    <div class="total-right">
-                        <strong>₩ 12,600,000</strong>
-                    </div>
-                </div>
-
-                <div class="payment-info">
-                    <div class="payment-info-left">
-                        <ul class="payment-info-body">
-                            <li>오후 5시까지 결제 및 확인 완료된 국내 재고 배송 건은 당일 출고됩니다.</li>
-                            <li>14일 이내 무료 반품</li>
-                            <li>14일 동안 무료 온라인 교환</li>
-                            <li>발렌시아가 시그니처 패키지 / 선물 포장</li>
-                        </ul>
-                    </div>
-                    <div class="payment-info-right">
-                        <img src="./images/Payment/Payment-Icon/americanexpress.jpg" alt="아메리칸익스프레스">
-                        <img src="./images/Payment/Payment-Icon/kakaopay.jpg" alt="카카오페이">
-                        <img src="./images/Payment/Payment-Icon/kcp.jpg" alt="KCP">
-                        <img src="./images/Payment/Payment-Icon/lpay.jpg" alt="Lpay">
-                        <img src="./images/Payment/Payment-Icon/mastercard.jpg" alt="마스터카드">
-                        <img src="./images/Payment/Payment-Icon/visa.jpg" alt="비자">
-                        <img src="./images/Payment/Payment-Icon/npay.jpg" alt="네이버페이">
-                        <img src="./images/Payment/Payment-Icon/payco.jpg" alt="페이코">
-                        <img src="./images/Payment/Payment-Icon/samsungpay.jpg" alt="삼성페이">
-                        <img src="./images/Payment/Payment-Icon/ssgpay.jpg" alt="SSG페이">
-                        <img src="./images/Payment/Payment-Icon/toss.jpg" alt="토스">
-
-                    </div>
-                </div>
-
-                <div class="payment-support">
-                    <div class="support-left">
-                        <h4>고객지원</h4>
-                        <ul class="support-body">
-                            <li>클라이언트 어드바이저가 월요일-토요일 10:00부터 21:00까지 상담 가능합니다.</li>
-                        </ul>
+                    <div class="total">
+                        <div class="total-left">
+                            <strong>합계</strong>
+                        </div>
+                        <div class="total-right">
+                            <strong id="final-total-price">₩ 12,600,000</strong>
+                        </div>
                     </div>
 
-                    <div class="support-right">
-                        <a href="tel:261052188">문의처 | +82 261052188</a>
+                    <div class="payment-info">
+                        <div class="payment-info-left">
+                            <ul class="payment-info-body">
+                                <li>오후 5시까지 결제 및 확인 완료된 국내 재고 배송 건은 당일 출고됩니다.</li>
+                                <li>14일 이내 무료 반품</li>
+                                <li>14일 동안 무료 온라인 교환</li>
+                                <li>발렌시아가 시그니처 패키지 / 선물 포장</li>
+                            </ul>
+                        </div>
+                        <div class="payment-info-right">
+                            <img src="./images/Payment/Payment-Icon/americanexpress.jpg" alt="아메리칸익스프레스">
+                            <img src="./images/Payment/Payment-Icon/kakaopay.jpg" alt="카카오페이">
+                            <img src="./images/Payment/Payment-Icon/kcp.jpg" alt="KCP">
+                            <img src="./images/Payment/Payment-Icon/lpay.jpg" alt="Lpay">
+                            <img src="./images/Payment/Payment-Icon/mastercard.jpg" alt="마스터카드">
+                            <img src="./images/Payment/Payment-Icon/visa.jpg" alt="비자">
+                            <img src="./images/Payment/Payment-Icon/npay.jpg" alt="네이버페이">
+                            <img src="./images/Payment/Payment-Icon/payco.jpg" alt="페이코">
+                            <img src="./images/Payment/Payment-Icon/samsungpay.jpg" alt="삼성페이">
+                            <img src="./images/Payment/Payment-Icon/ssgpay.jpg" alt="SSG페이">
+                            <img src="./images/Payment/Payment-Icon/toss.jpg" alt="토스">
+                        </div>
                     </div>
-                </div>
-                <div class="payment-btn">
-                    <p>고객 서비스에 연락하는 경우, 고객님은 개인정보의 국외 이전에 동의하게 됩니다.</p>
-                    <a href="#">결제하기</a>
+
+                    <div class="payment-support">
+                        <div class="support-left">
+                            <h4>고객지원</h4>
+                            <ul class="support-body">
+                                <li>클라이언트 어드바이저가 월요일-토요일 10:00부터 21:00까지 상담 가능합니다.</li>
+                            </ul>
+                        </div>
+                        <div class="support-right">
+                            <a href="tel:0261052188">문의처 | +82 261052188</a>
+                        </div>
+                    </div>
+
+                    <div class="payment-btn">
+                        <p>고객 서비스에 연락하는 경우, 고객님은 개인정보의 국외 이전에 동의하게 됩니다.</p>
+                        <a href="#">결제하기</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </main>
+
+    <script>
+        const productListEl = document.querySelector('.payment-product-list');
+        const totalItemCountEl = document.getElementById('total-item-count');
+        const finalTotalPriceEl = document.getElementById('final-total-price');
+
+        // 숫자 3자리마다 쉼표(,)를 추가하는 함수
+        function formatNumber(num) {
+            return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        // 전체 수량 및 최종 금액을 다시 계산하는 함수
+        function calculateTotal() {
+            const productItems = document.querySelectorAll('.payment-product');
+            let totalCount = 0;
+            let totalPrice = 0;
+
+            // 모든 상품이 삭제된 경우
+            if (productItems.length === 0) {
+                totalItemCountEl.textContent = '00';
+                finalTotalPriceEl.textContent = '₩ 0';
+                return;
+            }
+
+            productItems.forEach(item => {
+                const price = parseInt(item.getAttribute('data-price'), 10) || 0;
+                const qty = parseInt(item.querySelector('.qty-val').textContent, 10) || 1;
+
+                // 개별 상품 총 금액 계산 및 갱신
+                const itemTotal = price * qty;
+                item.querySelector('.item-total-price').textContent = `₩ ${formatNumber(itemTotal)}`;
+
+                totalCount += qty;
+                totalPrice += itemTotal;
+            });
+
+            // 상단 카운트(두 자리 형식 예: '03') 및 하단 합계 갱신
+            totalItemCountEl.textContent = String(totalCount).padStart(2, '0');
+            finalTotalPriceEl.textContent = `₩ ${formatNumber(totalPrice)}`;
+        }
+
+        // 이벤트 위임(Event Delegation)을 통한 버튼 동작 처리
+        if (productListEl) {
+            productListEl.addEventListener('click', (e) => {
+                const target = e.target;
+                const item = target.closest('.payment-product');
+                if (!item) return;
+
+                const qtyVal = item.querySelector('.qty-val');
+
+                // 1. 수량 증가 (+)
+                if (target.classList.contains('plus-btn')) {
+                    qtyVal.textContent = parseInt(qtyVal.textContent, 10) + 1;
+                    calculateTotal();
+                }
+
+                // 2. 수량 감소 (-)
+                if (target.classList.contains('minus-btn')) {
+                    let currentQty = parseInt(qtyVal.textContent, 10);
+                    if (currentQty > 1) {
+                        qtyVal.textContent = currentQty - 1;
+                        calculateTotal();
+                    } else {
+                        alert('최소 수량은 1개입니다.');
+                    }
+                }
+
+                // 3. 상품 삭제
+                if (target.classList.contains('delete-btn')) {
+                    if (confirm('상품을 삭제하시겠습니까?')) {
+                        item.remove();
+                        calculateTotal();
+                    }
+                }
+
+                // 4. 위시리스트 추가
+                if (target.classList.contains('wishlist-btn')) {
+                    alert('선택하신 상품이 위시리스트에 담겼습니다.');
+                }
+            })
+        }
+    </script>
 
     <!-- <footer> -->
     <footer>
@@ -570,11 +689,16 @@
                     </div>
                     <div class="sns-wrap">
                         <ul class="sns-list">
-                            <li><a href="https://www.instagram.com/balenciaga"><img src="./images/footer-icon/instagram-icon.svg" alt="인스타그램"></a></li>
-                            <li><a href="https://pf.kakao.com/_wxofhxj"><img src="./images/footer-icon/Kakao-icon.svg" alt="카카오톡"></a></li>
-                            <li><a href="https://www.facebook.com/Balenciaga"><img src="./images/footer-icon/facebook-icon.svg" alt="페이스북"></a></li>
-                            <li><a href="https://www.tiktok.com/@balenciaga"><img src="./images/footer-icon/Ticktok-icon.svg" alt="틱톡"></a></li>
-                            <li><a href="https://open.spotify.com/user/mxmpjdm18c1eqgvx6osztt98g?si=087097c3c16545a0"><img src="./images/footer-icon/Spotify-icon.svg" alt="스포티파이"></a></li>
+                            <li><a href="https://www.instagram.com/balenciaga"><img
+                                        src="./images/footer-icon/instagram-icon.svg" alt="인스타그램"></a></li>
+                            <li><a href="https://pf.kakao.com/_wxofhxj"><img src="./images/footer-icon/Kakao-icon.svg"
+                                        alt="카카오톡"></a></li>
+                            <li><a href="https://www.facebook.com/Balenciaga"><img
+                                        src="./images/footer-icon/facebook-icon.svg" alt="페이스북"></a></li>
+                            <li><a href="https://www.tiktok.com/@balenciaga"><img
+                                        src="./images/footer-icon/Ticktok-icon.svg" alt="틱톡"></a></li>
+                            <li><a href="https://open.spotify.com/user/mxmpjdm18c1eqgvx6osztt98g?si=087097c3c16545a0"><img
+                                        src="./images/footer-icon/Spotify-icon.svg" alt="스포티파이"></a></li>
                         </ul>
                     </div>
                 </div>

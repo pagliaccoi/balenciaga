@@ -2,469 +2,408 @@
     margin: 135px 0;
 }
 
-
 /* ============================================================
 INNER
 ============================================================ */
-.payment-list-wrap>.inner {
+.payment-list-wrap > .inner {
     max-width: 1680px;
     width: 100%;
     margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
 }
 
 /* ============================================================
 PAYMENT LIST
 ============================================================ */
-
-.payment-list>.payment-title {
+.payment-list > .payment-title {
     display: flex;
     align-items: center;
-    gap: 30px;
+    gap: 15px;
+    margin-bottom: 40px;
 }
 
-.payment-title>h2 {
+.payment-title > h2 {
     font-size: 2em;
     font-weight: 600;
 }
 
-.payment-title>span {
-    padding: 5px 5px;
+.payment-title > span {
+    padding: 3px 8px;
     background: #fff;
-    border: 0.5px solid #111;
-    font-size: 1em;
-    font-weight: 400;
+    border: 1px solid #111;
+    font-size: 0.9em;
+    font-weight: 500;
 }
 
 /* ============================================================
-PRODUCT LIST OF PAYMENT PAGE
+PRODUCT LIST
 ============================================================ */
-.payment-product-list {
-    /* background: skyblue; */
-}
-
 .payment-product {
-    /* background: #dcdcdc; */
     display: flex;
     gap: 30px;
     position: relative;
     margin-top: 30px;
+    padding-bottom: 30px;
+}
+
+.payment-product .img-box {
+    width: 180px;
+    height: 180px;
+    flex-shrink: 0;
+}
+
+.payment-product .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .payment-product .all {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
 }
 
-.payment-product .all>.product-info-right {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-}
-
-.payment-product .all>.product-info-left>.product-info {
+.product-info-left {
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    justify-content: space-between;
+    flex: 1;
+    padding-right: 20px;
 }
 
-.payment-product .all>.product-info-left>.product-info>h3 {
-    font-size: 1.50em;
+.product-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.product-info > h3 {
+    font-size: 1.35em;
     font-weight: 600;
     color: #111;
 }
 
-.payment-product .all>.product-info-left>.product-info>p {
-    font-size: 1em;
+.product-info > p {
+    font-size: 0.95em;
     font-weight: 400;
-    color: #111;
+    color: #666;
+    line-height: 1.4;
 }
 
-.payment-product .all>.product-info-left>.product-info-bottom {
+.product-info-bottom {
     display: flex;
-    gap: 300px;
-    margin-top: 100px;
+    gap: 40px;
     align-items: center;
+    margin-top: 20px;
 }
 
-.payment-product .all>.product-info-left>.product-info-bottom>.product-size {
+.product-size {
     display: flex;
-    gap: 30px;
+    align-items: center;
+    gap: 10px;
 }
 
-.payment-product .all>.product-info-left>.product-info-bottom>.product-num {
+.product-size strong {
+    font-size: 0.85em;
+    font-weight: 600;
+}
+
+.product-size select {
+    padding: 4px 8px;
+    border: 1px solid #dcdcdc;
+    background: #fff;
+    color: #111;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.product-num {
     display: flex;
     gap: 10px;
     align-items: center;
+    font-size: 0.85em;
 }
 
-.payment-product .all>.product-info-left>.product-info-bottom>.product-num>span {
-    padding: 2px 2px;
+.qty-control {
+    display: flex;
+    align-items: center;
+    border: 1px solid #dcdcdc;
     background: #fff;
-    border: 0.5px solid #dcdcdc;
 }
 
-.product-info-right>strong {
-    font-size: 1.50em;
+.qty-control button {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    background: #f9f9f9;
+    cursor: pointer;
+    border: none;
+}
+
+.qty-control button:hover {
+    background: #eaeaea;
+}
+
+.qty-control .qty-val {
+    padding: 0 10px;
+    font-size: 14px;
+    min-width: 20px;
+    text-align: center;
+}
+
+.product-top-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.product-action-btns {
+    display: flex;
+    gap: 12px;
+}
+
+.product-action-btns button {
+    font-size: 13px;
+    color: #666;
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    padding: 0;
+}
+
+.product-action-btns button:hover {
+    color: #111;
+    text-decoration: underline;
+}
+
+.product-info-right strong {
+    font-size: 1.35em;
     font-weight: 600;
 }
 
 /* ============================================================
-HR
+TOTAL & INFO & SUPPORT
 ============================================================ */
 .hr {
     width: 100%;
-    height: 2px;
+    height: 1px;
     background: #111;
-    margin: 60px 0;
+    margin: 40px 0;
 }
 
-/* ============================================================
-TOTAL
-============================================================ */
 .total {
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
-.total .total-left>strong {
-    font-size: 2em;
+.total .total-left > strong,
+.total .total-right > strong {
+    font-size: 1.8em;
     font-weight: 600;
 }
 
-.total .total-right>strong {
-    font-size: 2em;
-    font-weight: 600;
-}
-
-/* ============================================================
-PAYMENT INFORMATION
-============================================================ */
 .payment-info {
     display: flex;
     justify-content: space-between;
-    margin-top: 120px;
+    gap: 40px;
+    margin-top: 80px;
 }
 
-.payment-info-left>.payment-info-body>li {
-    font-size: 1em;
-    line-height: 1.5;
+.payment-info-left .payment-info-body > li {
+    font-size: 0.95em;
+    line-height: 1.8;
+    color: #333;
 }
 
 .payment-info-right {
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 40px);
     gap: 10px;
+    align-content: start;
 }
 
-.payment-info-right>img {
+.payment-info-right > img {
     width: 40px;
     height: 40px;
+    object-fit: cover;
 }
 
-/* ============================================================
-PAYMENT SUPPORT
-============================================================ */
 .payment-support {
     display: flex;
     justify-content: space-between;
-    margin-top: 120px;
+    align-items: center;
+    margin-top: 80px;
 }
 
-.payment-support>.support-left>h4 {
-    font-size: 1.50em;
+.payment-support > .support-left > h4 {
+    font-size: 1.35em;
     font-weight: 600;
 }
 
-.payment-support>.support-left>.support-body {
-    margin-top: 30px;
+.payment-support > .support-left > .support-body {
+    margin-top: 10px;
     font-size: 14px;
+    color: #666;
 }
 
-/* .payment-support>.support-right {} */
-
-.payment-support>.support-right>a {
-    padding: 10px;
+.payment-support > .support-right > a {
+    padding: 12px 24px;
     background: #fff;
-    border: 0.5px solid #111;
+    border: 1px solid #111;
     color: #111;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-block;
+    transition: background 0.2s;
 }
 
-/* ============================================================
-BOTTOM BUTTON
-============================================================ */
+.payment-support > .support-right > a:hover {
+    background: #111;
+    color: #fff;
+}
+
 .payment-btn {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    margin-top: 300px;
+    gap: 20px;
+    margin-top: 100px;
     text-align: center;
     align-items: center;
 }
 
-
-.payment-btn>p {
-    font-size: 1em;
+.payment-btn > p {
+    font-size: 0.9em;
+    color: #666;
 }
 
-.payment-btn>a {
+.payment-btn > a {
     font-size: 1em;
-    padding: 10px 70px;
+    padding: 16px 80px;
     background: #111;
-    border: 0.5px solid #111;
+    border: 1px solid #111;
     color: #fff;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+
+.payment-btn > a:hover {
+    background: #333;
 }
 
 /* ============================================================
-I-PAD (IPAD PRO)
+TABLET (IPAD PRO / TABLET)
 ============================================================ */
-@media screen and (max-width:1280px) {
-    .payment-list-wrap>.inner {
-        max-width: 1280px;
-        width: 100%;
-        margin: 0 auto;
-    }
-
-
-    .payment-list {
-        padding: 0 120px;
-    }
-
-    .payment-product .all>.product-info-left>.product-info-bottom {
-        display: flex;
-        gap: 100px;
-        margin-top: 100px;
-        align-items: center;
-    }
-
-    .product-info-left {
-        width: 552.67px;
-    }
-
-    .payment-product img {
-        width: 200px;
-        height: 200px;
-    }
-
-
-}
-
-/* ============================================================
-MOBILE (IPAD MINI & GALAXY S)
-============================================================ */
-@media screen and (max-width:789px) {
-
-    .payment-list-wrap>.inner {
-        max-width: 789px;
-        width: 100%;
-        margin: 0 auto;
-    }
-
-
+@media screen and (max-width: 1024px) {
     .payment-list-wrap {
-        margin: 75px 0;
+        margin: 80px 0;
     }
 
-    .inner {
-        /* background-color: skyblue; */
+    .payment-product .img-box {
+        width: 140px;
+        height: 140px;
     }
 
-    .payment-product {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .payment-product .all>.product-info-left>.product-info {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .payment-product .all>.product-info-left>.product-info-bottom {
-        display: flex;
-        gap: 100px;
-        margin-top: 20px;
-        align-items: center;
+    .product-info-bottom {
+        gap: 20px;
     }
 
     .payment-info {
-        /* display: flex; */
-        /* justify-content: space-between; */
-        display: block;
-        margin-top: 120px;
-    }
-
-    .payment-info-left>.payment-info-body>li {
-        font-size: 1em;
-        line-height: 1.5;
+        flex-direction: column;
+        gap: 30px;
     }
 
     .payment-info-right {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 10px;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .payment-info-right>img {
-        display: block;
-        width: 40px;
-        height: 40px;
-        margin-top: 30px;
-        overflow: hidden;
-        object-fit: cover;
-    }
-
-    .payment-info-right>* {
-        width: max-content;
-        height: max-content;
-    }
-
-    .payment-support {
-        display: flex;
-        flex-direction: column;
-        /* justify-content: space-between; */
-        margin-top: 120px;
-        gap: 60px;
+        grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+        max-width: 320px;
     }
 }
 
-@media screen and (max-width:480px) {
-    .inner {
-        /* background-color: salmon; */
-    }
-
-    .payment-list {
-        padding: 0 60px;
+/* ============================================================
+MOBILE (TABLET MINI & MOBILE)
+============================================================ */
+@media screen and (max-width: 768px) {
+    .payment-list-wrap {
+        margin: 50px 0;
     }
 
     .payment-product {
-        /* background: #dcdcdc; */
-        display: flex;
-        gap: 30px;
-        position: relative;
-        margin-top: 30px;
+        flex-direction: column;
+        gap: 15px;
     }
 
-    .payment-product>.img-box img {
+    .payment-product .img-box {
         width: 100%;
-        height: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
     }
 
-    .payment-product .all>.product-info-right {
-        /* position: absolute; */
-        position: static;
-        display: block;
+    .payment-product .all {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .product-info-left {
+        padding-right: 0;
+    }
+
+    .product-info > h3 {
+        font-size: 1.15em;
+    }
+
+    .product-info-bottom {
+        justify-content: space-between;
+        margin-top: 15px;
+    }
+
+    .product-top-right {
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px dashed #e5e5e5;
+        padding-top: 15px;
         margin-top: 10px;
-        /* bottom: 0; */
-        /* right: 0; */
     }
 
-    .all {
-        display: flex;
+    .payment-support {
         flex-direction: column;
         align-items: flex-start;
-        gap: 10px;
+        gap: 20px;
     }
 
-    .total>.total-left {
-        display: none;
-    }
-
-    .product-info {
-        width: 238.67px;
-        /* display: flex;
-        flex-direction: column;
-        justify-content: center; */
-    }
-
-    .payment-product .all>.product-info-left>.product-info>h3 {
-        font-size: 1.13em;
-        font-weight: 600;
-        text-align: center;
-        color: #111;
-    }
-
-    .payment-product .all>.product-info-left>.product-info>p {
-        font-size: 1em;
-        font-weight: 400;
-        text-align: justify;
-        color: #111;
-
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        overflow: hidden;
-    }
-
-    .payment-product .all>.product-info-left>.product-info-bottom {
-        display: flex;
-        width: 238.67px;
-        justify-content: space-between;
-        gap: 75px;
-        margin-top: 20px;
-        align-items: center;
-    }
-
-    .total .total-right>strong {
-        font-size: 1.25em;
-        font-weight: 600;
-    }
-
-    .hr {
+    .payment-support > .support-right {
         width: 100%;
-        height: 2px;
-        background: #111;
-        margin: 30px 0;
     }
 
-    .product-info-right strong {
-        font-size: 1em;
-    }
-
-    .payment-info-body {
-        font-size: 0.88em;
-    }
-
-    .payment-info {
+    .payment-support > .support-right > a {
         display: block;
-        margin-top: 60px;
-    }
-
-    .payment-support>.support-left>.support-body {
-        margin-top: 20px;
-        font-size: 0.88em;
-    }
-
-    .payment-support>.support-right>a {
-        padding: 10px 5px;
-        background: #fff;
-        border: 0.5px solid #111;
-        color: #111;
-        font-size: 0.88em;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .payment-info-right>img {
-        display: block;
-        width: 30px;
-        height: 30px;
-        margin-top: 20px;
-        overflow: hidden;
-        object-fit: cover;
+        text-align: center;
     }
 
     .payment-btn {
-        display: flex;
-        flex-direction: column;
-        gap: 40px;
-        margin-top: 75px;
-        text-align: center;
-        align-items: center;
+        margin-top: 60px;
     }
 
-    .payment-btn>p {
-        font-size: 0.88em;
+    .payment-btn > a {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .total .total-left > strong,
+    .total .total-right > strong {
+        font-size: 1.4em;
+    }
+
+    .payment-info-right > img {
+        width: 35px;
+        height: 35px;
     }
 }
