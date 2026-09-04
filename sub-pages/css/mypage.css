@@ -80,7 +80,7 @@ USER INFORMATION
 .user-info-list-top>span {
     padding: 5px 5px;
     background-color: #ccfb55;
-    border: 2px solid #111;
+    border: 0.5px solid #111;
     font-size: 1em;
     font-weight: 400;
 }
@@ -106,7 +106,7 @@ USER INFORMATION
 .user-info-list-middle>.num {
     padding: 5px 5px;
     background: #fff;
-    border: 2px solid #111;
+    border: 0.5px solid #111;
     font-size: 16px;
     font-weight: 400;
 }
@@ -172,7 +172,7 @@ COUPON
 .coupon-title>span {
     padding: 5px 5px;
     background: #fff;
-    border: 2px solid #111;
+    border: 0.5px solid #111;
     font-size: 16px;
     font-weight: 400;
 }
@@ -228,7 +228,7 @@ PRODUCT LIST
 .product-list-title>span {
     padding: 5px 5px;
     background: #fff;
-    border: 2px solid #111;
+    border: 0.5px solid #111;
     font-size: 1em;
     font-weight: 400;
 }
@@ -361,7 +361,7 @@ I-PAD
     .user-info-list-middle>.num {
         padding: 5px 5px;
         background: #fff;
-        border: 2px solid #111;
+        border: 0.5px solid #111;
         font-size: 16px;
         font-weight: 400;
     }
@@ -429,7 +429,7 @@ MOBILE
 ============================================================ */
 @media screen and (max-width:789px) {
     .mypage {
-        margin: 120px 60px;
+        margin: 75px 30px;
     }
 
     .inner {
@@ -465,7 +465,7 @@ MOBILE
     .user-info-list-top>span {
         padding: 3px 3px;
         background-color: #ccfb55;
-        border: 2px solid #111;
+        border: 0.5px solid #111;
         font-size: 0.88em;
         font-weight: 400;
     }
@@ -491,8 +491,16 @@ MOBILE
     .user-info-list-middle>.num {
         padding: 3px 3px;
         background: #fff;
-        border: 2px solid #111;
+        border: 0.5px solid #111;
         font-size: 0.88em;
+        font-weight: 400;
+    }
+
+    .coupon-title>span {
+        padding: 5px 5px;
+        background: #fff;
+        border: 0.5px solid #111;
+        font-size: 16px;
         font-weight: 400;
     }
 
@@ -596,7 +604,7 @@ MOBILE
     .user-info-list-top>span {
         padding: 2px 2px;
         background-color: #ccfb55;
-        border: 2px solid #111;
+        border: 0.5px solid #111;
         font-size: 0.88em;
         font-weight: 400;
     }
@@ -623,7 +631,7 @@ MOBILE
     .user-info-list-middle>.num {
         padding: 2px 2px;
         background: #fff;
-        border: 2px solid #111;
+        border: 0.5px solid #111;
         font-size: 0.88em;
         font-weight: 400;
         align-items: center;
@@ -692,7 +700,7 @@ MOBILE
     .coupon-title>span {
         padding: 2px 2px;
         background: #fff;
-        border: 2px solid #111;
+        border: 0.5px solid #111;
         font-size: 0.88em;
         font-weight: 400;
         align-items: center;
