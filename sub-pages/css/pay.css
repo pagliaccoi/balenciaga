@@ -331,7 +331,7 @@ MOBILE
     }
 
     .pay-right>.pay-choice-wrap>.pay-choice li {
-        padding: 10px 45px;
+        padding: 10px 30px;
         border: 1.5px solid rgba(0, 0, 0, 0.3);
         background: #fff;
         color: black;
@@ -342,7 +342,7 @@ MOBILE
     }
 
     .pay-right>.pay-choice-wrap>.pay-choice li:hover {
-        padding: 10px 50px;
+        padding: 10px 30px;
         border: 1.5px solid rgba(0, 0, 0, 0.3);
         background: #8a8a8a;
         color: #fff;
