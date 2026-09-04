@@ -1,408 +1,385 @@
-:root{
-    /* color */
-    --primary-color: #111;
-    --secondary-color: #fff;
-    --impact-color: #CCFB55;
-    
+:root {
+  /* color */
+  --primary-color: #111;
+  --secondary-color: #fff;
+  --impact-color: #ccfb55;
 
-    --text-primary-color: #111;
-    --text-secondray-color: #555;
-    --text-tertiary-color: #8a8a8a;
-    --text-disabled-color: #cfcfcf;
+  --text-primary-color: #111;
+  --text-secondray-color: #555;
+  --text-tertiary-color: #8a8a8a;
+  --text-disabled-color: #cfcfcf;
 
-    --gray-200: #E5E5E5;
-    --gray-300: #CFCFCF;
-    --gray-400: #A8A8A8;
-    --gray-500: #8A8A8A;
-    --gray-600: #666666;
-    --gray-700: #4A4A4A;
-    --gray-800: #2E2E2E;
-    
-    /* layout */ 
-    --inner-width: 1920px;
-    /* spacing */
+  --gray-200: #e5e5e5;
+  --gray-300: #cfcfcf;
+  --gray-400: #a8a8a8;
+  --gray-500: #8a8a8a;
+  --gray-600: #666666;
+  --gray-700: #4a4a4a;
+  --gray-800: #2e2e2e;
 
-    /* border */
-    /* transition */
+  /* layout */
+  --inner-width: 1680px;
+  /* spacing */
 
+  /* border */
+  /* transition */
 }
-body{
-    font-family: "Pretendard", sans-serif;
-    font-size: 16px;
-    background: var(--primary-color);
+body {
+  font-family: "Pretendard", sans-serif;
+  font-size: 16px;
+  background: var(--primary-color);
 }
-
 
 /* capmpain-main */
-main{
-    width: 100%;
-    max-width: var(--inner-width);
-    margin: 0 auto;
-    color: #fff;
-    padding: 10% 0;
+main {
+  width: 100%;
+  max-width: var(--inner-width);
+  margin: 0 auto;
+  color: #fff;
+  padding: 200px 0;
 }
 
-.campaign-wrap{
-    width: 100%;
+.campaign-wrap {
+  width: 100%;
 }
 .campaign-inner {
-    width: 100%;
-    max-width: var(--inner-width);
-    margin: 0 auto;
+  max-width: var(--inner-width);
+  margin: 0 auto;
 }
 .campaign-inner > div {
-    width: 100%;
-    margin: 0 auto;
-    padding-bottom: 50px;
+  width: 100%;
+  margin: 0 auto;
+  padding-bottom: 5em;
 }
-.campaign-inner p{
-    font-weight: 200;
+.campaign-inner p {
+  font-weight: 200;
 }
-.campaign-inner>.section-title{
-    display: block;
-    text-align: center;
-    color: var(--impact-color);
-    font-size: 2em;
-    font-weight: 600;
-    letter-spacing: 10px;
-    text-shadow: rgba(255,255,255,0.5) 1px 2px 10px;
-    /* 메인 타이틀 쉐도우 추가 */
-    margin: 30px 0 30px;
+.campaign-inner > .section-title {
+  text-align: center;
+  color: var(--impact-color);
+  font-size: 2em;
+  font-weight: 600;
+  letter-spacing: 10px;
+  text-shadow: rgba(255, 255, 255, 0.5) 1px 2px 10px;
+  /* 메인 타이틀 쉐도우 추가 */
 }
 
-.campaign-inner>div>img{
-    width: 100%;
+.campaign-inner > div > img {
+  width: 100%;
 }
-.campaign-menu-list{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1em;
+.campaign-menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
 }
-.campaign-menu-list>li{
-    display: block;
-    padding: 4px 10px;
-    font-size: 1.25em;
-    font-weight: 400;
-    letter-spacing: 2px;
+.campaign-menu-list > li {
+  display: block;
+  padding: 4px 10px;
+  font-size: 1.25em;
+  font-weight: 400;
+  letter-spacing: 2px;
 }
-.campaign-menu-list>li:hover{
-    color: var(--impact-color);
-    border-bottom: 1px solid var(--impact-color);
+.campaign-menu-list > li:hover {
+  color: var(--impact-color);
+  border-bottom: 1px solid var(--impact-color);
 }
 
 /* 공통사항 */
-.campaign-newyork-title{
-    display: block;
-    text-align: center;
-    font-size: 1.5em;
-    font-weight: 500;
-    margin: 100px 0;
+.campaign-newyork-title {
+  display: block;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 500;
+  margin: 100px 0;
 }
 
-.text-box{
-    height: 4.6em;
-    letter-spacing: 0.06em;
-    line-height: 1.5em;
-    position: relative;
+.text-box {
+  height: 4.6em;
+  letter-spacing: 0.06em;
+  line-height: 1.5em;
+  position: relative;
 }
-.text-box .rodeo-bag-title, .text-box .lecity-bag-title{
-    margin-top: 10px;
+.text-box .rodeo-bag-title,
+.text-box .lecity-bag-title {
+  margin-top: 10px;
 }
-.text-box .rodeo-bag-price, .text-box .lecity-bag-price{
-    position: absolute;
-    bottom: 10%;
+.text-box .rodeo-bag-price,
+.text-box .lecity-bag-price {
+  position: absolute;
+  bottom: 10%;
 }
 
 /* 공통사항 end */
 
-.campaign-rodeo-behind{
-    width: 100%;
-    margin: 0 auto;
-    display: grid;
-    /* 가로를 12개 컬럼으로 세분화하여 배치 기준 마련 */
-    grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(10, minmax(40px, auto));
-    gap: 1.25em;
-    position: relative;
+.campaign-rodeo-behind {
+  width: 100%;
+  margin: 0 auto;
+  display: grid;
+  /* 가로를 12개 컬럼으로 세분화하여 배치 기준 마련 */
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(10, minmax(40px, auto));
+  gap: 1.25em;
+  position: relative;
 }
-.campaign-rodeo-behind .behind-img-box{
-    display: contents;
-    /* ul 태그를 거치지 않고 내부 li들이 직접 grid 자식이 되도록 */
+.campaign-rodeo-behind .behind-img-box {
+  display: contents;
+  /* ul 태그를 거치지 않고 내부 li들이 직접 grid 자식이 되도록 */
 }
-.campaign-rodeo-behind .behind-img-box li{
-    position: relative;
+.campaign-rodeo-behind .behind-img-box li {
+  position: relative;
 }
-.campaign-rodeo-behind .behind-img-box img{
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.campaign-rodeo-behind .behind-img-box img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 /* 오른쪽 위 */
-.campaign-rodeo-behind .rodeo-img1{
-    grid-column: 5/13; /* 5번째 열부터 12번째 열까지 (오른쪽 영역) */
-    grid-row: 1/5; /* 위쪽 행 영역 */
-    z-index: 2;
+.campaign-rodeo-behind .rodeo-img1 {
+  grid-column: 5/13; /* 5번째 열부터 12번째 열까지 (오른쪽 영역) */
+  grid-row: 1/5; /* 위쪽 행 영역 */
+  z-index: 2;
 }
 /* 왼쪽 중간 */
-.campaign-rodeo-behind .rodeo-img2{
-    grid-column: 1/9; /* 왼쪽에서 7개 컬럼 차지 */
-    grid-row: 3/9; /* 중간~아래 행에 걸쳐 배치 */
-    z-index: 3;
+.campaign-rodeo-behind .rodeo-img2 {
+  grid-column: 1/9; /* 왼쪽에서 7개 컬럼 차지 */
+  grid-row: 3/9; /* 중간~아래 행에 걸쳐 배치 */
+  z-index: 3;
 }
 /* 오른쪽 아래 */
-.campaign-rodeo-behind .rodeo-img3{
-    grid-column: 6/13; /* 오른쪽 영역 */
-    grid-row: 6/11; /* 아래쪽 행 영역 */
-    z-index: 4;
+.campaign-rodeo-behind .rodeo-img3 {
+  grid-column: 6/13; /* 오른쪽 영역 */
+  grid-row: 6/11; /* 아래쪽 행 영역 */
+  z-index: 4;
 }
-.behind-text-box{
-    width: 50%;
-    margin: 0 auto 10em;
-    
+.behind-text-box {
+  width: 50%;
+  margin: 0 auto 10em;
 }
-.behind-text-box>.behind-text-title{
-    display: block;
-    padding: 5em 0 4em;
-    text-align: center;
+.behind-text-box > .behind-text-title {
+  display: block;
+  padding: 5em 0 4em;
+  text-align: center;
 }
-.behind-text span{
-    display: block;
-    line-height: 2em;
+.behind-text span {
+  display: block;
+  line-height: 2em;
 }
-
 
 /* lecity 구간 */
-.campaign-lecity-behind>ul{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1em;
-    width: 100%;
+.campaign-lecity-behind > ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1em;
+  width: 100%;
 }
-.campaign-lecity-behind>ul>li{
-    width: 48%;
+.campaign-lecity-behind > ul > li {
+  width: 48%;
 }
-.campaign-lecity-behind>ul>li img{
-    display: block;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
+.campaign-lecity-behind > ul > li img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 /* product 구간 */
-.campaign-wrap .product{
-    width: 100%;
-    margin: 10em 0;
-    position: relative;
+.campaign-wrap .product {
+  width: 100%;
+  margin: 10em 0;
+  position: relative;
 }
-.campaign-wrap .product>ul{
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 1.5%;
-    flex-wrap: wrap; /* 화면이 부족하면 다음 줄로 떨어지게 설정 */
+.campaign-wrap .product > ul {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5%;
+  flex-wrap: wrap; /* 화면이 부족하면 다음 줄로 떨어지게 설정 */
 }
-.campaign-wrap .product>ul>li{
-    flex: 0 0 calc((100% - 3%) / 3); /* 남은 공간을 균등하게 나눠 가짐 */
-    max-width: calc((100% - 3%) / 3); /* 기본적으로 3개가 한 줄에 들어가도록 설정 */
+.campaign-wrap .product > ul > li {
+  flex: 0 0 calc((100% - 3%) / 3); /* 남은 공간을 균등하게 나눠 가짐 */
+  max-width: calc(
+    (100% - 3%) / 3
+  ); /* 기본적으로 3개가 한 줄에 들어가도록 설정 */
 }
-.campaign-wrap .product>h2{
-    text-align: center;
-    margin-bottom: 4em;
-    font-size: 1.2em;
-    font-weight: 600;
+.campaign-wrap .product > h2 {
+  text-align: center;
+  margin-bottom: 4em;
+  font-size: 1.2em;
+  font-weight: 600;
 }
-.campaign-wrap .product>ul>li .text-box{
-    width: 100%;
-    min-width: auto;
-    margin: 1.25em 0 0.63em;
+.campaign-wrap .product > ul > li .text-box {
+  width: 100%;
+  min-width: auto;
+  margin: 1.25em 0 0.63em;
 }
-.campaign-wrap .product>ul>li .img-box{
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    aspect-ratio: 3/4; /* 이미지가 찌그러지지 않고 일정한 비율 유지 */
+.campaign-wrap .product > ul > li .img-box {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  aspect-ratio: 3/4; /* 이미지가 찌그러지지 않고 일정한 비율 유지 */
 }
-.campaign-wrap .product>ul>li .img-box img{
-    display: block;
-    width: 100%;
-    height: 100%;
-    transition: 0.3s;
-    object-fit: cover;
+.campaign-wrap .product > ul > li .img-box img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+  object-fit: cover;
 }
-.campaign-wrap .product>ul>li .img-box::after{
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.3);
-    transition: 0.3s;
-    opacity: 0;
+.campaign-wrap .product > ul > li .img-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+  opacity: 0;
 }
-.campaign-wrap .product>ul>li .img-box:hover img{
-    transform: scale(1.05);
+.campaign-wrap .product > ul > li .img-box:hover img {
+  transform: scale(1.05);
 }
-.campaign-wrap .product>ul>li .img-box:hover::after{
-    opacity: 1;
+.campaign-wrap .product > ul > li .img-box:hover::after {
+  opacity: 1;
 }
-.campaign-wrap .more-btn>a{
-    position: absolute;
-    top: 6%;
-    right: 0;
-    padding: 1em 0;
+.campaign-wrap .more-btn > a {
+  position: absolute;
+  top: 6%;
+  right: 0;
+  padding: 1em 0;
 }
 
 /* information 구간 */
-.information-wrap{
-    max-width: 800px;
-    width: 100%;
+.information-wrap {
+  max-width: 800px;
+  width: 100%;
 }
-.information-inner{
-    position: relative;
-    padding-bottom: 180px;
+.information-inner {
+  position: relative;
+  padding-bottom: 180px;
 }
-.information-inner .img-box{
-    position: relative;
-    overflow: hidden;
+.information-inner .img-box {
+  position: relative;
+  overflow: hidden;
 }
-.information-inner .img-box img{
-    display: block;
-    width: 100%;
+.information-inner .img-box img {
+  display: block;
+  width: 100%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* 반응형 디자인 */
 
 /* ipad */
-@media screen and (max-width:1280px) {
+@media screen and (max-width: 1280px) {
+  /* main */
+  main {
+    max-width: 1280px;
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  }
+  .campaign-wrap {
+    width: 100%;
+    padding: 0 1em;
+  }
+  .campaign-inner > div {
+    padding-bottom: 0;
+  }
+  .campaign-inner h2 {
+    font-size: 1.2em;
+    margin-bottom: 2.5em;
+  }
+  .behind-text {
+    font-size: 0.75em;
+  }
+  .behind-text-box {
+    width: 90%;
+  }
+  .campaign-inner .campaign-innerspan {
+    margin: 10px 0;
+  }
+  .campaign-rodeo-behind {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    grid-template-columns: none; /* grid 속성 초기화 */
+    grid-template-rows: none;
+  }
+  /* ul 태그(behind-img-box)의 display: contents 해제 및 세로 정렬 적용 */
+  .campaign-rodeo-behind .behind-img-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+    width: 100%;
+  }
+  /* 각각의 li 및 이미지들이 화면 너비(100%)를 꽉 채우도록 설정 */
+  .campaign-rodeo-behind .behind-img-box li,
+  .campaign-rodeo-behind .rodeo-img1,
+  .campaign-rodeo-behind .rodeo-img2,
+  .campaign-rodeo-behind .rodeo-img3 {
+    grid-column: auto;
+    grid-row: auto;
+    width: 100%;
+    max-width: 100%;
+    z-index: 1;
+  }
+  .campaign-rodeo-behind .behind-img-box img {
+    width: 100%;
+    height: auto; /* 이미지 비율이 찌그러지지 않도록 auto 지정 */
+    object-fit: cover;
+  }
 
-
-    /* main */
-    main{
-        max-width: 1280px;
-        width: 100%;
-        border-bottom: 1px solid rgba(255,255,255,0.5);
-    }
-    .campaign-wrap{
-        width: 100%;
-        padding: 0 1em;
-    }
-    .campaign-inner > div{
-        padding-bottom: 0;
-    }
-    .campaign-inner h2{
-        font-size: 1.2em;
-        margin-bottom: 2.5em;
-    }
-    .behind-text{
-        font-size: 0.75em;
-    }
-    .behind-text-box{
-        width: 90%;
-    }
-    .campaign-inner .campaign-innerspan{
-        margin: 10px 0;
-    }
-    .campaign-rodeo-behind{
-        display: flex;
-        flex-direction: column;
-        gap: 1.5em;
-        grid-template-columns: none; /* grid 속성 초기화 */
-        grid-template-rows: none;
-    }
-    /* ul 태그(behind-img-box)의 display: contents 해제 및 세로 정렬 적용 */
-    .campaign-rodeo-behind .behind-img-box {
-        display: flex; 
-        flex-direction: column;
-        gap: 1.5em;
-        width: 100%;
-    }
-    /* 각각의 li 및 이미지들이 화면 너비(100%)를 꽉 채우도록 설정 */
-    .campaign-rodeo-behind .behind-img-box li,
-    .campaign-rodeo-behind .rodeo-img1,
-    .campaign-rodeo-behind .rodeo-img2,
-    .campaign-rodeo-behind .rodeo-img3 {
-        grid-column: auto;
-        grid-row: auto;
-        width: 100%;
-        max-width: 100%;
-        z-index: 1;
-    }
-    .campaign-rodeo-behind .behind-img-box img {
-        width: 100%;
-        height: auto; /* 이미지 비율이 찌그러지지 않도록 auto 지정 */
-        object-fit: cover;
-    }
-
-    .campaign-wrap .more-btn>a{
-        top: 5%;
-        right: 0;
-    }
-    .campaign-menu-list{
-        width: 100%;
-    }
-    .campaign-menu-list>li{
-        gap: 0;
-        font-size: 0.88em;
-    }
-    .campaign-newyork-title{
-        font-size: 1em;
-    }
-    .campaign-wrap .product>ul>li .img-box::after{
-        display: none;
-    }
-    .campaign-wrap .product>ul>li .img-box:hover img{
-        transform: none;
-    }
-
+  .campaign-wrap .more-btn > a {
+    top: 5%;
+    right: 0;
+  }
+  .campaign-menu-list {
+    width: 100%;
+  }
+  .campaign-menu-list > li {
+    gap: 0;
+    font-size: 0.88em;
+  }
+  .campaign-newyork-title {
+    font-size: 1em;
+  }
+  .campaign-wrap .product > ul > li .img-box::after {
+    display: none;
+  }
+  .campaign-wrap .product > ul > li .img-box:hover img {
+    transform: none;
+  }
 }
 
 /* mobile */
-@media screen and (max-width:789px) {
-
-    /* main */
-    main{
-        width: 100%;
-    }
-    .campaign-inner h2{
-        font-size: 0.88em;
-        margin-bottom: 2.5em;
-    }
-    .campaign-wrap{
-        width: 100%;
-        padding-top: 20%;
-    }
-    .campaign-wrap .more-btn>a{
-        top: 14%;
-        font-size: 0.88em;
-    }
-    .campaign-wrap .product>ul>li .text-box{
-        font-size: 0.5em;
-    }
-    .campaign-lecity-behind>ul{
-        flex-direction: column;
-        gap: 1.25em;
-    }
-    .campaign-lecity-behind>ul>li{
-        width: 80%;
-    }
-
+@media screen and (max-width: 789px) {
+  /* main */
+  main {
+    width: 100%;
+  }
+  .campaign-inner h2 {
+    font-size: 0.88em;
+    margin-bottom: 2.5em;
+  }
+  .campaign-wrap {
+    width: 100%;
+    padding-top: 20%;
+  }
+  .campaign-wrap .more-btn > a {
+    top: 14%;
+    font-size: 0.88em;
+  }
+  .campaign-wrap .product > ul > li .text-box {
+    font-size: 0.5em;
+  }
+  .campaign-lecity-behind > ul {
+    flex-direction: column;
+    gap: 1.25em;
+  }
+  .campaign-lecity-behind > ul > li {
+    width: 80%;
+  }
 }
 
 /* mobile - mini phone */
-@media screen and (max-width:480px) {
-    
+@media screen and (max-width: 480px) {
 }

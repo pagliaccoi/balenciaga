@@ -18,7 +18,7 @@
   --gray-800: #2e2e2e;
 
   /* layout */
-  --inner-width: 1920px;
+  --inner-width: 1680px;
   /* spacing */
 
   /* border */
@@ -47,7 +47,6 @@ main {
   margin: 0 auto;
 }
 .campaign-inner > .section-title {
-  display: block;
   text-align: center;
   color: var(--impact-color);
   font-size: 2em;
@@ -55,7 +54,6 @@ main {
   letter-spacing: 10px;
   text-shadow: rgba(255, 255, 255, 0.5) 1px 2px 10px;
   /* 메인 타이틀 쉐도우 추가 */
-  margin: 0 0 10% 0;
 }
 
 .campaign-inner > div {
