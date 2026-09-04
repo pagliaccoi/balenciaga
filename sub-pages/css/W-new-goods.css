@@ -29,7 +29,6 @@
     aspect-ratio: 1920 / 640;
 }
 
-
 /* 제목 */
 
 .W-new-goods-heading {
@@ -67,7 +66,6 @@
     position: relative;
 }
 
-
 /* 필터 & 정렬 */
 
 .filter {
@@ -97,24 +95,26 @@
     display: block;
 }
 
-
-/* 카테고리 */
+/* ==========================================================================
+   카테고리 & 커스텀 스크롤바 영역 스타일
+   ========================================================================== */
 
 .W-new-goods-category {
     width: 100%;
     margin: 2em 0;
+    position: relative;
 }
 
-.W-new-goods-category .category-list {
+/* 카테고리 리스트 기본 (PC 기준 중앙 정렬) */
+.bag-category-list {
     display: flex;
     justify-content: center;
+    gap: 20px;
+    width: 100%;
 }
 
-.W-new-goods-category ul {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 1.25em;
+.bag-category-item {
+    list-style: none;
 }
 
 .W-new-goods-category .category-item {
@@ -130,9 +130,7 @@
     align-items: center;
     margin-bottom: 0.44em;
     width: 10em;
-    /* 160px -> 10em (1em = 16px 기준) */
     height: 10em;
-    /* 160px -> 10em */
     max-width: 100%;
 }
 
@@ -153,7 +151,14 @@
     white-space: nowrap;
 }
 
-/* 상품 공통 */
+/* 기본 상태에서 스크롤바 숨김 */
+.bag-category-scrollbar {
+    display: none;
+}
+
+/* ==========================================================================
+   상품 공통
+   ========================================================================== */
 
 .goods-item {
     min-width: 0;
@@ -166,6 +171,21 @@
 .W-new-goods-img {
     width: 100%;
     line-height: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.W-new-goods-img a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.W-new-goods-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .W-new-goods-text {
@@ -188,24 +208,32 @@
     font-weight: 400;
 }
 
+/* 1번째 & 3번째 상품 행 (4열 리스트) Flex 그리드 교정 */
 
-/* 1번째 행 : 상품 4개 */
-
-.W-new-goods-1 {
+.W-new-goods-1,
+.W-new-goods-3 {
     width: 100%;
     margin-bottom: 3.38em;
 }
 
-.W-new-goods-1 .goods-list {
+.W-new-goods-1 .goods-list,
+.W-new-goods-3 .goods-list {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 0.25em;
+    width: 100%;
 }
 
-.W-new-goods-1 .W-new-goods-img {
+.W-new-goods-1 .goods-item,
+.W-new-goods-3 .goods-item {
+    flex: 1 1 0%;
+    min-width: 0;
+}
+
+.W-new-goods-1 .W-new-goods-img,
+.W-new-goods-3 .W-new-goods-img {
     aspect-ratio: 1 / 1.05;
 }
-
 
 /* 2번째 행 : 대형 가방 이미지 */
 
@@ -219,31 +247,9 @@
 }
 
 .W-new-goods-2 .W-new-goods-img {
+    width: 100%;
     aspect-ratio: 2.25 / 1;
 }
-
-.W-new-goods-2 .W-new-goods-img>a:not(.bookmark-link)>img {
-    object-fit: cover;
-}
-
-
-/* 3번째 행 : 상품 4개 */
-
-.W-new-goods-3 {
-    width: 100%;
-    margin-bottom: 3.5em;
-}
-
-.W-new-goods-3 .goods-list {
-    display: flex;
-    justify-content: center;
-    gap: 0.25em;
-}
-
-.W-new-goods-3 .W-new-goods-img {
-    aspect-ratio: 1 / 1.05;
-}
-
 
 /* 4번째 행 : 이미지 2개 가로 배치 */
 
@@ -256,9 +262,7 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.25em;
-    overflow: visible;
-    background: transparent;
-    line-height: 0;
+    width: 100%;
 }
 
 .W-new-goods-4 .goods-split .W-new-goods-img>a {
@@ -275,7 +279,6 @@
     object-fit: cover;
 }
 
-
 /* 5번째 행 : 왼쪽 화보 스와이퍼 + 오른쪽 2x2 상품 그리드 */
 
 .W-new-goods-5 {
@@ -286,9 +289,6 @@
     width: 100%;
     margin-bottom: 100px;
 }
-
-
-/* 왼쪽 화보 (높이 상승 및 스와이퍼 absolute 호환 강제 설정) */
 
 .swipe {
     width: 100%;
@@ -321,8 +321,6 @@
     object-fit: cover !important;
 }
 
-/* 오른쪽 상품 4개 (2x2 그리드) */
-
 .W-new-goods-5 .accessory-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -334,9 +332,8 @@
     aspect-ratio: 1 / 1;
 }
 
-
 /* ==========================================================================
-   반응형 미디어 쿼리
+   반응형 미디어 쿼리 (카테고리 스크롤바 포함)
    ========================================================================== */
 
 /* 1280px 이하 */
@@ -354,12 +351,58 @@
         width: 7.5em;
         height: 7.5em;
     }
+
+    /* 1280px 이하 반응형 가로 스크롤 적용 */
+    .bag-category-list {
+        justify-content: flex-start;
+        gap: 16px;
+        padding: 0 20px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        /* Firefox 스크롤바 숨김 */
+        -ms-overflow-style: none;
+        /* IE/Edge 스크롤바 숨김 */
+    }
+
+    .bag-category-list::-webkit-scrollbar {
+        display: none;
+        /* Chrome/Safari 스크롤바 숨김 */
+    }
+
+    .bag-category-item {
+        flex-shrink: 0;
+    }
+
+    /* 커스텀 스크롤바 트랙 설정 */
+    .bag-category-scrollbar.is-scrollable {
+        position: relative;
+        display: block;
+        width: 500px;
+        height: 1px;
+        margin: 24px auto 0;
+        background: #e5e5e5;
+        cursor: pointer;
+        touch-action: none;
+        user-select: none;
+    }
+
+    /* 커스텀 스크롤바 썸(Thumb) 설정 */
+    .bag-category-scrollbar-thumb {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: #111;
+    }
+
+    .bag-category-scrollbar:focus-visible {
+        outline: 2px solid #111;
+        outline-offset: 6px;
+    }
 }
 
-
-/* 789px 이하 */
-@media (max-width: 789px) {
-
+/* 768px 이하 */
+@media (max-width: 768px) {
     body {
         font-size: 13.5px;
     }
@@ -369,47 +412,8 @@
         padding: 0 1em;
     }
 
-    /* 카테고리 전체 감싸는 영역 */
     .W-new-goods-category {
-        width: 100%;
         margin: 1.5em 0;
-    }
-
-    .W-new-goods-category .category-list {
-        width: 100%;
-    }
-
-    /* [핵심] ul 태그에 가로 스크롤 부여 */
-    .W-new-goods-category ul {
-        display: flex;
-        flex-wrap: nowrap;
-        /* 줄바꿈 금지 */
-        justify-content: flex-start;
-        /* 왼쪽 정렬 */
-        gap: 1em;
-        /* 아이템 간격 */
-        width: 100%;
-        overflow-x: auto;
-        /* 가로 스크롤 생성 */
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        /* iOS 부드러운 스크롤 */
-        scrollbar-width: none;
-        /* 파이어폭스 스크롤바 숨김 */
-        padding: 0.5em 1em;
-        /* 좌우 여백 */
-    }
-
-    /* 스크롤바 숨기기 (Chrome, Safari) */
-    .W-new-goods-category ul::-webkit-scrollbar {
-        display: none;
-    }
-
-    /* 개별 아이템 고정 너비 지정 */
-    .W-new-goods-category .category-item {
-        flex: 0 0 auto;
-        /* 너비 줄어듦 방지 */
-        width: 6.5em;
     }
 
     .W-new-goods-category .img-box {
@@ -421,12 +425,15 @@
         font-size: 0.85em;
         margin: 0.5em 0;
     }
-}
 
+    .bag-category-scrollbar.is-scrollable {
+        width: 240px;
+        margin-top: 18px;
+    }
+}
 
 /* 480px 이하 */
 @media (max-width: 480px) {
-
     body {
         font-size: 11px;
     }
@@ -436,18 +443,6 @@
         padding: 0 0.5em;
     }
 
-    .W-new-goods-category {
-        padding: 0 0.25em;
-    }
-
-    .W-new-goods-category ul {
-        gap: 0.75em;
-    }
-
-    .W-new-goods-category .category-item {
-        width: 6.5em;
-    }
-
     .W-new-goods-category .img-box {
         width: 6.5em;
         height: 6.5em;
@@ -455,5 +450,10 @@
 
     .W-new-goods-category .text-box {
         font-size: 0.85em;
+    }
+
+    .bag-category-scrollbar.is-scrollable {
+        width: 160px;
+        margin-top: 16px;
     }
 }

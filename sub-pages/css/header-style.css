@@ -58,6 +58,7 @@ header > .inner {
 .inner > .logo {
   width: 250px;
   height: 39px;
+  z-index: 100;
 }
 .gnb-menu {
   position: absolute;
