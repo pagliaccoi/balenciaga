@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>여성 신제품 | 발렌시아가 공식 온라인 부티크</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="icon" href="./images/balen-favicon.png">
     <link rel="stylesheet" href="./css/font/font.css">
     <link rel="stylesheet" href="./css/common.css">
@@ -13,8 +14,6 @@
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/W-new-goods.css">
 
-    <!-- Swiper CSS & JS (v11 기준 통일) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../js/header.js" defer></script>
     <script src="../js/header-slide.js" defer></script>
@@ -223,15 +222,20 @@
                                             <li class="menu-tab-btn"><a href="/sub-pages/index-campaign.html">전체보기</a>
                                             </li>
                                             <li class="menu-tab-btn"><a
-                                                    href="/sub-pages/index-campaign-newyork.html">New York</a></li>
+                                                    href="/sub-pages/index-campaign-newyork.html">New York</a>
+                                            </li>
                                             <li><a href="#">Soccer Series</a></li>
                                             <li><a href="#">Icon Photocard</a></li>
                                             <li><a href="#">Sneakers</a></li>
                                             <li><a href="#">NBA</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">컬렉션</a></li>
-                                    <li><a href="#">브랜드 역사</a></li>
+                                    <li>
+                                        <a href="#">컬렉션</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">브랜드 역사</a>
+                                    </li>
                                     <li>
                                         <p class="sub-menu-img">
                                             <a href="#">
@@ -242,7 +246,11 @@
                                 </ul>
                             </div>
                         </li>
-                        <li><a href="#">고객서비스</a></li>
+
+
+                        <li>
+                            <a href="#">고객서비스</a>
+                        </li>
                     </ul>
 
                     <div class="m-close-btn">
@@ -254,6 +262,7 @@
                         <p class="mypage"><a href="/sub-pages/mypage.html">마이페이지</a></p>
                     </div>
                 </nav>
+
 
                 <div class="m-left-btn">
                     <ul class="m-btn">
@@ -290,6 +299,7 @@
                 </div>
             </div>
         </header>
+
     </div>
 
     <main class="W-new-goods-wrap">
@@ -303,49 +313,55 @@
         <div class="W-new-goods-inner inner">
             <h2 class="W-new-goods-title">여성 신제품</h2>
 
-            <!-- 카테고리 Swiper 적용 -->
-            <nav class="W-new-goods-category category-swiper swiper" aria-label="여성 신제품 카테고리">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
+            <!-- 커스텀 스크롤바가 적용된 카테고리 영역 -->
+            <nav class="W-new-goods-category" aria-label="여성 신제품 카테고리">
+                <ul class="bag-category-list" id="bag-category-list">
+                    <li class="bag-category-item">
                         <a class="category-item" href="#">
                             <span class="img-box">
                                 <img src="./images/new/category-bags.jpg" alt="검은색 가죽 가방 이미지">
                             </span>
                             <span class="text-box">가방</span>
                         </a>
-                    </div>
-                    <div class="swiper-slide">
+                    </li>
+                    <li class="bag-category-item">
                         <a class="category-item" href="#">
                             <span class="img-box">
                                 <img src="./images/new/category-top.jpg" alt="검은색 나시 드레스 이미지">
                             </span>
                             <span class="text-box">상의</span>
                         </a>
-                    </div>
-                    <div class="swiper-slide">
+                    </li>
+                    <li class="bag-category-item">
                         <a class="category-item" href="#">
                             <span class="img-box">
                                 <img src="./images/new/category-bottom.jpg" alt="검은색 바지 이미지">
                             </span>
                             <span class="text-box">하의</span>
                         </a>
-                    </div>
-                    <div class="swiper-slide">
+                    </li>
+                    <li class="bag-category-item">
                         <a class="category-item" href="#">
                             <span class="img-box">
                                 <img src="./images/new/category-shoes.jpg" alt="검은색 하이힐 이미지">
                             </span>
                             <span class="text-box">슈즈</span>
                         </a>
-                    </div>
-                    <div class="swiper-slide">
+                    </li>
+                    <li class="bag-category-item">
                         <a class="category-item" href="#">
                             <span class="img-box">
                                 <img src="./images/new/category-ac.jpg" alt="은색 하트 귀걸이 이미지">
                             </span>
                             <span class="text-box">악세사리</span>
                         </a>
-                    </div>
+                    </li>
+                </ul>
+
+                <div class="bag-category-scrollbar" role="scrollbar" aria-controls="bag-category-list"
+                    aria-label="카테고리 가로 스크롤" aria-orientation="horizontal" aria-valuemin="0" aria-valuemax="0"
+                    aria-valuenow="0" tabindex="0">
+                    <span class="bag-category-scrollbar-thumb"></span>
                 </div>
             </nav>
         </div>
@@ -365,7 +381,7 @@
                 <section class="W-new-goods-1" aria-label="여성 신제품 상의">
                     <ul class="goods-list">
                         <li class="goods-item">
-                            <article class="goods">
+                            <div class="goods">
                                 <div class="W-new-goods-img">
                                     <a href="./pay.html">
                                         <img src="./images/new/w-new-top-1.jpg" alt="검은색 나시 드레스를 입은 여성 이미지">
@@ -375,10 +391,10 @@
                                     <a href="#">베이비돌 스트랩 드레스 블랙</a>
                                     <a href="#">₩ 2,900,000</a>
                                 </div>
-                            </article>
+                            </div>
                         </li>
                         <li class="goods-item">
-                            <article class="goods">
+                            <div class="goods">
                                 <div class="W-new-goods-img">
                                     <a href="#">
                                         <img src="./images/new/w-new-top-2.jpg" alt="옅은 하늘색 청자켓 이미지">
@@ -388,10 +404,10 @@
                                     <a href="#">크롭드 커브드 재킷 블리치 라이트 블루</a>
                                     <a href="#">₩ 2,350,000</a>
                                 </div>
-                            </article>
+                            </div>
                         </li>
                         <li class="goods-item">
-                            <article class="goods">
+                            <div class="goods">
                                 <div class="W-new-goods-img">
                                     <a href="#">
                                         <img src="./images/new/w-new-top-3.jpg" alt="검은색 가죽 자켓 이미지">
@@ -401,10 +417,10 @@
                                     <a href="#">랩 칼라 블루종 블랙</a>
                                     <a href="#">₩ 12,745,000</a>
                                 </div>
-                            </article>
+                            </div>
                         </li>
                         <li class="goods-item">
-                            <article class="goods">
+                            <div class="goods">
                                 <div class="W-new-goods-img">
                                     <a href="#">
                                         <img src="./images/new/w-new-top-4.jpg" alt="하얀 오버 셔츠 이미지">
@@ -414,14 +430,14 @@
                                     <a href="#">오버사이즈 스톨 셔츠 화이트</a>
                                     <a href="#">₩ 2,030,000</a>
                                 </div>
-                            </article>
+                            </div>
                         </li>
                     </ul>
                 </section>
 
                 <!-- 2번째 행 -->
                 <section class="W-new-goods-2" aria-label="여성 신제품 가방">
-                    <article class="goods goods-feature">
+                    <div class="goods goods-feature">
                         <div class="W-new-goods-img">
                             <a href="#">
                                 <img src="./images/new/w-new-bags.jpg" alt="가방 화보 이미지">
@@ -431,14 +447,14 @@
                             <a href="#">르 시티 슬릭 박스백 블랙</a>
                             <a href="#">₩ 4,375,000</a>
                         </div>
-                    </article>
+                    </div>
                 </section>
 
                 <!-- 3번째 상품 행 -->
                 <section class="W-new-goods-3" aria-label="여성 신제품 하의">
                     <ul class="goods-list">
                         <li class="goods-item">
-                            <article class="goods">
+                            <div class="goods">
                                 <div class="W-new-goods-img">
                                     <a href="#">
                                         <img src="./images/new/w-new-bottom-1.jpg" alt="베이지색 스커트를 입은 모델 다리 이미지">
@@ -448,10 +464,10 @@
                                     <a href="#">미니 코튼 스커트 베이지</a>
                                     <a href="#">₩ 1,725,000</a>
                                 </div>
-                            </article>
+                            </div>
                         </li>
                         <li class="goods-item">
-                            <article class="goods">
+                            <div class="goods">
                                 <div class="W-new-goods-img">
                                     <a href="#">
                                         <img src="./images/new/w-new-bottom-2.jpg" alt="옅은 하늘색 청바지">
@@ -461,10 +477,10 @@
                                     <a href="#">트위스티드 심 진 블리치 라이트 블루</a>
                                     <a href="#">₩ 1,790,000</a>
                                 </div>
-                            </article>
+                            </div>
                         </li>
                         <li class="goods-item">
-                            <article class="goods">
+                            <div class="goods">
                                 <div class="W-new-goods-img">
                                     <a href="#">
                                         <img src="./images/new/w-new-bottom-3.jpg" alt="검은색 통 넓은 스포츠 바지">
@@ -474,10 +490,10 @@
                                     <a href="#">바디스 트랙수트 팬츠 블랙</a>
                                     <a href="#">₩ 2,585,000</a>
                                 </div>
-                            </article>
+                            </div>
                         </li>
                         <li class="goods-item">
-                            <article class="goods">
+                            <div class="goods">
                                 <div class="W-new-goods-img">
                                     <a href="#">
                                         <img src="./images/new/w-new-bottom-4.jpg" alt="검은색 바지">
@@ -487,14 +503,14 @@
                                     <a href="#">하이웨이스트 배럴 팬츠 블랙</a>
                                     <a href="#">₩ 2,585,000</a>
                                 </div>
-                            </article>
+                            </div>
                         </li>
                     </ul>
                 </section>
 
                 <!-- 4번째 행 -->
                 <section class="W-new-goods-4" aria-label="여성 신제품 캠페인 이미지">
-                    <article class="goods goods-split">
+                    <div class="goods goods-split">
                         <div class="W-new-goods-img">
                             <a href="#">
                                 <img src="./images/new/w-new-top-5.jpg" alt="검은색 가죽 재킷을 입은 모델 이미지">
@@ -507,7 +523,7 @@
                             <a href="#">스탠다드 보머 블랙</a>
                             <a href="#">₩ 3,870,000</a>
                         </div>
-                    </article>
+                    </div>
                 </section>
 
                 <!-- 5번째 행 : Swiper 화보 + 상품 2x2 -->
@@ -531,7 +547,7 @@
 
                     <ul class="goods-list accessory-list">
                         <li class="goods-item">
-                            <article class="goods">
+                            <div class="goods">
                                 <div class="W-new-goods-img">
                                     <a href="#">
                                         <img src="./images/new/w-new-sun-1.jpg" alt="선글라스 이미지">
@@ -541,10 +557,10 @@
                                     <a href="#">다이너스티 렉탱글 선글라스 블랙</a>
                                     <a href="#">650,000</a>
                                 </div>
-                            </article>
+                            </div>
                         </li>
                         <li class="goods-item">
-                            <article class="goods">
+                            <div class="goods">
                                 <div class="W-new-goods-img">
                                     <a href="#">
                                         <img src="./images/new/w-new-ac-1.jpg" alt="금색 체인 팔찌 이미지">
@@ -554,10 +570,10 @@
                                     <a href="#">B 링크 브레이슬릿 샤이니 골드</a>
                                     <a href="#">₩ 1,210,000</a>
                                 </div>
-                            </article>
+                            </div>
                         </li>
                         <li class="goods-item">
-                            <article class="goods">
+                            <div class="goods">
                                 <div class="W-new-goods-img">
                                     <a href="#">
                                         <img src="./images/new/w-new-ac-2.jpg" alt="금색 귀걸이 이미지">
@@ -567,10 +583,10 @@
                                     <a href="#">블룸 핑키 링 샤이니 골드</a>
                                     <a href="#">₩ 990,000</a>
                                 </div>
-                            </article>
+                            </div>
                         </li>
                         <li class="goods-item">
-                            <article class="goods">
+                            <div class="goods">
                                 <div class="W-new-goods-img">
                                     <a href="#">
                                         <img src="./images/new/w-new-ac-3.jpg" alt="발렌시아가의 B가 두드러지는 키링 이미지">
@@ -580,7 +596,7 @@
                                     <a href="#">Qixi 크리스탈 B 참/키링 멀티컬러</a>
                                     <a href="#">₩ 1,030,000</a>
                                 </div>
-                            </article>
+                            </div>
                         </li>
                     </ul>
                 </section>
@@ -701,25 +717,122 @@
                 observeParents: true,
             });
 
-            /* 2. 카테고리 스와이퍼 */
-            const categorySwiper = new Swiper('.category-swiper', {
-                slidesPerView: 'auto',
-                spaceBetween: 20,
-                freeMode: true,
-                grabCursor: true,
-                observer: true,
-                observeParents: true,
-                breakpoints: {
-                    790: {
-                        spaceBetween: 20,
-                        freeMode: false
-                    },
-                    0: {
-                        spaceBetween: 12
-                    }
+            /* 2. 카테고리 스크롤바 초기화 */
+            initCategoryScrollbar();
+        });
+
+        function initCategoryScrollbar() {
+            const list = document.querySelector('.bag-category-list');
+            const scrollbar = document.querySelector('.bag-category-scrollbar');
+            const thumb = document.querySelector('.bag-category-scrollbar-thumb');
+
+            if (!list || !scrollbar || !thumb) return;
+
+            let dragState = null;
+
+            function updateScrollbar() {
+                const maxScroll = list.scrollWidth - list.clientWidth;
+                const isScrollable = maxScroll > 0;
+
+                scrollbar.classList.toggle('is-scrollable', isScrollable);
+
+                if (!isScrollable) return;
+
+                const trackWidth = scrollbar.clientWidth;
+                const thumbWidth = Math.max(40, (list.clientWidth / list.scrollWidth) * trackWidth);
+                const maxThumbOffset = trackWidth - thumbWidth;
+                const thumbOffset = maxThumbOffset * (list.scrollLeft / maxScroll);
+
+                thumb.style.width = `${thumbWidth}px`;
+                thumb.style.transform = `translateX(${thumbOffset}px)`;
+                scrollbar.setAttribute('aria-valuemax', Math.round(maxScroll));
+                scrollbar.setAttribute('aria-valuenow', Math.round(list.scrollLeft));
+            }
+
+            function scrollFromPointer(clientX) {
+                const maxScroll = list.scrollWidth - list.clientWidth;
+                const trackRect = scrollbar.getBoundingClientRect();
+                const thumbWidth = thumb.getBoundingClientRect().width;
+                const maxThumbOffset = trackRect.width - thumbWidth;
+                const pointerOffset = clientX - trackRect.left - (thumbWidth / 2);
+                const progress = Math.min(1, Math.max(0, pointerOffset / maxThumbOffset));
+
+                list.scrollLeft = progress * maxScroll;
+            }
+
+            scrollbar.addEventListener('pointerdown', (event) => {
+                if (!scrollbar.classList.contains('is-scrollable')) return;
+
+                dragState = {
+                    pointerId: event.pointerId,
+                    startX: event.clientX,
+                    startScroll: list.scrollLeft,
+                    isThumb: event.target === thumb
+                };
+
+                scrollbar.setPointerCapture(event.pointerId);
+
+                if (!dragState.isThumb) {
+                    scrollFromPointer(event.clientX);
+                    dragState.startScroll = list.scrollLeft;
+                }
+
+                event.preventDefault();
+            });
+
+            scrollbar.addEventListener('pointermove', (event) => {
+                if (!dragState || event.pointerId !== dragState.pointerId) return;
+
+                if (dragState.isThumb) {
+                    const maxScroll = list.scrollWidth - list.clientWidth;
+                    const maxThumbOffset = scrollbar.clientWidth - thumb.getBoundingClientRect().width;
+                    const scrollDelta = (event.clientX - dragState.startX) * (maxScroll / maxThumbOffset);
+
+                    list.scrollLeft = dragState.startScroll + scrollDelta;
+                } else {
+                    scrollFromPointer(event.clientX);
                 }
             });
-        });
+
+            ['pointerup', 'pointercancel'].forEach((eventName) => {
+                scrollbar.addEventListener(eventName, () => {
+                    dragState = null;
+                });
+            });
+
+            scrollbar.addEventListener('keydown', (event) => {
+                const step = list.clientWidth * 0.8;
+
+                if (event.key === 'ArrowRight') list.scrollBy({ left: step });
+                else if (event.key === 'ArrowLeft') list.scrollBy({ left: -step });
+                else if (event.key === 'Home') list.scrollTo({ left: 0 });
+                else if (event.key === 'End') list.scrollTo({ left: list.scrollWidth });
+                else return;
+
+                event.preventDefault();
+            });
+
+            list.addEventListener('wheel', (event) => {
+                const maxScroll = list.scrollWidth - list.clientWidth;
+
+                if (maxScroll <= 0 || Math.abs(event.deltaX) > Math.abs(event.deltaY)) return;
+
+                const nextScroll = Math.min(
+                    maxScroll,
+                    Math.max(0, list.scrollLeft + event.deltaY)
+                );
+
+                if (nextScroll === list.scrollLeft) return;
+
+                event.preventDefault();
+                list.scrollLeft = nextScroll;
+            }, { passive: false });
+
+            list.addEventListener('scroll', updateScrollbar, { passive: true });
+            window.addEventListener('resize', updateScrollbar);
+
+            updateScrollbar();
+        }
     </script>
 </body>
 
