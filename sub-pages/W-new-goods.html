@@ -12,12 +12,13 @@
     <link rel="stylesheet" href="./css/header-style.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/W-new-goods.css">
-    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js" defer></script>
+    
+    <!-- Swiper CSS & JS (v11 기준 통일) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../js/header.js" defer></script>
     <script src="../js/header-slide.js" defer></script>
 </head>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <body>
     <!-- header -->
@@ -85,8 +86,7 @@
                                     <li>
                                         <a href="#">상의</a>
                                         <ul class="sub-menu-category">
-                                            <li class="menu-tab-btn"><a href="/sub-pages/index-shop-women.html">전체보기</a>
-                                            </li>
+                                            <li class="menu-tab-btn"><a href="/sub-pages/index-shop-women.html">전체보기</a></li>
                                             <li><a href="#">티셔츠</a></li>
                                             <li><a href="#">니트웨어</a></li>
                                             <li><a href="#">드레스</a></li>
@@ -219,23 +219,16 @@
                                     <li>
                                         <a href="#">캠페인</a>
                                         <ul class="sub-menu-category">
-                                            <li class="menu-tab-btn"><a href="/sub-pages/index-campaign.html">전체보기</a>
-                                            </li>
-                                            <li class="menu-tab-btn"><a
-                                                    href="/sub-pages/index-campaign-newyork.html">New York</a>
-                                            </li>
+                                            <li class="menu-tab-btn"><a href="/sub-pages/index-campaign.html">전체보기</a></li>
+                                            <li class="menu-tab-btn"><a href="/sub-pages/index-campaign-newyork.html">New York</a></li>
                                             <li><a href="#">Soccer Series</a></li>
                                             <li><a href="#">Icon Photocard</a></li>
                                             <li><a href="#">Sneakers</a></li>
                                             <li><a href="#">NBA</a></li>
                                         </ul>
                                     </li>
-                                    <li>
-                                        <a href="#">컬렉션</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">브랜드 역사</a>
-                                    </li>
+                                    <li><a href="#">컬렉션</a></li>
+                                    <li><a href="#">브랜드 역사</a></li>
                                     <li>
                                         <p class="sub-menu-img">
                                             <a href="#">
@@ -246,11 +239,7 @@
                                 </ul>
                             </div>
                         </li>
-
-
-                        <li>
-                            <a href="#">고객서비스</a>
-                        </li>
+                        <li><a href="#">고객서비스</a></li>
                     </ul>
 
                     <div class="m-close-btn">
@@ -262,7 +251,6 @@
                         <p class="mypage"><a href="/sub-pages/mypage.html">마이페이지</a></p>
                     </div>
                 </nav>
-
 
                 <div class="m-left-btn">
                     <ul class="m-btn">
@@ -299,11 +287,9 @@
                 </div>
             </div>
         </header>
-
     </div>
 
     <main class="W-new-goods-wrap">
-
         <!-- 히어로 배너 -->
         <section class="W-new-goods-hero" aria-label="여성 신제품 메인 이미지">
             <div class="W-new-goods-header">
@@ -314,7 +300,7 @@
         <div class="W-new-goods-inner inner">
             <h2 class="W-new-goods-title">여성 신제품</h2>
 
-            <!-- 카테고리 -->
+            <!-- 카테고리 Swiper 적용 -->
             <nav class="W-new-goods-category category-swiper swiper" aria-label="여성 신제품 카테고리">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -325,7 +311,6 @@
                             <span class="text-box">가방</span>
                         </a>
                     </div>
-
                     <div class="swiper-slide">
                         <a class="category-item" href="#">
                             <span class="img-box">
@@ -334,7 +319,6 @@
                             <span class="text-box">상의</span>
                         </a>
                     </div>
-
                     <div class="swiper-slide">
                         <a class="category-item" href="#">
                             <span class="img-box">
@@ -343,7 +327,6 @@
                             <span class="text-box">하의</span>
                         </a>
                     </div>
-
                     <div class="swiper-slide">
                         <a class="category-item" href="#">
                             <span class="img-box">
@@ -352,7 +335,6 @@
                             <span class="text-box">슈즈</span>
                         </a>
                     </div>
-
                     <div class="swiper-slide">
                         <a class="category-item" href="#">
                             <span class="img-box">
@@ -366,7 +348,6 @@
         </div>
 
         <!-- 여성 신제품 상품 영역 -->
-
         <section class="W-new-goods-list" aria-label="여성 신제품 상품 목록">
             <div class="W-new-goods-inner inner">
                 <!-- 필터 & 정렬 -->
@@ -377,8 +358,7 @@
                     </a>
                 </div>
 
-
-                <!-- 1번째 상품 행 / 화면: 상품 4개 가로 배치 -->
+                <!-- 1번째 상품 행 -->
                 <section class="W-new-goods-1" aria-label="여성 신제품 상의">
                     <ul class="goods-list">
                         <li class="goods-item">
@@ -388,14 +368,12 @@
                                         <img src="./images/new/w-new-top-1.jpg" alt="검은색 나시 드레스를 입은 여성 이미지">
                                     </a>
                                 </div>
-
                                 <div class="W-new-goods-text">
                                     <a href="#">베이비돌 스트랩 드레스 블랙</a>
                                     <a href="#">₩ 2,900,000</a>
                                 </div>
                             </article>
                         </li>
-
                         <li class="goods-item">
                             <article class="goods">
                                 <div class="W-new-goods-img">
@@ -409,7 +387,6 @@
                                 </div>
                             </article>
                         </li>
-
                         <li class="goods-item">
                             <article class="goods">
                                 <div class="W-new-goods-img">
@@ -423,7 +400,6 @@
                                 </div>
                             </article>
                         </li>
-
                         <li class="goods-item">
                             <article class="goods">
                                 <div class="W-new-goods-img">
@@ -440,7 +416,7 @@
                     </ul>
                 </section>
 
-                <!-- 2번째 행 /  화면: 전체 너비의 대형 가방 이미지 -->
+                <!-- 2번째 행 -->
                 <section class="W-new-goods-2" aria-label="여성 신제품 가방">
                     <article class="goods goods-feature">
                         <div class="W-new-goods-img">
@@ -455,11 +431,9 @@
                     </article>
                 </section>
 
-
-                <!-- 3번째 상품 행 / 화면: 상품 4개 가로 배치 -->
+                <!-- 3번째 상품 행 -->
                 <section class="W-new-goods-3" aria-label="여성 신제품 하의">
                     <ul class="goods-list">
-
                         <li class="goods-item">
                             <article class="goods">
                                 <div class="W-new-goods-img">
@@ -473,8 +447,6 @@
                                 </div>
                             </article>
                         </li>
-
-
                         <li class="goods-item">
                             <article class="goods">
                                 <div class="W-new-goods-img">
@@ -488,8 +460,6 @@
                                 </div>
                             </article>
                         </li>
-
-
                         <li class="goods-item">
                             <article class="goods">
                                 <div class="W-new-goods-img">
@@ -503,8 +473,6 @@
                                 </div>
                             </article>
                         </li>
-
-
                         <li class="goods-item">
                             <article class="goods">
                                 <div class="W-new-goods-img">
@@ -521,7 +489,7 @@
                     </ul>
                 </section>
 
-                <!-- 4번째 행 / 화면: 이미지 2개를 나란히 배치 -->
+                <!-- 4번째 행 -->
                 <section class="W-new-goods-4" aria-label="여성 신제품 캠페인 이미지">
                     <article class="goods goods-split">
                         <div class="W-new-goods-img">
@@ -539,10 +507,8 @@
                     </article>
                 </section>
 
-                <!-- 5번째 행 / 왼쪽: 세로 화보 스크롤 시 이미지 슬라이드 / 오른쪽: 액세서리 상품 4개(2 x 2) -->
+                <!-- 5번째 행 : Swiper 화보 + 상품 2x2 -->
                 <section class="W-new-goods-5" aria-label="여성 신제품 액세서리">
-
-                    <!-- 왼쪽 화보 -->
                     <div class="swipe swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
@@ -560,10 +526,7 @@
                         </div>
                     </div>
 
-
-                    <!-- 오른쪽 상품 4개 -->
                     <ul class="goods-list accessory-list">
-
                         <li class="goods-item">
                             <article class="goods">
                                 <div class="W-new-goods-img">
@@ -577,8 +540,6 @@
                                 </div>
                             </article>
                         </li>
-
-
                         <li class="goods-item">
                             <article class="goods">
                                 <div class="W-new-goods-img">
@@ -592,8 +553,6 @@
                                 </div>
                             </article>
                         </li>
-
-
                         <li class="goods-item">
                             <article class="goods">
                                 <div class="W-new-goods-img">
@@ -607,8 +566,6 @@
                                 </div>
                             </article>
                         </li>
-
-
                         <li class="goods-item">
                             <article class="goods">
                                 <div class="W-new-goods-img">
@@ -626,15 +583,12 @@
                 </section>
             </div>
         </section>
-
     </main>
 
     <!-- footer -->
     <footer>
         <div class="footer-inner inner">
-            <!-- left -->
             <div class="footer-left">
-                <!-- adress -->
                 <address class="location">
                     <p>
                         <span>회사명：발렌시아가코리아 유한책임회사</span>
@@ -659,11 +613,9 @@
                         <span>대표번호：02-6105-2188</span>
                     </p>
                 </address>
-                <!-- copyright -->
                 <p class="copyright">&copy;2026 Balenciaga</p>
             </div>
             <div class="footer-right">
-                <!-- right-1-부띠크, 언어 설정 -->
                 <div class="right-1">
                     <div class="boutique-wrap">
                         <h2 class="boutique">부띠크</h2>
@@ -681,7 +633,6 @@
                         </select>
                     </div>
                 </div>
-                <!-- right-2-cs, sns -->
                 <div class="right-2">
                     <div class="cs-wrap">
                         <h2 class="cs">문의하기</h2>
@@ -703,58 +654,57 @@
                     </div>
                     <div class="sns-wrap">
                         <ul class="sns-list">
-                            <li><a href="https://www.instagram.com/balenciaga"><img
-                                        src="./images/footer-icon/instagram-icon.svg" alt="인스타그램"></a></li>
-                            <li><a href="https://pf.kakao.com/_wxofhxj"><img src="./images/footer-icon/Kakao-icon.svg"
-                                        alt="카카오톡"></a></li>
-                            <li><a href="https://www.facebook.com/Balenciaga"><img
-                                        src="./images/footer-icon/facebook-icon.svg" alt="페이스북"></a></li>
-                            <li><a href="https://www.tiktok.com/@balenciaga"><img
-                                        src="./images/footer-icon/Ticktok-icon.svg" alt="틱톡"></a></li>
-                            <li><a href="https://open.spotify.com/user/mxmpjdm18c1eqgvx6osztt98g?si=087097c3c16545a0"><img
-                                        src="./images/footer-icon/Spotify-icon.svg" alt="스포티파이"></a></li>
+                            <li><a href="https://www.instagram.com/balenciaga"><img src="./images/footer-icon/instagram-icon.svg" alt="인스타그램"></a></li>
+                            <li><a href="https://pf.kakao.com/_wxofhxj"><img src="./images/footer-icon/Kakao-icon.svg" alt="카카오톡"></a></li>
+                            <li><a href="https://www.facebook.com/Balenciaga"><img src="./images/footer-icon/facebook-icon.svg" alt="페이스북"></a></li>
+                            <li><a href="https://www.tiktok.com/@balenciaga"><img src="./images/footer-icon/Ticktok-icon.svg" alt="틱톡"></a></li>
+                            <li><a href="https://open.spotify.com/user/mxmpjdm18c1eqgvx6osztt98g?si=087097c3c16545a0"><img src="./images/footer-icon/Spotify-icon.svg" alt="스포티파이"></a></li>
                         </ul>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- logo -->
         <div class="footer-logo">
             <img src="./images/footer-icon/Big-logo.svg" alt="3분의 1이 잘린 로고">
         </div>
     </footer>
 
-    <!-- script -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+    <!-- Script Execution -->
     <script>
-        
-    </script>
-    <script>
-        const swipe = new Swiper('.swipe', {
-            /* 가로 방향 슬라이드 (기본값) */
-            direction: 'horizontal',
+        document.addEventListener("DOMContentLoaded", function () {
+            /* 1. 화보 슬라이드 스와이퍼 */
+            const swipe = new Swiper('.swipe', {
+                direction: 'horizontal',
+                slidesPerView: 1,
+                grabCursor: true,
+                speed: 600,
+                loop: true,
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                observer: true,
+                observeParents: true,
+            });
 
-            slidesPerView: 1,
-
-            /* 마우스 드래그 및 터치 스와이프 허용 */
-            grabCursor: true,
-
-            /* 슬라이드 전환 속도 (ms) */
-            speed: 600,
-
-            /* 무한 루프 설정 (선택사항) */
-            loop: true,
-
-            /* 자동 재생 (선택사항 - 원치 않으시면 삭제 가능) */
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-
-            /* 요소 변화 감지 (화면 출력 오류 방지 필수 옵션) */
-            observer: true,
-            observeParents: true,
+            /* 2. 카테고리 스와이퍼 */
+            const categorySwiper = new Swiper('.category-swiper', {
+                slidesPerView: 'auto',
+                spaceBetween: 20,
+                freeMode: true,
+                grabCursor: true,
+                observer: true,
+                observeParents: true,
+                breakpoints: {
+                    790: {
+                        spaceBetween: 20,
+                        freeMode: false
+                    },
+                    0: {
+                        spaceBetween: 12
+                    }
+                }
+            });
         });
     </script>
 </body>
