@@ -95,24 +95,26 @@
     display: block;
 }
 
-/* 카테고리 Swiper */
+/* ==========================================================================
+   카테고리 & 커스텀 스크롤바 영역 스타일
+   ========================================================================== */
 
 .W-new-goods-category {
     width: 100%;
     margin: 2em 0;
-    overflow: hidden;
+    position: relative;
 }
 
-.W-new-goods-category .swiper-wrapper {
+/* 카테고리 리스트 기본 (PC 기준 중앙 정렬) */
+.bag-category-list {
     display: flex;
     justify-content: center;
-    /* PC에서는 중앙 정렬 */
+    gap: 20px;
+    width: 100%;
 }
 
-.W-new-goods-category .swiper-slide {
-    width: auto;
-    display: flex;
-    justify-content: center;
+.bag-category-item {
+    list-style: none;
 }
 
 .W-new-goods-category .category-item {
@@ -149,7 +151,14 @@
     white-space: nowrap;
 }
 
-/* 상품 공통 */
+/* 기본 상태에서 스크롤바 숨김 */
+.bag-category-scrollbar {
+    display: none;
+}
+
+/* ==========================================================================
+   상품 공통
+   ========================================================================== */
 
 .goods-item {
     min-width: 0;
@@ -199,7 +208,7 @@
     font-weight: 400;
 }
 
-/* 2. 1번째 & 3번째 상품 행 (4열 리스트) Flex 그리드 교정 */
+/* 1번째 & 3번째 상품 행 (4열 리스트) Flex 그리드 교정 */
 
 .W-new-goods-1,
 .W-new-goods-3 {
@@ -218,9 +227,7 @@
 .W-new-goods-1 .goods-item,
 .W-new-goods-3 .goods-item {
     flex: 1 1 0%;
-    /* 4개 항목이 동일하게 25%씩 영역 분배 */
     min-width: 0;
-    /* flex 자식이 이너 밖으로 튀어나가는 현상 방지 */
 }
 
 .W-new-goods-1 .W-new-goods-img,
@@ -326,7 +333,7 @@
 }
 
 /* ==========================================================================
-   반응형 미디어 쿼리
+   반응형 미디어 쿼리 (카테고리 스크롤바 포함)
    ========================================================================== */
 
 /* 1280px 이하 */
@@ -344,11 +351,58 @@
         width: 7.5em;
         height: 7.5em;
     }
+
+    /* 1280px 이하 반응형 가로 스크롤 적용 */
+    .bag-category-list {
+        justify-content: flex-start;
+        gap: 16px;
+        padding: 0 20px;
+        overflow-x: auto;
+        scrollbar-width: none;
+        /* Firefox 스크롤바 숨김 */
+        -ms-overflow-style: none;
+        /* IE/Edge 스크롤바 숨김 */
+    }
+
+    .bag-category-list::-webkit-scrollbar {
+        display: none;
+        /* Chrome/Safari 스크롤바 숨김 */
+    }
+
+    .bag-category-item {
+        flex-shrink: 0;
+    }
+
+    /* 커스텀 스크롤바 트랙 설정 */
+    .bag-category-scrollbar.is-scrollable {
+        position: relative;
+        display: block;
+        width: 500px;
+        height: 1px;
+        margin: 24px auto 0;
+        background: #e5e5e5;
+        cursor: pointer;
+        touch-action: none;
+        user-select: none;
+    }
+
+    /* 커스텀 스크롤바 썸(Thumb) 설정 */
+    .bag-category-scrollbar-thumb {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        background: #111;
+    }
+
+    .bag-category-scrollbar:focus-visible {
+        outline: 2px solid #111;
+        outline-offset: 6px;
+    }
 }
 
-/* 789px 이하 (모바일/태블릿) */
-@media (max-width: 789px) {
-
+/* 768px 이하 */
+@media (max-width: 768px) {
     body {
         font-size: 13.5px;
     }
@@ -362,11 +416,6 @@
         margin: 1.5em 0;
     }
 
-    /* 모바일에서는 왼쪽 정렬하여 자유로운 가로 스와이프 지원 */
-    .W-new-goods-category .swiper-wrapper {
-        justify-content: flex-start;
-    }
-
     .W-new-goods-category .img-box {
         width: 6.5em;
         height: 6.5em;
@@ -376,11 +425,15 @@
         font-size: 0.85em;
         margin: 0.5em 0;
     }
+
+    .bag-category-scrollbar.is-scrollable {
+        width: 240px;
+        margin-top: 18px;
+    }
 }
 
 /* 480px 이하 */
 @media (max-width: 480px) {
-
     body {
         font-size: 11px;
     }
@@ -397,5 +450,10 @@
 
     .W-new-goods-category .text-box {
         font-size: 0.85em;
+    }
+
+    .bag-category-scrollbar.is-scrollable {
+        width: 160px;
+        margin-top: 16px;
     }
 }

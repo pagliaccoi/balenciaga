@@ -313,49 +313,55 @@
         <div class="W-new-goods-inner inner">
             <h2 class="W-new-goods-title">여성 신제품</h2>
 
-            <!-- 카테고리 Swiper 적용 -->
-            <nav class="W-new-goods-category category-swiper swiper" aria-label="여성 신제품 카테고리">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
+            <!-- 커스텀 스크롤바가 적용된 카테고리 영역 -->
+            <nav class="W-new-goods-category" aria-label="여성 신제품 카테고리">
+                <ul class="bag-category-list" id="bag-category-list">
+                    <li class="bag-category-item">
                         <a class="category-item" href="#">
                             <span class="img-box">
                                 <img src="./images/new/category-bags.jpg" alt="검은색 가죽 가방 이미지">
                             </span>
                             <span class="text-box">가방</span>
                         </a>
-                    </div>
-                    <div class="swiper-slide">
+                    </li>
+                    <li class="bag-category-item">
                         <a class="category-item" href="#">
                             <span class="img-box">
                                 <img src="./images/new/category-top.jpg" alt="검은색 나시 드레스 이미지">
                             </span>
                             <span class="text-box">상의</span>
                         </a>
-                    </div>
-                    <div class="swiper-slide">
+                    </li>
+                    <li class="bag-category-item">
                         <a class="category-item" href="#">
                             <span class="img-box">
                                 <img src="./images/new/category-bottom.jpg" alt="검은색 바지 이미지">
                             </span>
                             <span class="text-box">하의</span>
                         </a>
-                    </div>
-                    <div class="swiper-slide">
+                    </li>
+                    <li class="bag-category-item">
                         <a class="category-item" href="#">
                             <span class="img-box">
                                 <img src="./images/new/category-shoes.jpg" alt="검은색 하이힐 이미지">
                             </span>
                             <span class="text-box">슈즈</span>
                         </a>
-                    </div>
-                    <div class="swiper-slide">
+                    </li>
+                    <li class="bag-category-item">
                         <a class="category-item" href="#">
                             <span class="img-box">
                                 <img src="./images/new/category-ac.jpg" alt="은색 하트 귀걸이 이미지">
                             </span>
                             <span class="text-box">악세사리</span>
                         </a>
-                    </div>
+                    </li>
+                </ul>
+
+                <div class="bag-category-scrollbar" role="scrollbar" aria-controls="bag-category-list"
+                    aria-label="카테고리 가로 스크롤" aria-orientation="horizontal" aria-valuemin="0" aria-valuemax="0"
+                    aria-valuenow="0" tabindex="0">
+                    <span class="bag-category-scrollbar-thumb"></span>
                 </div>
             </nav>
         </div>
@@ -711,25 +717,122 @@
                 observeParents: true,
             });
 
-            /* 2. 카테고리 스와이퍼 */
-            const categorySwiper = new Swiper('.category-swiper', {
-                slidesPerView: 'auto',
-                spaceBetween: 20,
-                freeMode: true,
-                grabCursor: true,
-                observer: true,
-                observeParents: true,
-                breakpoints: {
-                    790: {
-                        spaceBetween: 20,
-                        freeMode: false
-                    },
-                    0: {
-                        spaceBetween: 12
-                    }
+            /* 2. 카테고리 스크롤바 초기화 */
+            initCategoryScrollbar();
+        });
+
+        function initCategoryScrollbar() {
+            const list = document.querySelector('.bag-category-list');
+            const scrollbar = document.querySelector('.bag-category-scrollbar');
+            const thumb = document.querySelector('.bag-category-scrollbar-thumb');
+
+            if (!list || !scrollbar || !thumb) return;
+
+            let dragState = null;
+
+            function updateScrollbar() {
+                const maxScroll = list.scrollWidth - list.clientWidth;
+                const isScrollable = maxScroll > 0;
+
+                scrollbar.classList.toggle('is-scrollable', isScrollable);
+
+                if (!isScrollable) return;
+
+                const trackWidth = scrollbar.clientWidth;
+                const thumbWidth = Math.max(40, (list.clientWidth / list.scrollWidth) * trackWidth);
+                const maxThumbOffset = trackWidth - thumbWidth;
+                const thumbOffset = maxThumbOffset * (list.scrollLeft / maxScroll);
+
+                thumb.style.width = `${thumbWidth}px`;
+                thumb.style.transform = `translateX(${thumbOffset}px)`;
+                scrollbar.setAttribute('aria-valuemax', Math.round(maxScroll));
+                scrollbar.setAttribute('aria-valuenow', Math.round(list.scrollLeft));
+            }
+
+            function scrollFromPointer(clientX) {
+                const maxScroll = list.scrollWidth - list.clientWidth;
+                const trackRect = scrollbar.getBoundingClientRect();
+                const thumbWidth = thumb.getBoundingClientRect().width;
+                const maxThumbOffset = trackRect.width - thumbWidth;
+                const pointerOffset = clientX - trackRect.left - (thumbWidth / 2);
+                const progress = Math.min(1, Math.max(0, pointerOffset / maxThumbOffset));
+
+                list.scrollLeft = progress * maxScroll;
+            }
+
+            scrollbar.addEventListener('pointerdown', (event) => {
+                if (!scrollbar.classList.contains('is-scrollable')) return;
+
+                dragState = {
+                    pointerId: event.pointerId,
+                    startX: event.clientX,
+                    startScroll: list.scrollLeft,
+                    isThumb: event.target === thumb
+                };
+
+                scrollbar.setPointerCapture(event.pointerId);
+
+                if (!dragState.isThumb) {
+                    scrollFromPointer(event.clientX);
+                    dragState.startScroll = list.scrollLeft;
+                }
+
+                event.preventDefault();
+            });
+
+            scrollbar.addEventListener('pointermove', (event) => {
+                if (!dragState || event.pointerId !== dragState.pointerId) return;
+
+                if (dragState.isThumb) {
+                    const maxScroll = list.scrollWidth - list.clientWidth;
+                    const maxThumbOffset = scrollbar.clientWidth - thumb.getBoundingClientRect().width;
+                    const scrollDelta = (event.clientX - dragState.startX) * (maxScroll / maxThumbOffset);
+
+                    list.scrollLeft = dragState.startScroll + scrollDelta;
+                } else {
+                    scrollFromPointer(event.clientX);
                 }
             });
-        });
+
+            ['pointerup', 'pointercancel'].forEach((eventName) => {
+                scrollbar.addEventListener(eventName, () => {
+                    dragState = null;
+                });
+            });
+
+            scrollbar.addEventListener('keydown', (event) => {
+                const step = list.clientWidth * 0.8;
+
+                if (event.key === 'ArrowRight') list.scrollBy({ left: step });
+                else if (event.key === 'ArrowLeft') list.scrollBy({ left: -step });
+                else if (event.key === 'Home') list.scrollTo({ left: 0 });
+                else if (event.key === 'End') list.scrollTo({ left: list.scrollWidth });
+                else return;
+
+                event.preventDefault();
+            });
+
+            list.addEventListener('wheel', (event) => {
+                const maxScroll = list.scrollWidth - list.clientWidth;
+
+                if (maxScroll <= 0 || Math.abs(event.deltaX) > Math.abs(event.deltaY)) return;
+
+                const nextScroll = Math.min(
+                    maxScroll,
+                    Math.max(0, list.scrollLeft + event.deltaY)
+                );
+
+                if (nextScroll === list.scrollLeft) return;
+
+                event.preventDefault();
+                list.scrollLeft = nextScroll;
+            }, { passive: false });
+
+            list.addEventListener('scroll', updateScrollbar, { passive: true });
+            window.addEventListener('resize', updateScrollbar);
+
+            updateScrollbar();
+        }
     </script>
 </body>
 
