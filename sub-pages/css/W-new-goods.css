@@ -105,7 +105,8 @@
 
 .W-new-goods-category .swiper-wrapper {
     display: flex;
-    justify-content: center; /* PC에서는 중앙 정렬 */
+    justify-content: center;
+    /* PC에서는 중앙 정렬 */
 }
 
 .W-new-goods-category .swiper-slide {
@@ -161,6 +162,21 @@
 .W-new-goods-img {
     width: 100%;
     line-height: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.W-new-goods-img a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.W-new-goods-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .W-new-goods-text {
@@ -183,20 +199,32 @@
     font-weight: 400;
 }
 
-/* 1번째 행 : 상품 4개 */
+/* 2. 1번째 & 3번째 상품 행 (4열 리스트) Flex 그리드 교정 */
 
-.W-new-goods-1 {
+.W-new-goods-1,
+.W-new-goods-3 {
     width: 100%;
     margin-bottom: 3.38em;
 }
 
-.W-new-goods-1 .goods-list {
+.W-new-goods-1 .goods-list,
+.W-new-goods-3 .goods-list {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 0.25em;
+    width: 100%;
 }
 
-.W-new-goods-1 .W-new-goods-img {
+.W-new-goods-1 .goods-item,
+.W-new-goods-3 .goods-item {
+    flex: 1 1 0%;
+    /* 4개 항목이 동일하게 25%씩 영역 분배 */
+    min-width: 0;
+    /* flex 자식이 이너 밖으로 튀어나가는 현상 방지 */
+}
+
+.W-new-goods-1 .W-new-goods-img,
+.W-new-goods-3 .W-new-goods-img {
     aspect-ratio: 1 / 1.05;
 }
 
@@ -212,28 +240,8 @@
 }
 
 .W-new-goods-2 .W-new-goods-img {
-    aspect-ratio: 2.25 / 1;
-}
-
-.W-new-goods-2 .W-new-goods-img>a:not(.bookmark-link)>img {
-    object-fit: cover;
-}
-
-/* 3번째 행 : 상품 4개 */
-
-.W-new-goods-3 {
     width: 100%;
-    margin-bottom: 3.5em;
-}
-
-.W-new-goods-3 .goods-list {
-    display: flex;
-    justify-content: center;
-    gap: 0.25em;
-}
-
-.W-new-goods-3 .W-new-goods-img {
-    aspect-ratio: 1 / 1.05;
+    aspect-ratio: 2.25 / 1;
 }
 
 /* 4번째 행 : 이미지 2개 가로 배치 */
@@ -247,9 +255,7 @@
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.25em;
-    overflow: visible;
-    background: transparent;
-    line-height: 0;
+    width: 100%;
 }
 
 .W-new-goods-4 .goods-split .W-new-goods-img>a {
