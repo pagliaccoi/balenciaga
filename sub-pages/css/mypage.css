@@ -429,7 +429,7 @@ MOBILE
 ============================================================ */
 @media screen and (max-width:789px) {
     .mypage {
-        margin: 120px 60px;
+        margin: 75px 30px;
     }
 
     .inner {
