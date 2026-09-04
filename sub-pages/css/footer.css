@@ -14,13 +14,11 @@ footer {
 
 .footer-inner {
     width: 100%;
-    max-width: 1920px;
-    padding: 2em 1.5em;
+    padding: 1em;
     display: flex;
     justify-content: space-between;
     color: #fff;
     font-size: 0.88em;
-    background: #111;
     box-sizing: border-box;
 }
 
