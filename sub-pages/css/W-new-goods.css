@@ -22,14 +22,14 @@
 .W-new-goods-hero,
 .W-new-goods-header {
     width: 100%;
-    line-height: 0;
+    /* line-height: 0; */
 }
 
 .W-new-goods-header img {
-    display: block;
+    /* display: block; */
     width: 100%;
-    height: 640px;
-    object-fit: cover;
+    aspect-ratio: 1920 / 640;
+    /* object-fit: cover; */
 }
 
 
@@ -56,12 +56,48 @@
     text-align: center;
 }
 
+/* 상품 목록 전체 */
+
+.W-new-goods-list {
+    width: 100%;
+}
 
 /* 콘텐츠 전체 폭 */
 
 .W-new-goods-inner {
     width: 100%;
     margin: 0 auto;
+    position: relative;
+}
+
+
+/* 필터 & 정렬 */
+
+.filter {
+    z-index: 10;
+    top: -27px;
+    left: 0;
+}
+
+.filter a {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 0.94em;
+    font-weight: 500;
+    line-height: 1.4;
+    white-space: nowrap;
+    margin: 0 0 20px;
+}
+
+.filter img {
+    display: block;
+    width: 1.25em;
+    height: 1.25em;
+}
+
+.filter span {
+    display: block;
 }
 
 
@@ -117,45 +153,6 @@
     white-space: nowrap;
 }
 
-
-/* 상품 목록 전체 */
-
-.W-new-goods-list {
-    position: relative;
-    width: 100%;
-}
-
-
-/* 필터 & 정렬 */
-
-.W-new-goods-list .fillter {
-    position: absolute;
-    z-index: 10;
-    top: -27px;
-    left: 0;
-}
-
-.W-new-goods-list .fillter a {
-    display: flex;
-    align-items: center;
-    gap: 0.5em;
-    font-size: 0.94em;
-    font-weight: 500;
-    line-height: 1.4;
-    white-space: nowrap;
-}
-
-.W-new-goods-list .fillter img {
-    display: block;
-    width: 1.25em;
-    height: 1.25em;
-}
-
-.W-new-goods-list .fillter span {
-    display: block;
-}
-
-
 /* 상품 공통 */
 
 .goods-item {
@@ -167,58 +164,22 @@
 }
 
 .W-new-goods-img {
-    position: relative;
     width: 100%;
-    overflow: hidden;
-    background: #f6f6f6;
     line-height: 0;
-}
-
-.W-new-goods-img>a:not(.bookmark-link) {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-.W-new-goods-img>a:not(.bookmark-link)>img:not(.bookmark) {
-    display: block;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
-
-.W-new-goods-img .bookmark-link {
-    position: absolute;
-    z-index: 3;
-    top: 0.63em;
-    right: 0.63em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 0.94em;
-    height: 0.94em;
-}
-
-.W-new-goods-img .bookmark {
-    display: block;
-    width: 100%;
-    height: 100%;
 }
 
 .W-new-goods-text {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.13;
-    margin: 0.88em 0;
+    margin: 0.875em;
     text-align: center;
 }
 
 .W-new-goods-text a {
     display: block;
-    margin: 0.5em 0;
     font-size: 1em;
-    line-height: 1.2;
+    line-height: 1.4;
     font-weight: 500;
 
     var {
@@ -227,6 +188,7 @@
 }
 
 .W-new-goods-text a:nth-child(2) {
+    font-size: 0.88em;
     font-weight: 400;
 }
 
@@ -239,8 +201,8 @@
 }
 
 .W-new-goods-1 .goods-list {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    display: flex;
+    justify-content: center;
     gap: 0.25em;
 }
 
@@ -277,8 +239,8 @@
 }
 
 .W-new-goods-3 .goods-list {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    display: flex;
+    justify-content: center;
     gap: 0.25em;
 }
 
@@ -339,7 +301,7 @@
 }
 
 .swipe .swiper-wrapper {
-    height: 100%;
+    height: 50%;
 }
 
 .swipe .swiper-slide {
@@ -367,12 +329,8 @@
     aspect-ratio: 1 / 1;
 }
 
-.W-new-goods-5 .accessory-list .W-new-goods-img>a:not(.bookmark-link)>img {
-    object-fit: contain;
-}
 
-
-/* 1280px 이하일 때 */
+/* 1280px 이하*/
 
 @media (max-width: 1280px) {
 
@@ -389,31 +347,16 @@
 /* 789px 이하 */
 
 @media (max-width: 789px) {
+
     body {
         font-size: 14px;
     }
+
     .W-new-goods-inner {
         width: calc(100% - 24px);
     }
-}
 
-
-/* 480px 이하 */
-
-@media (max-width: 480px) {
-    .W-new-goods-inner {
-        width: calc(100% - 16px);
-    }
-}
-
-/* =========================================================
-   카테고리 가로 스크롤 반응형
-   ---------------------------------------------------------
-   모바일에서 가방 / 상의 / 하의 / 슈즈 / 악세사리를
-   한 줄로 유지하면서 좌우로 스와이프할 수 있도록 합니다.
-   ========================================================= */
-
-@media (max-width: 789px) {
+    /* 카테고리 가로 스크롤 반응형 */
 
     .W-new-goods-category {
         width: 100%;
@@ -450,7 +393,16 @@
     }
 }
 
+
+/* 480px 이하 */
+
 @media (max-width: 480px) {
+
+    .W-new-goods-inner {
+        width: calc(100% - 16px);
+    }
+
+    /* 카테고리 가로 스크롤 반응형 */
 
     .W-new-goods-category {
         padding: 0 8px;
