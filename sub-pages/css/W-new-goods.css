@@ -29,7 +29,6 @@
     aspect-ratio: 1920 / 640;
 }
 
-
 /* 제목 */
 
 .W-new-goods-heading {
@@ -67,7 +66,6 @@
     position: relative;
 }
 
-
 /* 필터 & 정렬 */
 
 .filter {
@@ -97,24 +95,23 @@
     display: block;
 }
 
-
-/* 카테고리 */
+/* 카테고리 Swiper */
 
 .W-new-goods-category {
     width: 100%;
     margin: 2em 0;
+    overflow: hidden;
 }
 
-.W-new-goods-category .category-list {
+.W-new-goods-category .swiper-wrapper {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* PC에서는 중앙 정렬 */
 }
 
-.W-new-goods-category ul {
+.W-new-goods-category .swiper-slide {
+    width: auto;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    gap: 1.25em;
 }
 
 .W-new-goods-category .category-item {
@@ -130,9 +127,7 @@
     align-items: center;
     margin-bottom: 0.44em;
     width: 10em;
-    /* 160px -> 10em (1em = 16px 기준) */
     height: 10em;
-    /* 160px -> 10em */
     max-width: 100%;
 }
 
@@ -188,7 +183,6 @@
     font-weight: 400;
 }
 
-
 /* 1번째 행 : 상품 4개 */
 
 .W-new-goods-1 {
@@ -205,7 +199,6 @@
 .W-new-goods-1 .W-new-goods-img {
     aspect-ratio: 1 / 1.05;
 }
-
 
 /* 2번째 행 : 대형 가방 이미지 */
 
@@ -226,7 +219,6 @@
     object-fit: cover;
 }
 
-
 /* 3번째 행 : 상품 4개 */
 
 .W-new-goods-3 {
@@ -243,7 +235,6 @@
 .W-new-goods-3 .W-new-goods-img {
     aspect-ratio: 1 / 1.05;
 }
-
 
 /* 4번째 행 : 이미지 2개 가로 배치 */
 
@@ -275,7 +266,6 @@
     object-fit: cover;
 }
 
-
 /* 5번째 행 : 왼쪽 화보 스와이퍼 + 오른쪽 2x2 상품 그리드 */
 
 .W-new-goods-5 {
@@ -286,9 +276,6 @@
     width: 100%;
     margin-bottom: 100px;
 }
-
-
-/* 왼쪽 화보 (높이 상승 및 스와이퍼 absolute 호환 강제 설정) */
 
 .swipe {
     width: 100%;
@@ -321,8 +308,6 @@
     object-fit: cover !important;
 }
 
-/* 오른쪽 상품 4개 (2x2 그리드) */
-
 .W-new-goods-5 .accessory-list {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -333,7 +318,6 @@
 .W-new-goods-5 .accessory-list .W-new-goods-img {
     aspect-ratio: 1 / 1;
 }
-
 
 /* ==========================================================================
    반응형 미디어 쿼리
@@ -356,8 +340,7 @@
     }
 }
 
-
-/* 789px 이하 */
+/* 789px 이하 (모바일/태블릿) */
 @media (max-width: 789px) {
 
     body {
@@ -369,47 +352,13 @@
         padding: 0 1em;
     }
 
-    /* 카테고리 전체 감싸는 영역 */
     .W-new-goods-category {
-        width: 100%;
         margin: 1.5em 0;
     }
 
-    .W-new-goods-category .category-list {
-        width: 100%;
-    }
-
-    /* [핵심] ul 태그에 가로 스크롤 부여 */
-    .W-new-goods-category ul {
-        display: flex;
-        flex-wrap: nowrap;
-        /* 줄바꿈 금지 */
+    /* 모바일에서는 왼쪽 정렬하여 자유로운 가로 스와이프 지원 */
+    .W-new-goods-category .swiper-wrapper {
         justify-content: flex-start;
-        /* 왼쪽 정렬 */
-        gap: 1em;
-        /* 아이템 간격 */
-        width: 100%;
-        overflow-x: auto;
-        /* 가로 스크롤 생성 */
-        overflow-y: hidden;
-        -webkit-overflow-scrolling: touch;
-        /* iOS 부드러운 스크롤 */
-        scrollbar-width: none;
-        /* 파이어폭스 스크롤바 숨김 */
-        padding: 0.5em 1em;
-        /* 좌우 여백 */
-    }
-
-    /* 스크롤바 숨기기 (Chrome, Safari) */
-    .W-new-goods-category ul::-webkit-scrollbar {
-        display: none;
-    }
-
-    /* 개별 아이템 고정 너비 지정 */
-    .W-new-goods-category .category-item {
-        flex: 0 0 auto;
-        /* 너비 줄어듦 방지 */
-        width: 6.5em;
     }
 
     .W-new-goods-category .img-box {
@@ -423,7 +372,6 @@
     }
 }
 
-
 /* 480px 이하 */
 @media (max-width: 480px) {
 
@@ -434,18 +382,6 @@
     .W-new-goods-inner {
         width: 100%;
         padding: 0 0.5em;
-    }
-
-    .W-new-goods-category {
-        padding: 0 0.25em;
-    }
-
-    .W-new-goods-category ul {
-        gap: 0.75em;
-    }
-
-    .W-new-goods-category .category-item {
-        width: 6.5em;
     }
 
     .W-new-goods-category .img-box {
