@@ -432,7 +432,7 @@ header > .inner {
     flex-direction: column;
   }
   .m-close-btn{
-    top: 0;
+    top: 15px;
   }
   .gnb-list,
   .m-btn {
@@ -476,6 +476,6 @@ header > .inner {
 /* mobile - 2 */
 @media screen and (max-width: 480px) {
   .inner > .logo {
-    width: 120px;
+    /* width: 120px; */
   }
 }
