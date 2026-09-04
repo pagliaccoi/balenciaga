@@ -11,6 +11,7 @@ INNER
     width: 100%;
     margin: 0 auto;
 }
+
 /* ============================================================
 PAYMENT LIST
 ============================================================ */
@@ -216,9 +217,12 @@ BOTTOM BUTTON
 I-PAD (IPAD PRO)
 ============================================================ */
 @media screen and (max-width:1280px) {
-    .inner {
-        /* background-color: pink; */
+    .payment-list-wrap>.inner {
+        max-width: 1280px;
+        width: 100%;
+        margin: 0 auto;
     }
+
 
     .payment-list {
         padding: 0 120px;
@@ -231,6 +235,15 @@ I-PAD (IPAD PRO)
         align-items: center;
     }
 
+    .product-info-left {
+        width: 552.67px;
+    }
+
+    .payment-product img {
+        width: 200px;
+        height: 200px;
+    }
+
 
 }
 
@@ -238,6 +251,13 @@ I-PAD (IPAD PRO)
 MOBILE (IPAD MINI & GALAXY S)
 ============================================================ */
 @media screen and (max-width:789px) {
+
+    .payment-list-wrap>.inner {
+        max-width: 789px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
 
     .payment-list-wrap {
         margin: 75px 0;
