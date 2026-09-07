@@ -99,7 +99,7 @@ main {
     max-width: 1280px;
     width: 100%;
     border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    padding: 100px 0;
+    /* padding: 100px 0; */
   }
 
   .campaign-inner .campaign-part p > a {
