@@ -354,7 +354,7 @@
 
     /* 1280px 이하 반응형 가로 스크롤 적용 */
     .bag-category-list {
-        justify-content: flex-start;
+        justify-content: center;
         gap: 16px;
         padding: 0 20px;
         overflow-x: auto;
@@ -401,8 +401,8 @@
     }
 }
 
-/* 768px 이하 */
-@media (max-width: 768px) {
+/* 789px 이하 */
+@media (max-width: 789px) {
     body {
         font-size: 13.5px;
     }
@@ -412,6 +412,35 @@
         padding: 0 1em;
     }
 
+    /* --- 화보 및 대형 스와이프 이미지 숨김 --- */
+    .W-new-goods-2,            /* 2번째 행 (대형 가방 화보) */
+    .W-new-goods-4,            /* 4번째 행 (대형 2분할 캠페인) */
+    .W-new-goods-5 .swipe {     /* 5번째 행 (좌측 Swiper 화보) */
+        display: none !important;
+    }
+
+    /* --- 1번째 & 3번째 행: 2행 2열(2열 그리드) 변경 --- */
+    .W-new-goods-1 .goods-list,
+    .W-new-goods-3 .goods-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.5em 0.25em;
+    }
+
+    /* --- 5번째 행: Swiper가 사라진 후 상품 4개만 2행 2열 배치 --- */
+    .W-new-goods-5 {
+        display: block;
+        margin-bottom: 60px;
+    }
+
+    .W-new-goods-5 .accessory-list {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.5em 0.25em;
+        width: 100%;
+    }
+
+    /* 카테고리 & 스크롤바 */
     .W-new-goods-category {
         margin: 1.5em 0;
     }
@@ -444,12 +473,12 @@
     }
 
     .W-new-goods-category .img-box {
-        width: 6.5em;
-        height: 6.5em;
+        width: 5.5em;
+        height: 5.5em;
     }
 
     .W-new-goods-category .text-box {
-        font-size: 0.85em;
+        font-size: 0.8em;
     }
 
     .bag-category-scrollbar.is-scrollable {
