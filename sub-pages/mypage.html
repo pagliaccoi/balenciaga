@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./css/mypage.css">
     <link rel="stylesheet" href="./css/header-style.css">
     <link rel="stylesheet" href="./css/footer.css">
-
+    <script src="../js/header.js" defer></script>
 </head>
 
 <body>
@@ -33,9 +33,9 @@
                             <div class="sub-menu-wrap">
                                 <ul class="sub-menu">
                                     <li>
-                                        <a href="./sub-pages/W-new-goods.html">여성 신제품</a>
+                                        <a href="#">여성 신제품</a>
                                         <ul class="sub-menu-category">
-                                            <li class="menu-tab-btn"><a href="./sub-pages/W-new-goods.html">전체보기</a>
+                                            <li class="menu-tab-btn"><a href="/sub-pages/W-new-goods.html">전체보기</a>
                                             </li>
                                             <li><a href="#">겨울 26</a></li>
                                             <li><a href="#">홀리데이</a></li>
@@ -54,9 +54,9 @@
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="./sub-pages/sub_newbag.html">가방 신제품</a>
+                                        <a href="#">가방 신제품</a>
                                         <ul class="sub-menu-category">
-                                            <li class="menu-tab-btn"><a href="./sub-pages/sub_newbag.html">전체보기</a></li>
+                                            <li class="menu-tab-btn"><a href="/sub-pages/sub_newbag.html">전체보기</a></li>
                                             <li><a href="#">LE CITY</a></li>
                                             <li><a href="#">RODEO</a></li>
                                             <li><a href="#">LE 7</a></li>
@@ -81,8 +81,7 @@
                                     <li>
                                         <a href="#">상의</a>
                                         <ul class="sub-menu-category">
-                                            <li class="menu-tab-btn"><a
-                                                    href="./sub-pages/index-shop-women.html">전체보기</a>
+                                            <li class="menu-tab-btn"><a href="/sub-pages/index-shop-women.html">전체보기</a>
                                             </li>
                                             <li><a href="#">티셔츠</a></li>
                                             <li><a href="#">니트웨어</a></li>
@@ -216,10 +215,10 @@
                                     <li>
                                         <a href="#">캠페인</a>
                                         <ul class="sub-menu-category">
-                                            <li class="menu-tab-btn"><a href="./sub-pages/index-campaign.html">전체보기</a>
+                                            <li class="menu-tab-btn"><a href="/sub-pages/index-campaign.html">전체보기</a>
                                             </li>
                                             <li class="menu-tab-btn"><a
-                                                    href="./sub-pages/index-campaign-newyork.html">New York</a>
+                                                    href="/sub-pages/index-campaign-newyork.html">New York</a>
                                             </li>
                                             <li><a href="#">Soccer Series</a></li>
                                             <li><a href="#">Icon Photocard</a></li>
@@ -255,8 +254,8 @@
                     </div>
 
                     <div class="m-user-text">
-                        <p class="login"><a href="./sub-pages/login.html">로그인</a></p>
-                        <p class="mypage"><a href="./sub-pages/mypage.html">마이페이지</a></p>
+                        <p class="login"><a href="/sub-pages/login.html">로그인</a></p>
+                        <p class="mypage"><a href="/sub-pages/mypage.html">마이페이지</a></p>
                     </div>
                 </nav>
 
@@ -282,12 +281,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="./sub-pages/login.html">
+                            <a href="/sub-pages/login.html">
                                 <img src="./images/header-icon/icon-profile.svg" alt="마이페이지 및 로그인 유저 프로필 아이콘">
                             </a>
                         </li>
                         <li>
-                            <a href="./sub-pages/payment.html">
+                            <a href="/sub-pages/payment.html">
                                 <img src="./images/header-icon/icon-bag.svg" alt="장바구니 아이콘">
                             </a>
                             <span class="cart-count">1</span>
@@ -298,60 +297,8 @@
         </header>
 
     </div>
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@14.0.1/swiper-bundle.min.js"></script>
-
-    <script>
-        // const swiper = new Swiper('.headerSwiper', {
-        //     loop: true,
-        //     spaceBetween: 0,
-        //     centeredSlides: false,
-
-        //     autoplay: {
-        //         delay: 2500,
-        //         disableOnInteraction: false,
-        //     },
-        // });
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const mainMenuLis = document.querySelectorAll('.main-menu > li');
-            const header = document.querySelector('header');
-            const subBg = document.querySelector('.sub-bg');
-            const allSubWraps = document.querySelectorAll('.sub-menu-wrap');
-
-            mainMenuLis.forEach(li => {
-                const subWrap = li.querySelector('.sub-menu-wrap');
-
-                li.addEventListener('mouseenter', () => {
-                    // 1. 모든 서브메뉴 닫기 (클래스 제거)
-                    allSubWraps.forEach(wrap => {
-                        wrap.classList.remove('is-active');
-                    });
-
-                    // 2. 현재 호버한 메뉴에 서브메뉴가 있는 경우에만 배경과 서브메뉴 열기
-                    if (subWrap) {
-                        subBg.classList.add('is-active'); // 배경 슬라이드 열림
-                        subWrap.classList.add('is-active'); // 서브메뉴 열림
-                    } else {
-                        // '고객서비스'처럼 서브메뉴가 없는 메뉴에 마우스 올리면 배경 닫기
-                        subBg.classList.remove('is-active');
-                    }
-                });
-            });
-
-            // 헤더 전체 영역을 벗어났을 때 모두 닫기
-            header.addEventListener('mouseleave', () => {
-                subBg.classList.remove('is-active'); // 배경 닫힘
-
-                allSubWraps.forEach(wrap => {
-                    wrap.classList.remove('is-active');
-                });
-            });
-        });
-    </script>
-
     <!-- MAIN -->
-    <div class="mypage">
+    <!-- <div class="mypage">
         <div class="inner">
             <div class="mp-main">
                 <h2>회원정보</h2>
@@ -495,6 +442,174 @@
                 <a href="#">로그아웃</a>
             </div>
 
+            <div class="mp-footer-wrap">
+                <address>
+                    <ul class="mp-footer">
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">1:1문의</a></li>
+                        <li><a href="#">고객센터</a></li>
+                        <li><a href="#">회원탈퇴</a></li>
+                    </ul>
+                </address>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="mypage">
+        <div class="inner">
+            <!-- 상단 헤더 & 유저 인사말 -->
+            <div class="mp-header-section">
+                <h1 class="mp-page-title">마이페이지</h1>
+                <div class="user-welcome">
+                    <div class="welcome-text">
+                        <strong>홍길동</strong>님 안녕하세요
+                    </div>
+                    <div class="user-badge">
+                        <span class="badge-icon">W</span>
+                        <span class="badge-name">VVIP 회원</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 멤버십 / 바코드 / 요약 대시보드 (이미지 상단 카드 형태) -->
+            <div class="mp-dashboard-card">
+                <div class="dashboard-item user-membership">
+                    <div class="user-avatar">W</div>
+                    <div class="membership-info">
+                        <strong>VVIP 회원</strong>
+                        <a href="#" class="link-benefit">멤버십 혜택 보기 &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="dashboard-item barcode-box">
+                    <div class="barcode-img">||||||||||||||||||||||||||||||||||</div>
+                    <span class="barcode-num">1749643741954459</span>
+                </div>
+
+                <div class="dashboard-item count-box">
+                    <span class="count-num">02</span>
+                    <span class="count-label">쿠폰</span>
+                </div>
+
+                <div class="dashboard-item count-box">
+                    <span class="count-num">1000P</span>
+                    <span class="count-label">나의 마일리지</span>
+                </div>
+
+                <div class="dashboard-item count-box">
+                    <span class="count-num">02</span>
+                    <span class="count-label">매장피팅예약</span>
+                </div>
+
+                <div class="dashboard-item count-box">
+                    <span class="count-num">0</span>
+                    <span class="count-label">위시리스트</span>
+                </div>
+            </div>
+
+            <!-- 필터 버튼 (탭 영역) -->
+            <div class="mp-filter-bar">
+                <div class="filter-tabs">
+                    <button class="tab-btn active">주문배송</button>
+                    <button class="tab-btn">배송완료</button>
+                    <button class="tab-btn">취소/반품 내역</button>
+                </div>
+                <div class="filter-periods">
+                    <button class="period-btn active">1개월</button>
+                    <button class="period-btn">3개월</button>
+                    <button class="period-btn">6개월</button>
+                    <button class="period-btn">전체</button>
+                </div>
+            </div>
+
+            <!-- 1. 주문내역 영역 (텍스트 링크 형태) -->
+            <section class="mp-section">
+                <div class="section-head">
+                    <h3>주문배송 <span class="count-badge">02개 상품</span></h3>
+                    <a href="#" class="link-more">진행중 전체 &rarr;</a>
+                </div>
+                <ul class="text-list-wrap">
+                    <li class="text-list-item">
+                        <a href="#" class="item-title">여성 가에타 웨지 텅 블랙</a>
+                        <span class="item-price">₩ 1,450,000</span>
+                        <span class="item-status">배송중</span>
+                    </li>
+                    <li class="text-list-item">
+                        <a href="#" class="item-title">남성 바시티 재킷 블랙</a>
+                        <span class="item-price">₩ 4,700,000</span>
+                        <span class="item-status">상품준비중</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 2. 취소 및 반품 영역 (텍스트 링크 형태) -->
+            <section class="mp-section">
+                <div class="section-head">
+                    <h3>취소 및 반품 <span class="count-badge">02개 상품</span></h3>
+                </div>
+                <ul class="text-list-wrap">
+                    <li class="text-list-item">
+                        <a href="#" class="item-title">남성 커브드 진</a>
+                        <span class="item-price">₩ 1,790,000</span>
+                        <span class="item-status cancel">취소완료</span>
+                    </li>
+                    <li class="text-list-item">
+                        <a href="#" class="item-title">여성 르 셋 볼링백 스몰 블랙</a>
+                        <span class="item-price">₩ 4,950,000</span>
+                        <span class="item-status cancel">반품완료</span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- 3. 최근 본 상품 영역 (이미지 유지) -->
+            <section class="mp-section">
+                <div class="section-head">
+                    <h3>최근 본 상품 <span class="count-badge">14개</span></h3>
+                </div>
+                <div class="recent-product-grid">
+                    <div class="recent-product-card">
+                        <a href="#" class="img-box">
+                            <img src="/images/My-page/MP-goods/goods04.png" alt="남성 르 셋 볼링백 라지 블랙/브라운">
+                        </a>
+                        <h4 class="title"><a href="#">남성 르 셋 볼링백 라지 블랙/브라운</a></h4>
+                        <p class="price">₩ 6,650,000</p>
+                    </div>
+                    <div class="recent-product-card">
+                        <a href="#" class="img-box">
+                            <img src="/images/My-page/MP-goods/goods07.png" alt="여성 에이사 일립스 이어링 샤이니 골드">
+                        </a>
+                        <h4 class="title"><a href="#">여성 에이사 일립스 이어링 샤이니 골드</a></h4>
+                        <p class="price">₩ 1,250,000</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 내 정보 및 주소 세부 정보 -->
+            <section class="mp-section info-detail-section">
+                <h3>회원 상세 정보</h3>
+                <div class="info-grid">
+                    <div class="info-row">
+                        <strong>이메일</strong>
+                        <p>test@example.com</p>
+                    </div>
+                    <div class="info-row">
+                        <strong>전화번호</strong>
+                        <p>010-1234-5678</p>
+                    </div>
+                    <div class="info-row">
+                        <strong>주소</strong>
+                        <p>[04524] 서울특별시 중구 세종대로 110 (태평로1가) 101동 1004호 / OOO빌딩 3층</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 하단 버튼 영역 -->
+            <div class="mp-btn">
+                <a href="#">회원정보 수정</a>
+                <a href="#">로그아웃</a>
+            </div>
+
+            <!-- 푸터 링크 영역 -->
             <div class="mp-footer-wrap">
                 <address>
                     <ul class="mp-footer">
