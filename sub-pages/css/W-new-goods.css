@@ -24,9 +24,16 @@
     width: 100%;
 }
 
-.W-new-goods-header img {
+.W-new-goods-header-img,
+.W-new-goods-header .pc-img {
     width: 100%;
-    aspect-ratio: 1920 / 640;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 모바일용 이미지는 PC(데스크톱) 기본 상태에서 숨김 */
+.W-new-goods-header .m-img {
+    display: none;
 }
 
 /* 제목 */
@@ -339,7 +346,7 @@
 /* 1280px 이하 */
 @media (max-width: 1280px) {
     body {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .W-new-goods-inner {
@@ -404,7 +411,35 @@
 /* 789px 이하 */
 @media (max-width: 789px) {
     body {
-        font-size: 13.5px;
+        font-size: 14px;
+    }
+
+    /* --- 헤더 모바일 이미지 교체 --- */
+    .W-new-goods-hero,
+    .W-new-goods-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .W-new-goods-header {
+        margin-top: 2em;
+    }
+
+    /* 모바일 상태에서 PC 이미지 완전 숨김 */
+    .W-new-goods-header .pc-img {
+        display: none !important;
+    }
+
+
+    .W-new-goods-header .m-img {
+        display: block !important;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .W-new-goods-header .m-img img {
+        width: 100%;
     }
 
     .W-new-goods-inner {
@@ -413,9 +448,12 @@
     }
 
     /* --- 화보 및 대형 스와이프 이미지 숨김 --- */
-    .W-new-goods-2,            /* 2번째 행 (대형 가방 화보) */
-    .W-new-goods-4,            /* 4번째 행 (대형 2분할 캠페인) */
-    .W-new-goods-5 .swipe {     /* 5번째 행 (좌측 Swiper 화보) */
+    .W-new-goods-2,
+    /* 2번째 행 (대형 가방 화보) */
+    .W-new-goods-4,
+    /* 4번째 행 (대형 2분할 캠페인) */
+    .W-new-goods-5 .swipe {
+        /* 5번째 행 (좌측 Swiper 화보) */
         display: none !important;
     }
 
@@ -463,9 +501,6 @@
 
 /* 480px 이하 */
 @media (max-width: 480px) {
-    body {
-        font-size: 11px;
-    }
 
     .W-new-goods-inner {
         width: 100%;
