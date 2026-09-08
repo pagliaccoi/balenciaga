@@ -15,13 +15,13 @@
 </head>
 
 <body>
-   <!-- header -->
+    <!-- header -->
     <div class="wrap">
         <header>
             <div class="sub-bg"></div>
             <div class="inner">
                 <h1 class="logo">
-                    <a href="../index.html">
+                    <a href="./index.html">
                         <img src="./images/header/header-icon/logo-w.svg" alt="발렌시아가 로고">
                     </a>
                 </h1>
@@ -35,7 +35,7 @@
                                     <li>
                                         <a href="#">여성 신제품</a>
                                         <ul class="sub-menu-category">
-                                            <li class="menu-tab-btn"><a href="./W-new-goods.html">전체보기</a>
+                                            <li class="menu-tab-btn"><a href="./sub-pages/W-new-goods.html">전체보기</a>
                                             </li>
                                             <li><a href="#">겨울 26</a></li>
                                             <li><a href="#">홀리데이</a></li>
@@ -56,7 +56,7 @@
                                     <li>
                                         <a href="#">가방 신제품</a>
                                         <ul class="sub-menu-category">
-                                            <li class="menu-tab-btn"><a href="./sub_newbag.html">전체보기</a></li>
+                                            <li class="menu-tab-btn"><a href="./sub-pages/sub_newbag.html">전체보기</a></li>
                                             <li><a href="#">LE CITY</a></li>
                                             <li><a href="#">RODEO</a></li>
                                             <li><a href="#">LE 7</a></li>
@@ -82,7 +82,7 @@
                                         <a href="#">상의</a>
                                         <ul class="sub-menu-category">
                                             <li class="menu-tab-btn"><a
-                                                    href="./index-shop-women.html">전체보기</a>
+                                                    href="./sub-pages/index-shop-women.html">전체보기</a>
                                             </li>
                                             <li><a href="#">티셔츠</a></li>
                                             <li><a href="#">니트웨어</a></li>
@@ -216,10 +216,10 @@
                                     <li>
                                         <a href="#">캠페인</a>
                                         <ul class="sub-menu-category">
-                                            <li class="menu-tab-btn"><a href="./index-campaign.html">전체보기</a>
+                                            <li><a href="#">전체보기</a>
                                             </li>
                                             <li class="menu-tab-btn"><a
-                                                    href="./index-campaign-newyork.html">New York</a>
+                                                    href="./sub-pages/index-campaign-newyork.html">New York</a>
                                             </li>
                                             <li><a href="#">Soccer Series</a></li>
                                             <li><a href="#">Icon Photocard</a></li>
@@ -255,8 +255,8 @@
                     </div>
 
                     <div class="m-user-text">
-                        <p class="login"><a href="./login.html">로그인</a></p>
-                        <p class="mypage"><a href="./mypage.html">마이페이지</a></p>
+                        <p class="login"><a href="./sub-pages/login.html">로그인</a></p>
+                        <p class="mypage"><a href="./sub-pages/mypage.html">마이페이지</a></p>
                     </div>
                 </nav>
 
@@ -282,12 +282,12 @@
                             </a>
                         </li>
                         <li>
-                            <a href="./login.html">
+                            <a href="./sub-pages/login.html">
                                 <img src="./images/header-icon/icon-profile.svg" alt="마이페이지 및 로그인 유저 프로필 아이콘">
                             </a>
                         </li>
                         <li>
-                            <a href="./payment.html">
+                            <a href="./sub-pages/payment.html">
                                 <img src="./images/header-icon/icon-bag.svg" alt="장바구니 아이콘">
                             </a>
                             <span class="cart-count">1</span>
@@ -305,199 +305,178 @@
                 <div class="section-title">
                     <h2><a href="#">BALENCIAGA CAMPAIGN</a></h2>
                 </div>
-                <div class="campaign-menu-wrap">
+
+                <nav class="campaign-menu-wrap">
                     <ul class="campaign-menu-list">
                         <li><a href="/sub-pages/index-campaign.html">All</a></li>
-                        <li><a href="#">New York</a></li>
+                        <li><a href="#" class="active">New York</a></li>
                         <li><a href="#">Soccer Series</a></li>
                         <li><a href="#">Icon Photocard</a></li>
                         <li><a href="#">Sneakers</a></li>
                         <li><a href="#">NBA Collaboration</a></li>
                     </ul>
+                </nav>
+
+                <!-- 최상단 히어로 배너 -->
+                <div class="campaign-top-hero">
+                    <div class="hero-bg-img">
+                        <img src="./images/campaign/new-york/main-banner.jpg" alt="NEW YORK MINUTE 캠페인 메인 비주얼">
+                    </div>
+                    <div class="hero-title-overlay">
+                        <h2 class="main-title">NEW YORK MINUTE</h2>
+                    </div>
                 </div>
 
-                <div class="campaign-newyork">
-                    <h2 class="campaign-newyork-title">
-                        A New York Minute Take #1
-                    </h2>
+                <!-- 1. THE STORY 섹션 -->
+                <div class="campaign-section campaign-story-section">
+                    <div class="story-content-top">
+                        <div class="hero-title-box">
+                            <span class="step-num">01 / THE STORY</span>
+                            <h2 class="campaign-newyork-title">THE CITY NEVER POSES.</h2>
+                        </div>
+                        <div class="hero-desc-box">
+                            <p class="section-desc">뉴욕의 일상적인 순간을 정제되지 않은 시선으로 포착했습니다. 움직이는 군중, 잠깐의 정적, 그리고 도시와 함께 변하는
+                                실루엣.</p>
+                            <span class="photo-credit">PHOTOGRAPHED IN NEW YORK<br>WINTER 2026</span>
+                        </div>
+                    </div>
 
+                    <!-- 로데오 비하인드 컷 그리드 -->
                     <div class="campaign-rodeo-behind">
                         <ul class="behind-img-box">
                             <li class="rodeo-img1">
-                                <img src="./images/campaign/new-york/rodeo-behind1.jpg"
-                                    alt="A New York Minute 캠페인의 첫번째 비하인드 스틸 컷">
+                                <img src="./images/campaign/new-york/rodeo-behind1.jpg" alt="캠페인 비하인드 스틸 컷 1">
                             </li>
                             <li class="rodeo-img2">
-                                <img src="./images/campaign/new-york/rodeo-behind2.jpg"
-                                    alt="A New York Minute 캠페인의 두번째 비하인드 스틸 컷">
+                                <img src="./images/campaign/new-york/rodeo-behind2.jpg" alt="캠페인 비하인드 스틸 컷 2">
                             </li>
                             <li class="rodeo-img3">
-                                <img src="./images/campaign/new-york/rodeo-behind3.jpg"
-                                    alt="A New York Minute 캠페인의 세번째 비하인드 스틸 컷">
+                                <img src="./images/campaign/new-york/rodeo-behind3.jpg" alt="캠페인 비하인드 스틸 컷 3">
                             </li>
                         </ul>
                     </div>
-                    <div class="behind-text-box">
-                        <p class="behind-text-title">Rodeo Bag Campaign Still Cut</p>
-                        <p class="behind-text">
-                            <span>2026년 5월 공개된 셀린 송 감독의 발렌시아가 캠페인 A New York Minute는 뉴욕을 배경으로 한 세 편의 60초 필름으로
-                                구성되었다.</span>
-                            <span>사라 피전이 출연한 작품은 일상과 영화 제작의 경계를 넘나들며, 르 시티, ​르 셋 볼링, ​로데오 백을 각각 도시 속 다양한 순간을 상징하는 아이코닉한
-                                오브제로 조명한다.</span>
-                            <span>특히 로데오 백은 세련된 이브닝웨어와 함께 스타일링되어 뉴욕의 우아한 저녁 무드를 완성하였다.</span>
-                        </p>
+
+                    <div class="quote-box">
+                        <p>"A minute is enough to become someone else."</p>
                     </div>
-
-                    <div class="rodeo-bag-product product">
-                        <h2>Rodeo Bag</h2>
-                        <ul class="rodeo-bag">
-                            <li>
-                                <div class="img-box">
-                                    <a href="#">
-                                        <img src="./images/campaign/new-york/rodeo-goods1.png" alt=""></a>
-                                </div>
-                                <div class="text-box">
-                                    <p class="rodeo-bag-title">
-                                        <a href="#">로데오 미디엄 라이트 에스프레소</a>
-                                    </p>
-                                    <p class="rodeo-bag-price">₩ 6,140,000</p>
-                                </div>
-
-
-                            </li>
-                            <li>
-                                <div class="img-box">
-                                    <a href="#">
-                                        <img src="./images/campaign/new-york/rodeo-goods2.png" alt=""></a>
-                                </div>
-                                <div class="text-box">
-                                    <p class="rodeo-bag-title">
-                                        <a href="#">로데오 미디엄 버건디</a>
-                                    </p>
-                                    <p class="rodeo-bag-price">₩ 6,140,000</p>
-                                </div>
-
-
-                            </li>
-                            <li>
-                                <div class="img-box">
-                                    <a href="#">
-                                        <img src="./images/campaign/new-york/rodeo-goods3.png" alt=""></a>
-                                </div>
-                                <div class="text-box">
-                                    <p class="rodeo-bag-title">
-                                        <a href="#">로데오 그레인드 카프스킨 미디엄 블랙</a>
-                                    </p>
-                                    <p class="rodeo-bag-price">₩ 6,140,000</p>
-                                </div>
-                            </li>
-                        </ul>
-                        <p class="more-btn"><a href="#">전체보기 <img src="./images/campaign/icon/icon-right-arrow.svg"
-                                    alt="전체보기 화살표 아이콘 이미지"></a></p>
-                    </div>
-
-
                 </div>
 
-                <div class="campaign-newyork">
-                    <h2 class="campaign-newyork-title">
-                        A New York Minute Take #2
-                    </h2>
+                <!-- 2. CAMPAIGN SELECTION 섹션 (밝은 배경 구획) -->
+                <div class="campaign-section campaign-selection-section">
+                    <div class="selection-header">
+                        <span class="step-num">02 / RODEO</span>
+                        <h2 class="campaign-newyork-title">RODEO SELECTION</h2>
+                    </div>
+                    <ul class="product-list">
+                        <li>
+                            <div class="img-box">
+                                <a href="#"><img src="./images/campaign/new-york/rodeo-goods1.png"
+                                        alt="로데오 미디엄 라이트 에스프레소"></a>
+                            </div>
+                            <div class="text-box">
+                                <p class="product-title"><a href="#">로데오 미디엄 라이트 에스프레소</a></p>
+                                <p class="product-price">₩ 6,140,000</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img-box">
+                                <a href="#"><img src="./images/campaign/new-york/rodeo-goods2.png"
+                                        alt="로데오 미디엄 버건디"></a>
+                            </div>
+                            <div class="text-box">
+                                <p class="product-title"><a href="#">로데오 미디엄 버건디</a></p>
+                                <p class="product-price">₩ 6,140,000</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img-box">
+                                <a href="#"><img src="./images/campaign/new-york/rodeo-goods3.png"
+                                        alt="로데오 그레인드 카프스킨 미디엄 블랙"></a>
+                            </div>
+                            <div class="text-box">
+                                <p class="product-title"><a href="#">로데오 그레인드 카프스킨 미디엄 블랙</a></p>
+                                <p class="product-price">₩ 6,140,000</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
 
+                <!-- 3. BETWEEN THE MOMENTS 섹션 (르시티 비하인드 영역 복원) -->
+                <div class="campaign-section campaign-notes-section">
                     <div class="campaign-lecity-behind">
-                        <ul class="behind-img-box">
-                            <li class="lecity-img1">
-                                <img src="./images/campaign/new-york/lecity_behind1.jpg"
-                                    alt="캠페인 A New York Minute의 네번째 비하인드 스틸 컷">
-                            </li>
-                            <li class="lecity-img2">
-                                <img src="./images/campaign/new-york/lecity_behind2.jpg"
-                                    alt="캠페인 A New York Minute의 다섯번째 비하인드 스틸 컷">
-                            </li>
-                        </ul>
-                        <div class="behind-text-box">
-                            <p class="behind-text-title">Le City Bag Campaign Still Cut</p>
-                            <p class="behind-text">
-                                <span>A New York Minute는 분주한 도시 속 우연한 연결과 영화 제작의 과정을 하나의 내러티브로 엮어낸 작품이다.</span>
-                                <span>셀린 송은 컷 이후에도 "keep rolling"을 지시하며 실제 도시의 풍경까지 담아내고, 네 번째 벽을 허무는 연출을 통해 허구와 현실이
-                                    교차하는 영화적 경험을 완성하였다.</span>
-                                <span>또한, 극 중 사라 피전과 영화 속 영화의 주인공이 모두 르 시티 백을 착용하며 현실과 허구를 잇는 시각적 연결고리를 만들고,르 시티 백은 서로
-                                    다른 인물과 이야기를 하나로 이어주는 상징적인 오브제로 기능하였다.</span>
-                                <span>해당 영상은 발렌시아가 공식 유튜브 채널에서 볼 수 있다.</span>
+                        <div class="left-img-area behind-img-box">
+                            <img src="./images/campaign/new-york/lecity_behind1.jpg" alt="르시티 캠페인 비하인드 컷">
+                        </div>
+                        <div class="notes-content">
+                            <span class="step-num">03 / CAMPAIGN NOTES</span>
+                            <h2 class="campaign-newyork-title">BETWEEN THE MOMENTS</h2>
+                            <p class="section-desc behind-text">
+                                완성된 장면보다 장면과 장면 사이에 집중합니다. 각자의 속도로 도시를 통과하는 사람들과 그 안에서 자연스럽게 드러나는 태도.
+                            </p>
+                            <p class="more-btn">
+                                <a href="#">시리즈로 돌아가기 <img src="./images/campaign/icon/icon-right-arrow.svg"
+                                        alt="화살표 아이콘"></a>
                             </p>
                         </div>
                     </div>
-
-                    <div class="lecuty-bag-product product">
-                        <h2>Le City Bag</h2>
-                        <ul class="lecity-bag">
-                            <li>
-                                <div class="img-box">
-                                    <a href="#">
-                                        <img src="./images/campaign/new-york/lecity-goods1.png" alt=""></a>
-                                </div>
-                                <div class="text-box">
-                                    <p class="lecity-bag-title">
-                                        <a href="#">르 시티 버킷백 블랙</a>
-                                    </p>
-                                    <p class="rodeo-bag-price">₩ 3,250,000</p>
-                                </div>
-
-
-                            </li>
-                            <li>
-                                <div class="img-box">
-                                    <a href="#">
-                                        <img src="./images/campaign/new-york/lecity-goods2.png" alt=""></a>
-                                </div>
-                                <div class="text-box">
-                                    <p class="lecity-bag-title">
-                                        <a href="#">르 시티 백 미디엄 블랙</a>
-                                    </p>
-                                    <p class="rodeo-bag-price">₩ 4,200,000</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="img-box">
-                                    <a href="#">
-                                        <img src="./images/campaign/new-york/lecity-goods3.png" alt=""></a>
-                                </div>
-                                <div class="text-box">
-                                    <p class="lecity-bag-title">
-                                        <a href="#">르 시티 백팩 미니 블랙</a>
-                                    </p>
-                                    <p class="rodeo-bag-price">₩ 3,350,000</p>
-                                </div>
-
-                            </li>
-                        </ul>
-                        <p class="more-btn"><a href="#">전체보기 <img src="./images/campaign/icon/icon-right-arrow.svg"
-                                    alt="전체보기 화살표 아이콘 이미지"></a></p>
-                    </div>
-
-
                 </div>
 
-                <div class="information-wrap">
-                    <div class="campaign-newyork-title information-title">
-                        <h2 class="campaign-newyork-title">
-                            <a href="#">Campaign Film Information</a>
-                        </h2>
+                <!-- 4. 르시티 프로덕트 섹션 (Le City Product Selection) 복원 구역 -->
+                <div class="campaign-section campaign-selection-section lecity-product-section">
+                    <div class="selection-header">
+                        <span class="step-num">04 / LE CITY</span>
+                        <h2 class="campaign-newyork-title">LE CITY SELECTION</h2>
                     </div>
+                    <ul class="product-list">
+                        <li>
+                            <div class="img-box">
+                                <a href="#"><img src="./images/campaign/new-york/lecity-goods1.png" alt=""></a>
+                            </div>
+                            <div class="text-box">
+                                <p class="product-title"><a href="#">르 시티 버킷백 블랙</a></p>
+                                <p class="product-price">₩ 3,250,000</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img-box">
+                                <a href="#"><img src="./images/campaign/new-york/lecity-goods2.png" alt=""></a>
+                            </div>
+                            <div class="text-box">
+                                <p class="product-title"><a href="#">르 시티 백 미디엄 블랙</a></p>
+                                <p class="product-price">₩ 4,200,000</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="img-box">
+                                <a href="#"><img src="./images/campaign/new-york/lecity-goods3.png" alt="르시티 스몰 백"></a>
+                            </div>
+                            <div class="text-box">
+                                <p class="product-title"><a href="#">르 시티 백팩 미니 블랙</a></p>
+                                <p class="product-price">₩ 3,350,000</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
 
+                <!-- 5. 정보 영역 (좌우 2열 레이아웃 적용) -->
+                <div class="information-wrap">
                     <div class="information-inner">
-                        <div class="img-box">
+                        <div class="info-img-box">
                             <a href="#">
-                                <img src="./images/campaign/new-york/campaign_last_img.jpg"
-                                    alt="캠페인 필름 포토그래퍼와 인스타그램 아이디를 기재한 이미지">
+                                <img src="./images/campaign/new-york/campaign_last_img.jpg" alt="캠페인 필름 포토그래퍼 정보">
                             </a>
                         </div>
-                        <div class="text-box">
-                            <p>Photographer - Monaris, Zora Sicher</p>
-                            <p>Instagram - @keeppprolling</p>
+                        <div class="info-text-box">
+                            <span class="step-num">05 / CREDITS</span>
+                            <h2 class="campaign-newyork-title">BEHIND THE LENS</h2>
+                            <div class="credit-desc-box">
+                                <p>Photographer - Monaris, Zora Sicher</p>
+                                <p>Instagram - @keeppprolling</p>
+                            </div>
                         </div>
                     </div>
                 </div>
+
             </div>
         </section>
     </main>
