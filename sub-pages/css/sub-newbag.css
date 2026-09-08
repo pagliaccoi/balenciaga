@@ -52,7 +52,7 @@
 }
 
 .inner {
-    max-width: var(--inner-width);
+    max-width: 1680px;
     margin: 0 auto;
 }
 
