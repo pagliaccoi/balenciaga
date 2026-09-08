@@ -1,4 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // 로그인 정보는 전송하지 않고 홈페이지로 이동한다.
+    const loginForm = document.querySelector('.login-form');
+
+    loginForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        window.location.href = '/sub-pages/mypage.html';
+    });
+
     // 비밀번호 재설정 오버레이 요소
     const pwResetTrigger = document.querySelector('#findPwTrigger');
     const pwResetOverlay = document.querySelector('#pwResetOverlay');
