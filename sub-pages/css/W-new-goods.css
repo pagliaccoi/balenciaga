@@ -68,7 +68,7 @@
 /* 콘텐츠 전체 폭 */
 
 .W-new-goods-inner {
-    max-width: var(--inner-width, 1680px);
+    max-width: 1680px;
     width: 100%;
     margin: 0 auto;
     position: relative;
