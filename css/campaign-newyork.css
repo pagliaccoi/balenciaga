@@ -1,316 +1,345 @@
-:root {
-  /* color */
-  --primary-color: #111;
-  --secondary-color: #fff;
-  --impact-color: #ccfb55;
+/* @charset "utf-8"; */
 
-  --text-primary-color: #111;
-  --text-secondray-color: #555;
-  --text-tertiary-color: #8a8a8a;
-  --text-disabled-color: #cfcfcf;
-
-  --gray-200: #e5e5e5;
-  --gray-300: #cfcfcf;
-  --gray-400: #a8a8a8;
-  --gray-500: #8a8a8a;
-  --gray-600: #666666;
-  --gray-700: #4a4a4a;
-  --gray-800: #2e2e2e;
-
-  /* layout */
-  --inner-width: 1680px;
-  /* spacing */
-
-  /* border */
-  /* transition */
-}
 body {
   font-family: "Pretendard", sans-serif;
   font-size: 16px;
-  background: var(--primary-color);
+  background: var(--primary-color, #111);
+  color: #fff;
 }
 
-/* capmpain-main */
+/* 메인 레이아웃 컨테이너 */
 main {
   width: 100%;
-  max-width: var(--inner-width);
-  margin: 0 auto;
+  background: var(--primary-color, #111);
   color: #fff;
-  padding: 200px 0;
+  padding: 80px 0 120px;
 }
 
-.campaign-wrap {
-  width: 100%;
-}
 .campaign-inner {
-  max-width: var(--inner-width);
+  max-width: 1680px;
   margin: 0 auto;
-}
-.campaign-inner > div {
-  width: 100%;
-  margin: 0 auto;
-  padding-bottom: 5em;
-}
-.campaign-inner p {
-  font-weight: 200;
-}
-.campaign-inner > .section-title {
-  text-align: center;
-  color: var(--impact-color);
-  font-size: 2em;
-  font-weight: 600;
-  letter-spacing: 10px;
-  text-shadow: rgba(255, 255, 255, 0.5) 1px 2px 10px;
-  /* 메인 타이틀 쉐도우 추가 */
+  padding: 100px 40px;
 }
 
-.campaign-inner > div > img {
-  width: 100%;
+/* 상단 네비게이션 및 타이틀 */
+.section-title {
+  margin-bottom: 40px;
+}
+.section-title h2 {
+  font-size: 1.5em;
+  letter-spacing: 8px;
+  font-weight: 800;
+  color: var(--impact-color);
+  text-shadow: 0 4px 10px rgba(255,255,255,0.4);
+  padding: 30px 0;
+}
+
+.campaign-menu-wrap {
+  margin-bottom: 100px;
 }
 .campaign-menu-list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1em;
+  gap: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 20px;
 }
-.campaign-menu-list > li {
-  display: block;
-  padding: 4px 10px;
-  font-size: 1.25em;
-  font-weight: 400;
-  letter-spacing: 2px;
+.campaign-menu-list li a {
+  font-size: 1.1em;
+  color: #777;
+  transition: color 0.3s;
 }
-.campaign-menu-list > li:hover {
-  color: var(--impact-color);
-  border-bottom: 1px solid var(--impact-color);
-}
-
-/* 공통사항 */
-.campaign-newyork-title {
-  display: block;
-  text-align: center;
-  font-size: 1.5em;
-  font-weight: 500;
-  margin: 100px 0;
+.campaign-menu-list li a.active,
+.campaign-menu-list li a:hover {
+  color: #fff;
+  font-weight: 600;
 }
 
-.text-box {
-  height: 4.6em;
-  letter-spacing: 0.06em;
-  line-height: 1.5em;
+/* 최상단 히어로 배너 */
+.campaign-top-hero {
   position: relative;
-}
-.text-box .rodeo-bag-title,
-.text-box .lecity-bag-title {
-  margin-top: 10px;
-}
-.text-box .rodeo-bag-price,
-.text-box .lecity-bag-price {
-  position: absolute;
-  bottom: 10%;
-}
-
-/* 공통사항 end */
-
-.campaign-rodeo-behind {
   width: 100%;
-  margin: 0 auto;
-  display: grid;
-  /* 가로를 12개 컬럼으로 세분화하여 배치 기준 마련 */
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(10, minmax(40px, auto));
-  gap: 1.25em;
-  position: relative;
+  height: 70vh;
+  min-height: 500px;
+  overflow: hidden;
+  margin-bottom: 140px;
 }
-.campaign-rodeo-behind .behind-img-box {
-  display: contents;
-  /* ul 태그를 거치지 않고 내부 li들이 직접 grid 자식이 되도록 */
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
 }
-.campaign-rodeo-behind .behind-img-box li {
-  position: relative;
-}
-.campaign-rodeo-behind .behind-img-box img {
-  display: block;
+.hero-bg-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-/* 오른쪽 위 */
-.campaign-rodeo-behind .rodeo-img1 {
-  grid-column: 5/13; /* 5번째 열부터 12번째 열까지 (오른쪽 영역) */
-  grid-row: 1/5; /* 위쪽 행 영역 */
-  z-index: 2;
+.hero-title-overlay {
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
 }
-/* 왼쪽 중간 */
-.campaign-rodeo-behind .rodeo-img2 {
-  grid-column: 1/9; /* 왼쪽에서 7개 컬럼 차지 */
-  grid-row: 3/9; /* 중간~아래 행에 걸쳐 배치 */
-  z-index: 3;
-}
-/* 오른쪽 아래 */
-.campaign-rodeo-behind .rodeo-img3 {
-  grid-column: 6/13; /* 오른쪽 영역 */
-  grid-row: 6/11; /* 아래쪽 행 영역 */
-  z-index: 4;
-}
-.behind-text-box {
-  width: 50%;
-  margin: 0 auto 10em;
-}
-.behind-text-box > .behind-text-title {
-  display: block;
-  padding: 5em 0 4em;
-  text-align: center;
-}
-.behind-text span {
-  display: block;
-  line-height: 2em;
+.hero-title-overlay .main-title {
+  font-size: clamp(3rem, 7vw, 7rem);
+  font-weight: 800;
+  letter-spacing: -2px;
+  color: #fff;
+  line-height: 1;
 }
 
-/* lecity 구간 */
-.campaign-lecity-behind > ul {
+/* 공통 섹션 스타일 */
+.campaign-section {
+  width: 100%;
+  margin-bottom: 160px;
+  padding-bottom: 100px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.step-num {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--impact-color, #CCFB55);
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.campaign-newyork-title {
+  font-size: 5em;
+  width: 300px;
+  font-weight: 700;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+/* 1. THE STORY 섹션 레이아웃 (좌우 2열 배치) */
+.story-content-top {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  gap: 1em;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+.hero-title-box {
+  flex: 1;
+}
+.hero-desc-box {
+  flex: 0 0 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.section-desc {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: #ccc;
+  line-height: 1.6;
+}
+.photo-credit {
+  font-size: 0.8rem;
+  color: #777;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+
+/* 비하인드 컷 3분할 비대칭 그리드 (레퍼런스 이미지 반영) */
+.campaign-rodeo-behind {
+  margin-bottom: 80px;
+}
+.campaign-rodeo-behind .behind-img-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 30px;
+}
+.campaign-rodeo-behind .behind-img-box li img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.campaign-lecity-behind > ul > li {
-  width: 48%;
+.rodeo-img1 {
+  grid-row: span 2;
 }
-.campaign-lecity-behind > ul > li img {
-  display: block;
+.rodeo-img2 {
+  grid-column: 2;
+  grid-row: 1;
+}
+.rodeo-img3 {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.quote-box {
+  text-align: left;
+  margin-top: 40px;
+}
+.quote-box p {
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  font-weight: 300;
+  color: #fff;
+  font-style: italic;
+  letter-spacing: -0.5px;
+}
+
+/* 2 & 4. CAMPAIGN SELECTION 섹션 (밝은 배경 구획) */
+.campaign-selection-section {
+  background: #EAEAEA;
+  color: #111;
+  padding: 80px 60px;
+  border-radius: 4px;
+}
+.campaign-selection-section .step-num {
+  color: #555;
+}
+.campaign-selection-section .campaign-newyork-title {
+  color: #111;
+  margin-bottom: 50px;
+}
+.product-list {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+}
+.product-list > li {
+  flex: 1;
+  background: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.product-list .img-box {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: #f4f4f4;
+}
+.product-list .img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.product-list .text-box {
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.product-title a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #111;
+}
+.product-price {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111;
+}
+
+/* 3. BETWEEN THE MOMENTS 섹션 (좌우 반전 레이아웃) */
+.campaign-notes-section {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  margin-bottom: 160px;
+  padding-bottom: 100px;
+}
+.campaign-lecity-behind {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+}
+.campaign-lecity-behind .left-img-area {
+  flex: 1.2;
+}
+.campaign-lecity-behind .left-img-area img {
+  width: 100%;
+  object-fit: cover;
+}
+.campaign-lecity-behind .notes-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.more-btn {
+  margin-top: 20px;
+}
+.more-btn a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  transition: opacity 0.3s;
+}
+.more-btn a:hover {
+  opacity: 0.7;
+}
+
+/* 4. 정보 영역 */
+/* 5. 정보 영역 (좌우 2열 배치 레이아웃) */
+.information-wrap {
+  margin-top: 160px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding-top: 100px;
+}
+
+.information-inner {
+  display: flex;
+  align-items: center;
+  gap: 80px; /* 이미지와 텍스트 사이 간격 */
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.information-inner .info-img-box {
+  flex: 1.2;
+}
+
+.information-inner .info-img-box img {
   width: 100%;
   height: auto;
   object-fit: cover;
+  display: block;
 }
 
-/* product 구간 */
-.campaign-wrap .product {
-  width: 100%;
-  margin: 10em 0;
-  position: relative;
-}
-.campaign-wrap .product > ul {
+.information-inner .info-text-box {
+  flex: 1;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 1.5%;
-  flex-wrap: wrap; /* 화면이 부족하면 다음 줄로 떨어지게 설정 */
-}
-.campaign-wrap .product > ul > li {
-  flex: 0 0 calc((100% - 3%) / 3); /* 남은 공간을 균등하게 나눠 가짐 */
-  max-width: calc(
-    (100% - 3%) / 3
-  ); /* 기본적으로 3개가 한 줄에 들어가도록 설정 */
-}
-.campaign-wrap .product > h2 {
-  text-align: center;
-  margin-bottom: 4em;
-  font-size: 1.2em;
-  font-weight: 600;
-}
-.campaign-wrap .product > ul > li .text-box {
-  width: 100%;
-  min-width: auto;
-  margin: 1.25em 0 0.63em;
-}
-.campaign-wrap .product > ul > li .img-box {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  aspect-ratio: 3/4; /* 이미지가 찌그러지지 않고 일정한 비율 유지 */
-}
-.campaign-wrap .product > ul > li .img-box img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  transition: 0.3s;
-  object-fit: cover;
-}
-.campaign-wrap .product > ul > li .img-box::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.3);
-  transition: 0.3s;
-  opacity: 0;
-}
-.campaign-wrap .product > ul > li .img-box:hover img {
-  transform: scale(1.05);
-}
-.campaign-wrap .product > ul > li .img-box:hover::after {
-  opacity: 1;
-}
-.campaign-wrap .more-btn > a {
-  position: absolute;
-  top: 6%;
-  right: 0;
-  padding: 1em 0;
+  flex-direction: column;
+  gap: 20px;
 }
 
-/* information 구간 */
-.information-wrap {
-  max-width: 800px;
-  width: 100%;
-}
-.information-inner {
-  position: relative;
-  padding-bottom: 180px;
-}
-.information-inner .img-box {
-  position: relative;
-  overflow: hidden;
-}
-.information-inner .img-box img {
-  display: block;
-  width: 100%;
+.credit-desc-box {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 30px;
+  border-left: 3px solid var(--impact-color, #CCFB55);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ccc;
 }
 
-/* 반응형 디자인 */
 
-/* ipad */
+/* 태블릿 및 아이패드 영역 (1280px 이하) */
 @media screen and (max-width: 1280px) {
-  /* main */
   main {
     max-width: 1280px;
     width: 100%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
   }
   .campaign-wrap {
     width: 100%;
-    padding: 0 1em;
+    padding: 0 24px;
   }
-  .campaign-inner > div {
-    padding-bottom: 0;
+  .campaign-inner {
+    max-width: 100%;
+    padding: 60px 0;
   }
-  .campaign-inner .section-title {
-    margin-bottom: 2em;
-  }
-  .behind-text {
-    font-size: 0.75em;
-  }
-  .behind-text-box {
-    width: 90%;
-  }
-  .campaign-inner .campaign-inner span {
-    margin: 10px 0;
-  }
-  .campaign-rodeo-behind {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5em;
-    grid-template-columns: none; /* grid 속성 초기화 */
-    grid-template-rows: none;
-  }
-  /* ul 태그(behind-img-box)의 display: contents 해제 및 세로 정렬 적용 */
   .campaign-rodeo-behind .behind-img-box {
     display: flex;
     flex-direction: column;
-    gap: 1.5em;
+    gap: 20px;
     width: 100%;
   }
-  /* 각각의 li 및 이미지들이 화면 너비(100%)를 꽉 채우도록 설정 */
   .campaign-rodeo-behind .behind-img-box li,
   .campaign-rodeo-behind .rodeo-img1,
   .campaign-rodeo-behind .rodeo-img2,
@@ -318,101 +347,165 @@ main {
     grid-column: auto;
     grid-row: auto;
     width: 100%;
-    max-width: 100%;
-    z-index: 1;
   }
   .campaign-rodeo-behind .behind-img-box img {
     width: 100%;
-    height: auto; /* 이미지 비율이 찌그러지지 않도록 auto 지정 */
+    height: auto;
     object-fit: cover;
-  }
-
-  .campaign-wrap .more-btn > a {
-    top: 5%;
-    right: 0;
-  }
-  .campaign-menu-list {
-    width: 100%;
-  }
-  .campaign-menu-list > li {
-    gap: 0;
-    font-size: 0.88em;
-  }
-  .campaign-newyork-title {
-    font-size: 1em;
-  }
-  .campaign-wrap .product > ul > li .img-box::after {
-    display: none;
-  }
-  .campaign-wrap .product > ul > li .img-box:hover img {
-    transform: none;
   }
 }
 
-/* mobile */
+/* 모바일 매거진 뉴스 스타일 (789px 이하) */
 @media screen and (max-width: 789px) {
-  /* main */
   main {
     width: 100%;
-    padding: 100px 0;
+    padding: 30px 0;
   }
-  .campaign-inner .section-title {
-    font-size: 1.2em;
-    margin-bottom: 2em;
+  .campaign-inner {
+    /* padding: 0 16px; */
   }
-  .campaign-wrap {
-    width: 100%;
-  }
+  
+  /* 상단 메뉴바: 뉴스 브리핑 탭 형태 */
   .campaign-menu-wrap {
     width: 100%;
     overflow-x: auto;
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
-    margin-bottom: 2em;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    padding-bottom: 12px;
   }
-  .campaign-menu-wrap::-webkit-scrollbar{
+  .campaign-menu-wrap::-webkit-scrollbar {
     display: none;
   }
-  .campaign-menu-list{
+  .campaign-menu-list {
     display: flex;
     flex-wrap: nowrap;
     justify-content: flex-start;
-    padding: 0 1em;
+    padding: 0;
+    gap: 10px;
   }
-  .campaign-menu-list>li{
+  .campaign-menu-list > li {
     flex: 0 0 auto;
-    padding: 8px 16px;
-    border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 6px rgba(255,255,255,0.05);
-    transition: all 0.3s ease;
+    padding: 6px 14px;
+    font-size: 0.85rem;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.12);
   }
-  .campaign-menu-list > li:hover{
-    color: #fff;
-    border-bottom: transparent;
-  }
-  .campaign-wrap .more-btn > a {
-    top: 14%;
-    font-size: 0.88em;
-  }
-  .campaign-wrap .product > ul > li .text-box {
-    font-size: 0.5em;
-  }
-  .campaign-newyork-title{
-    margin: 80px 0;
-  }
-  .campaign-lecity-behind > ul {
+
+  /* 스토리 섹션 상하 배치 */
+  .story-content-top {
     flex-direction: column;
-    gap: 1.25em;
+    gap: 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 40px;
+    margin-bottom: 40px;
   }
-  .campaign-lecity-behind > ul > li {
-    width: 80%;
+  .hero-desc-box {
+    flex: none;
+    width: 100%;
+  }
+
+  /* 뉴스 헤드라인 스타일 타이틀 (여백을 주어 답답하지 않고 시원한 느낌) */
+  .campaign-newyork-title {
+    font-size: 1.7rem !important;
+    width: 100% !important;
+    margin: 10px 0 16px 0 !important;
+    letter-spacing: -0.5px;
+    border-left: 2px solid var(--impact-color, #CCFB55);
+    padding-left: 12px;
+    line-height: 1.25;
+  }
+
+  .step-num {
+    font-size: 0.75rem;
+    letter-spacing: 2px;
+    color: var(--impact-color, #CCFB55);
+    margin-bottom: 6px;
+  }
+
+  .campaign-lecity-behind {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  /* 상품 섹션: 꽉 차지 않고 여백이 숨 쉬는 미니 뉴스 피드 슬라이드 */
+  .campaign-selection-section {
+    padding: 30px 16px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 4px;
+    margin-bottom: 40px;
+  }
+  .campaign-selection-section .selection-header {
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .product-list {
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 8px;
+  }
+  .product-list::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 카드 너비를 슬림하게 가져가 주변 여백이 보이도록 매거진 레이아웃 구현 */
+  .product-list > li {
+    flex: 0 0 68%;
+    max-width: 240px;
+    scroll-snap-align: start;
+    border-radius: 2px;
+    background: #111;
+    overflow: hidden;
+  }
+  .product-list .img-box {
+    aspect-ratio: 4/5;
+    background: #111;
+  }
+  .product-list .text-box {
+    padding: 12px;
+  }
+  .product-title a {
+    font-size: 0.88em;
+    font-weight: 300;
+    color: #eaeaea;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+  }
+  .product-price {
+    font-size: 0.88em;
+    font-weight: 200;
+    color: #fff;
+    margin-top: 6px;
   }
 }
 
-/* mobile - mini phone */
+/* 초소형 미니폰 최적화 (480px 이하) */
 @media screen and (max-width: 480px) {
+  .campaign-wrap {
+    padding: 0 12px;
+  }
+  .campaign-newyork-title {
+    font-size: 1.45rem !important;
+  }
+  .product-list > li {
+    flex: 0 0 78%;
+  }
+  .info-img-box{
+    display: none;
+  }
+  .credit-desc-box {
+    padding: 16px;
+    font-size: 0.88rem;
+  }
+  
 }
