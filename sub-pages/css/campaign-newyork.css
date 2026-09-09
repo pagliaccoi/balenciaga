@@ -482,6 +482,10 @@ main .inner {
 
 /* 초소형 미니폰 최적화 (480px 이하) */
 @media screen and (max-width: 480px) {
+  .inner {
+    max-width: 480px;
+    width: 100%;
+  }
   .campaign-wrap {
     padding: 0 12px;
   }
