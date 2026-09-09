@@ -31,6 +31,7 @@
 .inner {
     max-width: var(--inner-width);
     border: 1px solid gold;
+    margin: 0 auto;
 }
 
 html {
