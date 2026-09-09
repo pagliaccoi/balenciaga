@@ -12,11 +12,6 @@
     font-weight: 600;
 }
 
-.inner {
-    max-width: 1920px;
-    margin: 0 auto;
-}
-
 .bs-top,
 .bs-bottom {
     display: flex;
