@@ -15,7 +15,7 @@ main {
   padding: 80px 0 120px;
 }
 
-.campaign-inner {
+.inner {
   max-width: 1680px;
   margin: 0 auto;
   padding: 100px 40px;
@@ -330,7 +330,7 @@ main {
     width: 100%;
     padding: 0 24px;
   }
-  .campaign-inner {
+  .inner {
     max-width: 100%;
     padding: 60px 0;
   }
@@ -360,9 +360,6 @@ main {
   main {
     width: 100%;
     padding: 30px 0;
-  }
-  .campaign-inner {
-    /* padding: 0 16px; */
   }
   
   /* 상단 메뉴바: 뉴스 브리핑 탭 형태 */

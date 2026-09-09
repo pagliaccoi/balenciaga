@@ -18,7 +18,7 @@
   --gray-800: #2e2e2e;
 
   /* layout */
-  --inner-width: 1920px;
+  --header-inner-width: 1920px;
   /* spacing */
 
   /* border */
@@ -38,13 +38,13 @@ body {
   z-index: 9999;
 }
 
-.inner {
-  max-width: var(--inner-width);
+.header-inner {
+  max-width: var(--header-inner-width);
   width: 100%;
   /* background-color: rgba(255,0,0,0.2); */
   margin: 0 auto;
 }
-header > .inner {
+header > .header-inner {
   width: 100%;
   height: 75px;
   display: flex;
@@ -55,7 +55,7 @@ header > .inner {
   padding: 0 1.25em;
   position: relative;
 }
-.inner > .logo {
+.header-inner > .logo {
   width: 250px;
   height: 39px;
   z-index: 100;
@@ -253,14 +253,14 @@ header > .inner {
   body {
     font-size: 16px;
   }
-  header > .inner {
+  header > .header-inner {
     height: 3.5em;
     justify-content: center;
   }
-  .inner > .logo {
+  .header-inner > .logo {
     width: 250px;
   }
-  .inner > .logo img {
+  .header-inner > .logo img {
     width: 100%;
   }
   .sub-bg {
@@ -315,6 +315,8 @@ header > .inner {
   .main-menu {
     flex-direction: column;
     margin: 0 2em;
+    padding: 0;
+    gap: 0;
   }
   .main-menu>li{
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
@@ -372,7 +374,7 @@ header > .inner {
     height: 1.25em;
     position: absolute;
     top: 4%;
-    right: 3em;
+    right: 2em;
   }
   .m-user-text {
     display: block;
@@ -414,7 +416,7 @@ header > .inner {
   body {
     font-size: 14px;
   }
-  .inner > .logo {
+  .header-inner > .logo {
     width: 150px;
   }
   .gnb-menu.is-active {
@@ -476,7 +478,7 @@ header > .inner {
 
 /* mobile - 2 */
 @media screen and (max-width: 480px) {
-  .inner > .logo {
+  .header-inner > .logo {
     /* width: 120px; */
   }
 }
