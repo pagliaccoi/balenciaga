@@ -13,6 +13,7 @@ footer {
 }
 
 .footer-inner {
+    max-width: 1680px;
     width: 100%;
     padding: 1em;
     display: flex;
