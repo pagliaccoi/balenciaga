@@ -1,181 +1,170 @@
-/* foeter main 설정 */
-
-footer {
-    width: 100%;
-    max-width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 1em;
-    background: #111;
+/* ==========================================================================
+   Field (floating label input component)
+   ========================================================================== */
+.field {
     position: relative;
-    line-height: 1;
+    margin-bottom: 1.5em;
 }
 
-.footer-inner {
-    width: 100%;
-    padding: 1em;
-    display: flex;
-    justify-content: space-between;
-    color: #fff;
-    font-size: 0.88em;
+.field-password {
+    margin-bottom: 0.8em;
+}
+
+.field-input {
     box-sizing: border-box;
-}
-
-.footer-logo {
     width: 100%;
-}
-
-.footer-logo img {
-    max-width: none;
-    width: 100%;
-}
-
-/* footer 주소, 저작권 영역 */
-
-.location {
-    width: 100%;
+    height: 50px;
+    padding: 20px 10px 0;
+    border: none;
+    border-bottom: 1px solid var(--gray-200);
     font-size: 0.88em;
+    color: var(--text-primary-color);
+    background: transparent;
+    outline: none;
+    transition: border-color 0.3s ease;
 }
 
-.location>p {
-    margin: 0 0 0.5em 0;
+.field-input::placeholder {
+    color: var(--text-tertiary-color);
 }
 
-.location>p span {
-    line-height: 1.44em;
+.field-input:focus {
+    border-bottom-color: var(--primary-color);
 }
 
-.footer-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.field-password .field-input {
+    padding-right: 36px;
 }
 
-.footer-left .copyright {
-    font-weight: 400;
+.field-toggle {
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.2s ease;
 }
 
-.footer-right {
-    display: flex;
-    justify-content: space-between;
+.field-toggle:hover {
+    opacity: 1;
 }
 
-/* boutique 영역 */
-
-.right-1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.boutique-wrap {
-    margin: 0 1.25em 0 0;
-}
-
-.boutique-wrap>.boutique {
+.field-toggle img {
+    width: 100%;
+    height: 100%;
     display: block;
-    color: #A8A8A8;
+}
+
+.field-label {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
     font-size: 0.88em;
-    font-weight: 600;
+    color: var(--gray-600);
+    pointer-events: none;
+    transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+}
+
+.field-input:focus ~ .field-label,
+.field-input:not(:placeholder-shown) ~ .field-label {
+    top: 14px;
+    font-size: 0.63em;
+    color: var(--gray-600);
+}
+
+.field-input:hover ~ .field-label {
+    color: var(--text-primary-color);
+}
+
+.field-input:focus ~ .field-label {
+    color: var(--gray-600);
+}
+
+/* Inline variant (used inside phone-field) */
+.field-inline {
+    flex: 1;
+    height: 100%;
+    margin-bottom: 0;
+}
+
+.field-inline .field-input {
+    height: 100%;
+    padding: 14px 0 0;
+    border-bottom: none;
+}
+
+.field-label-inline {
+    left: 0;
+    top: 50%;
+}
+
+.field-inline .field-input:focus ~ .field-label-inline,
+.field-inline .field-input:not(:placeholder-shown) ~ .field-label-inline {
+    top: 6px;
+    font-size: 0.63em;
+    color: var(--gray-600);
+}
+
+.field-inline .field-input:hover ~ .field-label-inline {
+    color: var(--text-primary-color);
+}
+
+.field-inline .field-input:focus ~ .field-label-inline {
+    color: var(--gray-600);
+}
+
+/* ==========================================================================
+   Phone Field
+   ========================================================================== */
+.phone-field {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    gap: 10px;
+    height: 44px;
     margin-bottom: 2em;
+    border-bottom: 1px solid var(--gray-200);
+    transition: border-color 0.3s ease;
 }
 
-.boutique-list>li {
-    font-size: 0.88em;
-    margin: 0 0 1.55em 0;
+.phone-field:focus-within {
+    border-bottom-color: var(--primary-color);
 }
 
-.boutique-list>li>a {
-    font-weight: 500;
-}
-
-.boutique-list>li>a:hover {
-    text-decoration: underline;
-}
-
-select {
-    color: #fff;
-    font-size: 0.88em;
-    display: block;
-    border: 0.13em solid #fff;
-    padding: 0.25em 1.5em 0.25em 0.25em;
-}
-
-
-/* cs 영역 */
-
-.cs-wrap>.cs {
-    color: #A8A8A8;
+.phone-field-select {
+    flex: 0 0 auto;
+    align-self: center;
+    height: auto;
+    border: none;
+    background: transparent;
+    outline: none;
     font-size: 0.88em;
     font-weight: 600;
+    color: var(--text-primary-color);
+    padding: 0;
+    cursor: pointer;
 }
 
-.cs-wrap>p {
-    color: #A8A8A8;
-    font-size: 0.75em;
-    font-weight: 300;
-    margin-bottom: 1.13em;
+.phone-field-divider {
+    align-self: center;
+    color: var(--gray-200);
+    font-size: 0.85em;
 }
 
-.cs-wrap>.cs-list>li {
-    color: #fff;
-    margin-bottom: 0.5em;
-}
-
-.cs-wrap>.cs-list>li>a {
-    font-size: 0.88em;
-    font-weight: 500;
-}
-
-.cs-wrap>.cs-list>li>a:hover {
-    text-decoration: underline;
-}
-
-.cs-wrap>.cs-list>li>p {
-    font-size: 0.75em;
-}
-
-.sns-wrap {
-    margin-top: 1em;
-}
-
-.sns-wrap .sns-list {
-    display: flex;
-    justify-content: space-between;
-}
-
-.sns-wrap .sns-list li img {
-    height: 1.5em;
-    text-align: center;
-}
-
-@media screen and (max-width:1280px) {
-    footer {
-        max-width: 100%;
-        margin: 1em 0;
-    }
-
-    .footer-inner {
-        padding: 1em;
-        display: flex;
-        flex-direction: column
-    }
-
-    .footer-left .copyright {
-        margin: 0 0 1em 0;
-    }
-}
-
-@media screen and (max-width:789px) {
-    .footer-inner {
-        display: flex;
-        flex-direction: column
-    }
-}
-
-@media screen and (max-width:480px) {
-    .location span {
-        display: block;
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 789px) {
+    /* iOS Safari 포커스 시 자동 확대 방지 */
+    .field-input,
+    .phone-field-select {
+        font-size: 16px;
     }
 }
