@@ -153,6 +153,7 @@ select {
 @media screen and (max-width:1280px) {
     footer {
         max-width: 100%;
+        margin: 1em 0;
     }
 
     .footer-inner {
@@ -162,7 +163,7 @@ select {
     }
 
     .footer-left .copyright {
-        margin: 1em 0;
+        margin: 0 0 1em 0;
     }
 }
 
