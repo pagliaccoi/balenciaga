@@ -11,7 +11,7 @@ main {
 .shop-wrap p {
   font-weight: 500;
 }
-.shop-inner {
+.inner {
   max-width: 1680px;
   width: 100%;
   padding-bottom: 200px;
@@ -201,7 +201,7 @@ main {
     margin-top: 34px;
   }
   .shop-banner,
-  .shop-inner {
+  .inner {
     max-width: 1280px;
     width: 100%;
   }
@@ -276,7 +276,7 @@ main {
   .shop-wrap {
     padding: 1em 0;
   }
-  .shop-inner {
+  .inner {
     max-width: 789px;
     width: 100%;
   }
@@ -335,7 +335,7 @@ main {
 
 /* mobile */
 @media screen and (max-width: 480px) {
-  .shop-inner {
+  .inner {
     max-width: 480px;
     width: 100%;
   }
