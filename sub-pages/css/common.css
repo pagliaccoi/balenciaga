@@ -117,3 +117,54 @@ button:focus-visible {
     outline: 2px solid #111;
     outline-offset: 2px;
 }
+
+
+/* 최상단 이동(TOP) 버튼 */
+.top-btn {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    z-index: 9500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    padding: 0;
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s,
+        background-color 0.3s, color 0.3s;
+}
+
+.top-btn.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.top-btn:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.top-btn svg {
+    display: block;
+    width: 16px;
+    height: 16px;
+}
+
+@media screen and (max-width: 768px) {
+    .top-btn {
+        right: 16px;
+        bottom: 16px;
+        width: 42px;
+        height: 42px;
+    }
+}
