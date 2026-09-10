@@ -1,7 +1,7 @@
 // 최상단 이동(TOP) 버튼
 // 아이콘 경로를 이 스크립트 위치 기준으로 계산해서 메인/서브페이지 모두에서 동작
 const TOP_BTN_ICON = new URL(
-  "/images/icon/icon_arrow.svg",
+  "./images/icon/icon_arrow.svg",
   document.currentScript.src
 ).href;
 
