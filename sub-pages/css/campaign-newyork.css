@@ -454,12 +454,10 @@ main .inner {
     max-width: 240px;
     scroll-snap-align: start;
     border-radius: 2px;
-    background: #111;
     overflow: hidden;
   }
   .product-list .img-box {
     aspect-ratio: 4/5;
-    background: #111;
   }
   .product-list .text-box {
     padding: 12px;
@@ -467,7 +465,6 @@ main .inner {
   .product-title a {
     font-size: 0.88em;
     font-weight: 300;
-    color: #eaeaea;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
