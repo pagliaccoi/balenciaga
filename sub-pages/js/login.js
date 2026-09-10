@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loginForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        window.location.href = '/sub-pages/mypage.html';
+        window.location.href = './mypage.html';
     });
 
     // 비밀번호 재설정 오버레이 요소
