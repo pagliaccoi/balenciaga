@@ -1,4 +1,10 @@
 // 최상단 이동(TOP) 버튼
+// 아이콘 경로를 이 스크립트 위치 기준으로 계산해서 메인/서브페이지 모두에서 동작
+const TOP_BTN_ICON = new URL(
+  "/images/icon/icon_arrow.svg",
+  document.currentScript.src
+).href;
+
 document.addEventListener("DOMContentLoaded", () => {
   // 버튼이 보이기 시작하는 스크롤 위치(px)
   const SHOW_AT = 300;
@@ -7,8 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   topBtn.type = "button";
   topBtn.className = "top-btn";
   topBtn.setAttribute("aria-label", "맨 위로 이동");
-  topBtn.innerHTML =
-    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>';
+  topBtn.innerHTML = `<img src="${TOP_BTN_ICON}" alt="">`;
 
   document.body.appendChild(topBtn);
 

@@ -134,13 +134,12 @@ button:focus-visible {
     border: 1px solid var(--primary-color);
     border-radius: 50%;
     background-color: var(--secondary-color);
-    color: var(--primary-color);
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
     transition: opacity 0.3s, visibility 0.3s, transform 0.3s,
-        background-color 0.3s, color 0.3s;
+        background-color 0.3s;
 }
 
 .top-btn.is-active {
@@ -151,13 +150,20 @@ button:focus-visible {
 
 .top-btn:hover {
     background-color: var(--primary-color);
-    color: var(--secondary-color);
 }
 
-.top-btn svg {
+.top-btn img {
     display: block;
-    width: 16px;
-    height: 16px;
+    width: 24px;
+    height: 24px;
+    /* icon_arrow.svg가 오른쪽 방향이라 위로 회전 */
+    transform: rotate(-90deg);
+    transition: filter 0.3s;
+}
+
+.top-btn:hover img {
+    /* 검은 아이콘을 흰색으로 반전 */
+    filter: invert(1);
 }
 
 @media screen and (max-width: 768px) {
