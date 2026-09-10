@@ -1,6 +1,5 @@
 /* @charset "utf-8"; */
 
-
 /* 메인 레이아웃 컨테이너 */
 main {
   width: 100%;
@@ -19,12 +18,20 @@ main .inner {
 .section-title {
   margin-bottom: 40px;
 }
+
+/* 스크롤 감지 후 나타날 때 활성화되는 클래스 (JS 연동용) */
+.section-title.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .section-title h2 {
-  font-size: 2.5em;
-  letter-spacing: 8px;
-  font-weight: 100;
-  color: var(--impact-color);
-  text-shadow: 0 4px 10px rgba(255,255,255,0.4);
+  color: #ccfb55;
+  font-size: 5em;
+  font-weight: bold;
+  letter-spacing: 4px;
+  line-height: 1.1;
+  text-align: left; /* 필요에 따라 center로 변경 가능 */
   padding: 30px 0;
 }
 
@@ -87,18 +94,10 @@ main .inner {
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
 }
 
-.step-num {
-  display: block;
-  font-size: 0.85rem;
-  color: var(--impact-color, #CCFB55);
-  letter-spacing: 2px;
-  margin-bottom: 15px;
-  font-weight: 500;
-}
 
 .campaign-newyork-title {
   font-size: 5em;
-  width: 300px;
+  width: 600px;
   font-weight: 700;
   letter-spacing: -1px;
   line-height: 1.1;
@@ -163,26 +162,23 @@ main .inner {
 }
 
 .quote-box {
-  text-align: left;
+  text-align: center;
   margin-top: 40px;
 }
 .quote-box p {
-  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
-  font-weight: 300;
+  font-size: 1.5em;
+  font-weight: 100;
   color: #fff;
-  font-style: italic;
+  /* font-style: italic; */
   letter-spacing: -0.5px;
 }
 
 /* 2 & 4. CAMPAIGN SELECTION 섹션 (밝은 배경 구획) */
 .campaign-selection-section {
-  background: #EAEAEA;
+  background: rgba(255, 255, 255, 0.5);
   color: #111;
   padding: 80px 60px;
   border-radius: 4px;
-}
-.campaign-selection-section .step-num {
-  color: #555;
 }
 .campaign-selection-section .campaign-newyork-title {
   color: #111;
@@ -195,7 +191,7 @@ main .inner {
 }
 .product-list > li {
   flex: 1;
-  background: #fff;
+  background: rgba(0,0,0,0.2);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -203,7 +199,6 @@ main .inner {
 .product-list .img-box {
   width: 100%;
   aspect-ratio: 3/4;
-  background: #f4f4f4;
 }
 .product-list .img-box img {
   width: 100%;
@@ -218,13 +213,13 @@ main .inner {
 }
 .product-title a {
   font-size: 1rem;
-  font-weight: 500;
-  color: #111;
+  font-weight: 300;
+  color: #fff;
 }
 .product-price {
   font-size: 1.05rem;
-  font-weight: 700;
-  color: #111;
+  font-weight: 300;
+  color: #fff;
 }
 /* 이미지 호버 시 매거진 스타일 줌인 효과 */
 .product-list .img-box img,
@@ -318,12 +313,11 @@ main .inner {
   gap: 12px;
   background: rgba(255, 255, 255, 0.03);
   padding: 30px;
-  border-left: 3px solid var(--impact-color, #CCFB55);
+  border-left: 3px solid #777;
   font-size: 1.1rem;
   line-height: 1.6;
   color: #ccc;
 }
-
 
 /* 태블릿 및 아이패드 영역 (1280px 이하) */
 @media screen and (max-width: 1280px) {
@@ -366,7 +360,11 @@ main .inner {
     width: 100%;
     padding: 30px 0;
   }
-  
+
+  .section-title h2{
+    font-size: 3em;
+  }
+
   /* 상단 메뉴바: 뉴스 브리핑 탭 형태 */
   .campaign-menu-wrap {
     width: 100%;
@@ -415,16 +413,9 @@ main .inner {
     width: 100% !important;
     margin: 10px 0 16px 0 !important;
     letter-spacing: -0.5px;
-    border-left: 2px solid var(--impact-color, #CCFB55);
+    border-left: 2px solid #777;
     padding-left: 12px;
     line-height: 1.25;
-  }
-
-  .step-num {
-    font-size: 0.75rem;
-    letter-spacing: 2px;
-    color: var(--impact-color, #CCFB55);
-    margin-bottom: 6px;
   }
 
   .campaign-lecity-behind {
@@ -435,8 +426,7 @@ main .inner {
   /* 상품 섹션: 꽉 차지 않고 여백이 숨 쉬는 미니 뉴스 피드 슬라이드 */
   .campaign-selection-section {
     padding: 30px 16px;
-    background: rgba(255, 255, 255, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.5);
     border-radius: 4px;
     margin-bottom: 40px;
   }
@@ -506,12 +496,11 @@ main .inner {
   .product-list > li {
     flex: 0 0 78%;
   }
-  .info-img-box{
+  .info-img-box {
     display: none;
   }
   .credit-desc-box {
     padding: 16px;
     font-size: 0.88rem;
   }
-  
 }
